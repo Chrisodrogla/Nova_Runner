@@ -55,17 +55,19 @@ needed_keys = ['orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_pri
 final_results = []
 
 
+errors = []
+
 with concurrent.futures.ThreadPoolExecutor() as executor:
-
     futures = [executor.submit(scrape_rental, rental, scraper, needed_keys) for rental in rental_links]
-
 
     for future in concurrent.futures.as_completed(futures):
         try:
             result = future.result()
             final_results.extend(result)
         except Exception as e:
-            logger.error(f"Error occurred: {e}")
+            error_message = f"Error occurred: {e}"
+            logger.error(error_message)
+            errors.append(error_message)
 
 
 # with open('final_results.json', 'w') as f:
@@ -82,3 +84,9 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 
 print(final_results)
 print("DONE SAMPLE")
+
+# Print all errors at the end
+if errors:
+    print("\nErrors occurred during execution:")
+    for error in errors:
+        print(error)

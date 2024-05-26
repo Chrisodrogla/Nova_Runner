@@ -9,16 +9,6 @@
         "listing_link_format": "https://www.airbnb.com/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Kissimmee,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-06-11&checkout=2024-06-15&min_bedrooms=6&min_beds=8&min_bathrooms=4&adults=14&currency=USD",
         "rankbreeze_Id": "69715",
         "rental_id": "37938829"
-    },
-    {
-        "listing_link_format": "https://www.airbnb.com/s/Davenport--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Davenport,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-06-11&checkout=2024-06-15&min_bedrooms=7&min_beds=11&min_bathrooms=5&adults=16&currency=USD",
-        "rankbreeze_Id": "67556",
-        "rental_id": "755163388432693249"
-    },
-    {
-        "listing_link_format": "https://www.airbnb.com/s/Four-Corners--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Four-Corners,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-06-11&checkout=2024-06-15&min_bedrooms=0&min_beds=0&min_bathrooms=0&adults=0&currency=USD",
-        "rankbreeze_Id": "67416",
-        "rental_id": "32240720"
     }
 
 ]

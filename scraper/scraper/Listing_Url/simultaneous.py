@@ -7,7 +7,7 @@ import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
 
-with open('scraper/Listing_Url/final_rental_link.json', 'r') as f:
+with open('scraper/scraper/Listing_Url/final_rental_link.json', 'r') as f:
     rental_links = json.load(f)
 
 # # sys.path.insert(0, "C:\\Users\\calgo\Github_vscode_Cloned\\nova_scraper_-1\\scraper") #scraper

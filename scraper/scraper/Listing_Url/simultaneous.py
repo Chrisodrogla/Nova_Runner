@@ -1,8 +1,9 @@
 import json
 import time
+import os
 import sys
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
-import os
+
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging

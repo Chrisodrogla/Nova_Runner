@@ -2,11 +2,16 @@ import json
 import csv
 import sys
 import os
+sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
+from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
 
+
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
-from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
+
+with open('scraper/scraper/Listing_Url/final_rental_link.json', 'r') as f:
+    rental_links = json.load(f)
 
 
 def filter_results(result, needed_keys):
@@ -33,42 +38,33 @@ def scrape_rental(rental, scraper, needed_keys):
     return final_results
 
 
-def main(json_file):
-    with open(json_file, 'r') as f:
-        rental_links = json.load(f)
-
-    logger = logging.getLogger(__name__)
-    scraper = AirbnbComSearchStrategy(logger)
-    needed_keys = ['orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
-
-    final_results = []
-    errors = []
-
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(scrape_rental, rental, scraper, needed_keys) for rental in rental_links]
-
-        for future in concurrent.futures.as_completed(futures):
-            try:
-                result = future.result()
-                final_results.extend(result)
-            except Exception as e:
-                error_message = f"Error occurred: {e}"
-                logger.error(error_message)
-                errors.append(error_message)
-
-    print(final_results)
-    print("DONE SAMPLE")
-
-    # Print all errors at the end
-    if errors:
-        print("\nErrors occurred during execution:")
-        for error in errors:
-            print(error)
+logger = logging.getLogger(__name__)
+scraper = AirbnbComSearchStrategy(logger)
+needed_keys = ['orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date',
+               'check_out_date']
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python simultaneous.py <json_file>")
-        sys.exit(1)
-    json_file = sys.argv[1]
-    main(json_file)
+final_results = []
+
+errors = []
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    futures = [executor.submit(scrape_rental, rental, scraper, needed_keys) for rental in rental_links]
+
+    for future in concurrent.futures.as_completed(futures):
+        try:
+            result = future.result()
+            final_results.extend(result)
+        except Exception as e:
+            error_message = f"Error occurred: {e}"
+            logger.error(error_message)
+            errors.append(error_message)
+
+print(final_results)
+print("DONE SAMPLE")
+
+# Print all errors at the end
+if errors:
+    print("\nErrors occurred during execution:")
+    for error in errors:
+        print(error)

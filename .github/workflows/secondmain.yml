@@ -21,13 +21,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Split JSON file
+    - name: Run scraper script
       run: |
-        python scraper/scraper/Listing_Url/split_json.py scraper/scraper/Listing_Url/final_rental_link.json 3
-
-    - name: Run scraper scripts
-      run: |
-        for chunk in chunk_*.json; do
-          python scraper/scraper/Listing_Url/simultaneous.py $chunk &
-        done
-        wait
+        python scraper/scraper/Listing_Url/simultaneous.py

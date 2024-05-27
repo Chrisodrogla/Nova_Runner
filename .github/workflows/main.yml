@@ -1,3 +1,4 @@
+# main.yml
 name: Sample_Run_Test
 
 on:
@@ -21,6 +22,32 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run scraper script
+    - name: Split rental links into batches
       run: |
-        python scraper/scraper/Listing_Url/simultaneous.py
+        mkdir -p batches
+        python -c "
+import json
+import os
+
+with open('scraper/scraper/Listing_Url/final_rental_link.json', 'r') as f:
+    rental_links = json.load(f)
+
+batch_size = 3
+for i in range(0, len(rental_links), batch_size):
+    batch = rental_links[i:i+batch_size]
+    with open(f'batches/batch_{i//batch_size}.json', 'w') as bf:
+        json.dump(batch, bf, indent=2)
+"
+
+    - name: Run scraper scripts in parallel
+      run: |
+        for batch_file in batches/*.json; do
+          python scraper/scraper/Listing_Url/scrape_batch.py $batch_file &
+        done
+        wait
+
+    - name: Collect results
+      run: |
+        mkdir -p results
+        mv batches/*_results.json results/
+        echo "Scraping completed. Results saved in results/ directory."

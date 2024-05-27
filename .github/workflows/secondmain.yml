@@ -1,0 +1,33 @@
+name: Sample_Run_Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Split JSON file
+      run: |
+        python split_json.py scraper/scraper/Listing_Url/final_rental_link.json 3
+
+    - name: Run scraper scripts
+      run: |
+        for chunk in chunk_*.json; do
+          python scraper/scraper/Listing_Url/simultaneous.py $chunk &
+        done
+        wait

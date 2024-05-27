@@ -23,7 +23,7 @@ jobs:
 
     - name: Split JSON file
       run: |
-        python split_json.py scraper/scraper/Listing_Url/final_rental_link.json 3
+        python scraper/scraper/Listing_Url/split_json.py scraper/scraper/Listing_Url/final_rental_link.json 3
 
     - name: Run scraper scripts
       run: |

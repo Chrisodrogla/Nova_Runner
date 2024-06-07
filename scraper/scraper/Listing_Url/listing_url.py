@@ -4,7 +4,7 @@ import datetime
 from selenium import webdriver
 import shutil
 import json
-
+start_time = time.time()
 # username = os.environ['D_USERNAME_SECRET']
 # passw = os.environ['D_PASSWORD_SECRET']
 username ="Marketing@novavacation.com"
@@ -15,7 +15,7 @@ website = "https://app.rankbreeze.com/listings"
 
 # Set up Chrome WebDriver
 options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
+options.add_argument("--headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
 # options.add_argument("--disable-gpu")
@@ -54,7 +54,7 @@ def ranklistingcheck():
             address2 = address_text.replace(' - ', '--').replace(' ', '-')
             addresses.append(address2)
 
-        time.sleep(13)
+        time.sleep(5)
         # Check if there's a "Next" button on the page
         next_buttons = driver.find_elements("xpath", """//span[@class="next"]""")
         if len(next_buttons) > 0:
@@ -122,9 +122,16 @@ def data_to_json(unique_data):
         airbnb_data.append(airbnb_entry)
 
     rb_bnb_json = json.dumps(airbnb_data, indent=4)
-    with open('rb_bnb.json', 'w') as f:
+    with open('json_file/rb_bnb.json', 'w') as f:
         f.write(rb_bnb_json)
 
 
 unique_data = ranklistingcheck()
 data_to_json(unique_data)
+
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+minutes = int(elapsed_time // 60)
+seconds = int(elapsed_time % 60)
+print(f"Time takes {minutes} minutes and {seconds} seconds")

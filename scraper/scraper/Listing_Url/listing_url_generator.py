@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def generate_listing_link(address, start_date, end_date, delta_days, guest, bedrooms, beds, bath):
     base_url = f"https://www.airbnb.com/s/{address}/homes"
@@ -24,7 +24,7 @@ def generate_listing_link(address, start_date, end_date, delta_days, guest, bedr
         "min_beds": beds,
         "min_bathrooms": bath,
         "adults": guest,
-        "currency":"USD"
+        "currency": "USD"
     }
 
     params_string = '&'.join([f"{key}={value}" for key, value in params.items()])
@@ -32,17 +32,26 @@ def generate_listing_link(address, start_date, end_date, delta_days, guest, bedr
 
     return listing_link
 
+def get_next_weekday(start_date, target_weekday, weeks_in_advance=3):
+    days_ahead = target_weekday - start_date.weekday()
+    if days_ahead < 0:
+        days_ahead += 7
+    next_weekday = start_date + timedelta(days_ahead + 7 * weeks_in_advance)
+    return next_weekday
 
-# jSON data from file
-with open('listing_attribute.json', 'r') as f:
+# Parameters
+number_of_weeks = 1  # Number of weeks for each listing
+days_in_week = 4  # Wednesday to Saturday
+weeks_in_advance = 6  # Start date is 6 weeks from today (can be adjusted)
+target_weekday = 0  # Monday0 Tuesday1 .....
+
+# Current date
+current_date = datetime.now().date()
+start_date = get_next_weekday(current_date, target_weekday, weeks_in_advance)
+
+# JSON data from file
+with open('json_file/listing_attribute.json', 'r') as f:
     listings = json.load(f)
-
-# Date Ranges
-start_date_str = '2024-05-21'
-end_date_str = '2024-05-25'
-start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
-end_date = datetime.strptime(end_date_str, "%Y-%m-%d").date()
-delta_days = (end_date - start_date).days
 
 output = []
 
@@ -54,20 +63,32 @@ for listing in listings:
     bedrooms = listing["bedrooms"]
     rankbreeze_Id = listing["rankbreeze_Id"]
     airbnb_link = listing["airbnb_link"]
-    listing_link = generate_listing_link(address, start_date_str, end_date_str, delta_days, guest, bedrooms, beds,
-                                         baths)
 
-    rental_id = airbnb_link.replace("https://www.airbnb.com/rooms/", "")
+    for i in range(number_of_weeks):
+        current_start_date = start_date + timedelta(weeks=i)
+        current_end_date = current_start_date + timedelta(days=days_in_week)
+        delta_days = (current_end_date - current_start_date).days
 
-    output_entry = {
-        "listing_link_format": listing_link,
-        "rankbreeze_Id": rankbreeze_Id,
-        "rental_id": rental_id
-    }
+        listing_link = generate_listing_link(address, current_start_date.isoformat(), current_end_date.isoformat(), delta_days, guest, bedrooms, beds, baths)
+        rental_id = airbnb_link.replace("https://www.airbnb.com/rooms/", "")
 
-    output.append(output_entry)
+        output_entry = {
+            "listing_link_format": listing_link,
+            "rankbreeze_Id": rankbreeze_Id,
+            "rental_id": rental_id
+        }
 
-with open('final_rental_link.json', 'w') as f:
-    json.dump(output, f, indent=4)
+        output.append(output_entry)
 
-print("Data on Json")
+# Split the output into batches of 6
+batch_size = 6
+batches = {}
+for i in range(0, len(output), batch_size):
+    batch_number = (i // batch_size) + 1
+    batch_key = f"Batch{batch_number}"
+    batches[batch_key] = output[i:i + batch_size]
+
+with open('json_file/final_rental_link.json', 'w') as f:
+    json.dump(batches, f, indent=4)
+
+print("Data saved to final_rental_link.json")

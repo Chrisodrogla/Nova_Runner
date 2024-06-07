@@ -1,9 +1,11 @@
 import json
 import sys
 import logging
+import time
 
+start_time = time.time()
 
-sys.path.insert(0, "C:\\Users\\calgo\\Downloads\\nova_scraper_\\scraper")
+sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 
 
 from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy
@@ -39,8 +41,8 @@ def scrape_airbnb_details(data, scraper):
 
 def main():
     # File paths
-    input_file = 'small_rb_bnb.json'
-    output_file = 'listing_attribute.json'
+    input_file = 'json_file/rb_bnb.json'
+    output_file = 'json_file/listing_attribute.json'
 
     # Read the input JSON file
     data = read_json_file(input_file)
@@ -56,5 +58,14 @@ def main():
 
     print(f"Data has been successfully written to {output_file}")
 
+
+
 if __name__ == "__main__":
     main()
+    
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+minutes = int(elapsed_time // 60)
+seconds = int(elapsed_time % 60)
+print(f"Time takes {minutes} minutes and {seconds} seconds")

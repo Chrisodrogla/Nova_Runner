@@ -2,7 +2,7 @@ name: Runner 1
 
 on:
 
-  workflow_dispatch:
+  push:
 #  schedule:
 #    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
 

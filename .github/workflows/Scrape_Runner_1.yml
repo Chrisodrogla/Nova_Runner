@@ -29,6 +29,14 @@ jobs:
       run: |
         BATCH_ID=Batch1 python scraper/scraper/Listing_Url/simultaneous.py
 
+    - name: Create lock file
+      run: |
+        touch /tmp/lockfile
+
+    - name: Wait for lock
+      run: |
+        while [ -f /tmp/lockfile ]; do echo "Waiting for lock..."; sleep 10; done
+
     - name: Stash local changes
       run: |
         git config --global user.name 'github-actions[bot]'
@@ -56,3 +64,7 @@ jobs:
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Remove lock file
+      run: |
+        rm /tmp/lockfile

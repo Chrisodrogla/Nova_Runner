@@ -29,11 +29,23 @@ jobs:
       run: |
         BATCH_ID=Batch1 python scraper/scraper/Listing_Url/simultaneous.py
 
-    - name: Pull latest changes
+    - name: Stash local changes
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git stash
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Pull latest changes
+      run: |
         git pull origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Apply stashed changes
+      run: |
+        git stash pop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         

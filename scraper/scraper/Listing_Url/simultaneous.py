@@ -117,8 +117,12 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 # Authorize the client
 client = gspread.authorize(creds)
 
-# Open the Google Sheet by its name
-sheet = client.open("SearchResults").sheet1
+# Open the Google Sheet by its name and select the specific sheet
+spreadsheet_name = 'rankbreeze-sample-data-for-DB'
+sheet_name = 'SearchResults'
+
+spreadsheet = client.open(spreadsheet_name)
+sheet = spreadsheet.worksheet(sheet_name)
 
 # Prepare data in the format needed for appending
 rows = [[

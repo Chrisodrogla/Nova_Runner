@@ -138,8 +138,8 @@ rows = [[
 ] for item in final_results]
 
 # Append data to the sheet in batches
-batch_size = 5  # Adjust the batch size based on your needs and limits
+batch_size = 2  # Adjust the batch size based on your needs and limits
 for i in range(0, len(rows), batch_size):
     batch = rows[i:i + batch_size]
     sheet.append_rows(batch)
-    time.sleep(62)  # Adding delay to avoid hitting the quota
+    time.sleep(1)  # Adding delay to avoid hitting the quota

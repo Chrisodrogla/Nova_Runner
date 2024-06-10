@@ -79,29 +79,29 @@ elapsed_time = end_time - start_time
 minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
-# Load existing data from the JSON file
-existing_data = []
+# # Load existing data from the JSON file
+# existing_data = []
 
-# with open('output/final_results.json', 'r') as existing_file:
-with open('scraper/scraper/Listing_Url/output/final_results.json', 'r') as existing_file:
-    existing_data = json.load(existing_file)
+# # with open('output/final_results.json', 'r') as existing_file:
+# with open('scraper/scraper/Listing_Url/output/final_results.json', 'r') as existing_file:
+#     existing_data = json.load(existing_file)
 
-# Append your new data to the existing list
-existing_data.extend(final_results)
+# # Append your new data to the existing list
+# existing_data.extend(final_results)
 
-# Write the updated data back to the JSON file
-# with open('output/final_results.json', 'w') as updated_file:
-with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
-    json.dump(existing_data, updated_file, indent=4)
+# # Write the updated data back to the JSON file
+# # with open('output/final_results.json', 'w') as updated_file:
+# with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
+#     json.dump(existing_data, updated_file, indent=4)
 
-print("Data appended and saved to 'output/final_results.json'.")
+# print("Data appended and saved to 'output/final_results.json'.")
 
-print(final_results)
-print("DONE SAMPLE")
+# print(final_results)
+# print("DONE SAMPLE")
 
 
 
-print(f"Time takes {minutes} minutes and {seconds} seconds")
+# print(f"Time takes {minutes} minutes and {seconds} seconds")
 
 
 
@@ -137,6 +137,9 @@ rows = [[
     item['check_out_date']
 ] for item in final_results]
 
-# Append data to the sheet
-for row in rows:
-    sheet.append_row(row)
+# Append data to the sheet in batches
+batch_size = 5  # Adjust the batch size based on your needs and limits
+for i in range(0, len(rows), batch_size):
+    batch = rows[i:i + batch_size]
+    sheet.append_rows(batch)
+    time.sleep(62)  # Adding delay to avoid hitting the quota

@@ -3,6 +3,10 @@ import csv
 import sys
 import time
 import os
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+
 # sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
@@ -98,3 +102,37 @@ print("DONE SAMPLE")
 
 
 print(f"Time takes {minutes} minutes and {seconds} seconds")
+
+
+
+
+
+scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+
+# Load credentials from environment variable
+creds_json = json.loads(os.getenv('GOOGLE_SHEETS_CREDENTIALS'))
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
+
+# Authorize the client
+client = gspread.authorize(creds)
+
+# Open the Google Sheet by its name
+sheet = client.open("SearchResults").sheet1
+
+# Prepare data in the format needed for appending
+rows = [[
+    item['rankbreeze_Id'],
+    item['rental_id'],
+    item['orig_price_per_night'],
+    item['cleaning_fee'],
+    item['service_fee'],
+    item['total_price'],
+    item['price_per_night'],
+    item['check_in_date'],
+    item['check_out_date']
+] for item in final_results]
+
+# Append data to the sheet
+for row in rows:
+    sheet.append_row(row)

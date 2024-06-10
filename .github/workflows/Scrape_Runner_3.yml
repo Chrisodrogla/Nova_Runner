@@ -1,7 +1,7 @@
 name: Runner 3
 
 on:
-  workflow_dispatch:
+  push:
 #  schedule:
 #    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
 
@@ -22,6 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install gspread oauth2client
         pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
     - name: Run scraper script

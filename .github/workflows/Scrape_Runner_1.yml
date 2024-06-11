@@ -1,7 +1,7 @@
 name: Runner 1
 
 on:
-  workflow_dispatch:
+  push:
 #  schedule:
 #    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
 
@@ -12,9 +12,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -24,47 +22,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install gspread oauth2client pandas gspread-dataframe
+        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
     - name: Run scraper script
+      env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+
+
       run: |
         BATCH_ID=Batch1 python scraper/scraper/Listing_Url/simultaneous.py
-
-    - name: Create lock file
-      run: |
-        touch /tmp/lockfile
-
-    - name: Wait for lock
-      run: |
-        while [ -f /tmp/lockfile ]; do echo "Waiting for lock..."; sleep 10; done
-
-    - name: Stash local changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git stash
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Pull latest changes
-      run: |
-        git pull origin main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Apply stashed changes
-      run: |
-        git stash pop
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Commit and push changes
-      run: |
-        git add scraper/scraper/Listing_Url/output/final_results.json
-        git commit -m "Update final_results.json"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Remove lock file
-      run: |
-        rm /tmp/lockfile

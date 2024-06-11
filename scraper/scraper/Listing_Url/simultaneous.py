@@ -5,6 +5,8 @@ import time
 import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from gspread_dataframe import set_with_dataframe
+
 
 
 # sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
@@ -104,9 +106,7 @@ seconds = int(elapsed_time % 60)
 # print(f"Time takes {minutes} minutes and {seconds} seconds")
 
 
-
-
-
+# Define the scope and credentials for accessing Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
@@ -124,22 +124,16 @@ sheet_name = 'SearchResults'
 spreadsheet = client.open(spreadsheet_name)
 sheet = spreadsheet.worksheet(sheet_name)
 
-# Prepare data in the format needed for appending
-rows = [[
-    item['rankbreeze_Id'],
-    item['rental_id'],
-    item['orig_price_per_night'],
-    item['cleaning_fee'],
-    item['service_fee'],
-    item['total_price'],
-    item['price_per_night'],
-    item['check_in_date'],
-    item['check_out_date']
-] for item in final_results]
 
-# Append data to the sheet in batches
-batch_size = 2  # Adjust the batch size based on your needs and limits
-for i in range(0, len(rows), batch_size):
-    batch = rows[i:i + batch_size]
-    sheet.append_rows(batch)
-    time.sleep(1)  # Adding delay to avoid hitting the quota
+# Convert the data to a Pandas DataFrame
+df = pd.DataFrame(final_results)
+
+# Append data to the sheet
+existing_data = sheet.get_all_values()
+existing_df = pd.DataFrame(existing_data[1:], columns=existing_data[0])
+
+# Concatenate the existing data with the new data
+new_df = pd.concat([existing_df, df], ignore_index=True)
+
+# Write the updated DataFrame back to the sheet
+set_with_dataframe(sheet, new_df)

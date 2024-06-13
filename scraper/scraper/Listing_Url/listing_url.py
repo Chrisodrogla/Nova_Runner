@@ -10,13 +10,15 @@ import time
 from datetime import datetime, timedelta
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import sys
 
+sys.path.insert(0, 'scraper/scraper')
 
 start_time = time.time()
 username = os.environ['D_USERNAME_SECRET']
 passw = os.environ['D_PASSWORD_SECRET']
 
-website = "https://app.rankbreeze.com/listings"
+website = "https://app.rankbreeze.com/listings?page=13"
 
 
 
@@ -137,7 +139,7 @@ def data_to_json(unique_data):
 
 
     rb_bnb_json = json.dumps(airbnb_data, indent=4)
-    with open('json_file/rb_bnb.json', 'w') as f:
+    with open('scraper/scraper/Listing_Url/json_file/rb_bnb.json', 'w') as f:
         f.write(rb_bnb_json)
 
     print(airbnb_data)

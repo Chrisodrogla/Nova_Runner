@@ -18,7 +18,7 @@ start_time = time.time()
 username = os.environ['D_USERNAME_SECRET']
 passw = os.environ['D_PASSWORD_SECRET']
 
-website = "https://app.rankbreeze.com/listings?page=13"
+website = "https://app.rankbreeze.com/listings"
 
 
 

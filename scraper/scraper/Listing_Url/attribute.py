@@ -2,11 +2,12 @@ import json
 import sys
 import logging
 import time
+import os
 
 start_time = time.time()
 
-sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
-
+# sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
+sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy
 
 logger = logging.getLogger(__name__)

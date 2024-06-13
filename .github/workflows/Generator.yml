@@ -1,7 +1,12 @@
 name: Generator
 
 on:
-  workflow_dispatch: # This allows manual triggering of the workflow
+    workflow_run:
+      workflows: ["Attributes"]
+      types:
+        - completed
+# on:
+#   workflow_dispatch: # This allows manual triggering of the workflow
 
   # schedule:
   # - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)

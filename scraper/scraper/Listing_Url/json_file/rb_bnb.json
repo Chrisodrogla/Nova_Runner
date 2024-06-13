@@ -1,11 +1,5 @@
 [
     {
-        "proxy_link": "https://app.rankbreeze.com/rankings/50318",
-        "address": "Davenport--Florida--United-States",
-        "rankbreeze_Id": "50318",
-        "airbnb_link": "https://www.airbnb.com/rooms/950908727734458240"
-    },
-    {
         "proxy_link": "https://app.rankbreeze.com/rankings/50307",
         "address": "Kissimmee--Florida--United-States",
         "rankbreeze_Id": "50307",
@@ -28,5 +22,11 @@
         "address": "Kissimmee--Florida--United-States",
         "rankbreeze_Id": "50254",
         "airbnb_link": "https://www.airbnb.com/rooms/777659652608777776"
+    },
+    {
+        "proxy_link": "https://app.rankbreeze.com/rankings/50318",
+        "address": "Davenport--Florida--United-States",
+        "rankbreeze_Id": "50318",
+        "airbnb_link": "https://www.airbnb.com/rooms/950908727734458240"
     }
 ]

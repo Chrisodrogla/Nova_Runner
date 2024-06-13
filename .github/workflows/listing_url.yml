@@ -1,0 +1,46 @@
+name: listing_url for Rankbreeze 
+
+on:
+  workflow_dispatch: # This allows manual triggering of the workflow
+
+  # schedule:
+  # - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
+
+jobs:
+  run_python_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        python -m pip install --upgrade pip
+        pip install selenium pandas
+    - name: Start Xvfb
+      run: Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+
+    - name: Run Python script
+      env:
+        D_USERNAME_SECRET: ${{ secrets.D_USERNAME_SECRET }}
+        D_PASSWORD_SECRET: ${{ secrets.D_PASSWORD_SECRET }}
+        DISPLAY: :99
+      run: python scraper/scraper/Listing_Url/listing_url.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add scraper/scraper/Listing_Url/json_file/rb_bnb.json
+        git commit -m 'Update rb_bnb.json with latest data'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

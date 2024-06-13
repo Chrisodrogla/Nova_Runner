@@ -136,6 +136,10 @@ def data_to_json(unique_data):
         airbnb_data.append(airbnb_entry)
 
 
+    rb_bnb_json = json.dumps(airbnb_data, indent=4)
+    with open('json_file/rb_bnb.json', 'w') as f:
+        f.write(rb_bnb_json)
+
     print(airbnb_data)
     print(final_data)
 

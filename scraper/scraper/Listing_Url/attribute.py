@@ -40,10 +40,9 @@ def scrape_airbnb_details(data, scraper):
 def main():
     # File paths
     # with open('json_file/final_rental_link.json', 'r') as f:
-    input_file = 'json_file/rb_bnb.json'
-    output_file = 'json_file/listing_attribute.json'
-    target_file = 'json_file/target_list.json'
-    data = read_json_file(input_file)
+    input_file = 'scraper/scraper/Listing_Url/json_file/json_file/rb_bnb.json'
+    output_file = 'scraper/scraper/Listing_Url/json_file/son_file/listing_attribute.json'
+    target_file = 'scraper/scraper/Listing_Url/json_file/json_file/target_list.json'
     target_list = read_json_file(target_file)
 
     target_ids = {item['link'].split('/')[-1] for item in target_list}

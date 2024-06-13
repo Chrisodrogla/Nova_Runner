@@ -1,5 +1,7 @@
 import json
 from datetime import datetime, timedelta
+import sys
+sys.path.insert(0, 'scraper/scraper')
 
 def generate_listing_link(address, start_date, end_date, delta_days, guest, bedrooms, beds, bath):
     base_url = f"https://www.airbnb.com/s/{address}/homes"
@@ -50,7 +52,7 @@ current_date = datetime.now().date()
 start_date = get_next_weekday(current_date, target_weekday, weeks_in_advance)
 
 # JSON data from file
-with open('json_file/listing_attribute.json', 'r') as f:
+with open('scraper/scraper/Listing_Url/json_file/listing_attribute.json', 'r') as f:
     listings = json.load(f)
 
 output = []
@@ -88,7 +90,7 @@ for i in range(0, len(output), batch_size):
     batch_key = f"Batch{batch_number}"
     batches[batch_key] = output[i:i + batch_size]
 
-with open('json_file/final_rental_link.json', 'w') as f:
+with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'w') as f:
     json.dump(batches, f, indent=4)
 
 print("Data saved to final_rental_link.json")

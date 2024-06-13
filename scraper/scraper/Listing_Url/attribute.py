@@ -7,9 +7,7 @@ start_time = time.time()
 
 sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 
-
 from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy
-
 
 logger = logging.getLogger(__name__)
 
@@ -38,31 +36,30 @@ def scrape_airbnb_details(data, scraper):
 
     return updated_data
 
-
 def main():
     # File paths
+    # with open('json_file/final_rental_link.json', 'r') as f:
     input_file = 'json_file/rb_bnb.json'
     output_file = 'json_file/listing_attribute.json'
-
-    # Read the input JSON file
+    target_file = 'json_file/target_list.json'
     data = read_json_file(input_file)
+    target_list = read_json_file(target_file)
 
-    # Initialize the scraper
+    target_ids = {item['link'].split('/')[-1] for item in target_list}
+
+    filtered_data = [item for item in data if item['airbnb_link'].split('/')[-1] in target_ids]
+
     scraper = AirbnbComDetailStrategy(logger)
 
-    # Scrape details for each Airbnb listing
-    updated_data = scrape_airbnb_details(data, scraper)
+    updated_data = scrape_airbnb_details(filtered_data, scraper)
 
-    # Write the updated data to the output JSON file
     write_json_file(updated_data, output_file)
 
     print(f"Data has been successfully written to {output_file}")
 
-
-
 if __name__ == "__main__":
     main()
-    
+
 end_time = time.time()
 
 elapsed_time = end_time - start_time

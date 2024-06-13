@@ -1,9 +1,10 @@
 name: Runner 1
 
 on:
-  workflow_dispatch:
-#  schedule:
-#    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
+  workflow_run:
+    workflows: ["Generator"]
+    types:
+      - completed
 
 jobs:
   run-scraper:

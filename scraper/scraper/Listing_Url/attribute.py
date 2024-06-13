@@ -41,11 +41,11 @@ def main():
     # Print the current working directory
     print("Current working directory:", os.getcwd())
 
-    # File paths
+    # File paths rb_bnb.json
     base_path = os.path.dirname(__file__)
-    input_file = os.path.join(base_path, 'json_file/json_file/rb_bnb.json')
-    output_file = os.path.join(base_path, 'json_file/json_file/listing_attribute.json')
-    target_file = os.path.join(base_path, 'json_file/json_file/target_list.json')
+    input_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/json_file/rb_bnb.json')
+    output_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/listing_attribute.json')
+    target_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/target_list.json')
 
     # Read the target list
     target_list = read_json_file(target_file)

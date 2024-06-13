@@ -4,10 +4,14 @@ import logging
 import time
 import os
 
-start_time = time.time()
 
 # Add the 'scraper' directory to the sys.path
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
+
+start_time = time.time()
+
+sys.path.insert(0, 'scraper/scraper')
+
 from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy
 
 logger = logging.getLogger(__name__)
@@ -38,34 +42,22 @@ def scrape_airbnb_details(data, scraper):
     return updated_data
 
 def main():
-    # Print the current working directory
-    print("Current working directory:", os.getcwd())
+    # File paths
+    input_file = 'scraper/scraper/Listing_Url/json_file/rb_bnb.json'
+    output_file = 'scraper/scraper/Listing_Url/json_file/listing_attribute.json'
+    target_file = 'scraper/scraper/Listing_Url/json_file/target_list.json'
 
-    # File paths rb_bnb.json
-    base_path = os.path.dirname(__file__)
-    input_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/json_file/rb_bnb.json')
-    output_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/listing_attribute.json')
-    target_file = os.path.join(base_path, 'scraper/scraper/Listing_Url/json_file/target_list.json')
-
-    # Read the target list
+    data = read_json_file(input_file)
     target_list = read_json_file(target_file)
 
-    # Extract target IDs
     target_ids = {item['link'].split('/')[-1] for item in target_list}
 
-    # Read the input data
-    data = read_json_file(input_file)
-
-    # Filter the data
     filtered_data = [item for item in data if item['airbnb_link'].split('/')[-1] in target_ids]
 
-    # Initialize the scraper
     scraper = AirbnbComDetailStrategy(logger)
 
-    # Scrape the Airbnb details
     updated_data = scrape_airbnb_details(filtered_data, scraper)
 
-    # Write the updated data to the output file
     write_json_file(updated_data, output_file)
 
     print(f"Data has been successfully written to {output_file}")

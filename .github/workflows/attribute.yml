@@ -2,7 +2,11 @@ name: Attributes
 
 
 on:
+
+  schedule:
+    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC  
   workflow_dispatch:
+
 
 jobs:
   scrape:

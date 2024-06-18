@@ -20,7 +20,7 @@ needed_keys = ['guest', 'baths', 'beds', 'bedrooms']
 filtered_result = {key: result[key] for key in needed_keys}
 
 # Print the filtered result
-print(filtered_result)
+print(result)
 
 
 # needed_keys = ['price_per_night','orig_price_per_night','cleaning_fee', 'service_fee', 'total_price']

@@ -1,17 +1,17 @@
 {
     "Batch1": [
         {
-            "listing_link_format": "https://www.airbnb.com/s/Davenport--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Davenport,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-07-29&checkout=2024-08-02&min_bedrooms=5&min_beds=8&min_bathrooms=5&adults=13&currency=USD",
+            "listing_link_format": "https://www.airbnb.com/s/Davenport--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Davenport,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-08-05&checkout=2024-08-09&min_bedrooms=5&min_beds=8&min_bathrooms=5&adults=13&currency=USD",
             "rankbreeze_Id": "73635",
             "rental_id": "1019172721312127453"
         },
         {
-            "listing_link_format": "https://www.airbnb.com/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Kissimmee,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-07-29&checkout=2024-08-02&min_bedrooms=6&min_beds=8&min_bathrooms=4&adults=13&currency=USD",
+            "listing_link_format": "https://www.airbnb.com/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Kissimmee,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-08-05&checkout=2024-08-09&min_bedrooms=6&min_beds=8&min_bathrooms=4&adults=13&currency=USD",
             "rankbreeze_Id": "69711",
             "rental_id": "1076647410356569199"
         },
         {
-            "listing_link_format": "https://www.airbnb.com/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Kissimmee,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-07-29&checkout=2024-08-02&min_bedrooms=6&min_beds=8&min_bathrooms=4&adults=13&currency=USD",
+            "listing_link_format": "https://www.airbnb.com/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Kissimmee,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-08-05&checkout=2024-08-09&min_bedrooms=6&min_beds=8&min_bathrooms=4&adults=13&currency=USD",
             "rankbreeze_Id": "73636",
             "rental_id": "1076647410356569199"
         }

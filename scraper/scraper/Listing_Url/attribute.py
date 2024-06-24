@@ -52,7 +52,15 @@ def main():
 
     target_ids = {item['link'].split('/')[-1] for item in target_list}
 
-    filtered_data = [item for item in data if item['airbnb_link'].split('/')[-1] in target_ids]
+    # Create a dictionary to ensure only one entry per target ID
+    filtered_data_dict = {}
+
+    for item in data:
+        item_id = item['airbnb_link'].split('/')[-1]
+        if item_id in target_ids and item_id not in filtered_data_dict:
+            filtered_data_dict[item_id] = item
+
+    filtered_data = list(filtered_data_dict.values())
 
     scraper = AirbnbComDetailStrategy(logger)
 

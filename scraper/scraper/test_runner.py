@@ -14,13 +14,13 @@ result = scraper.execute(config)
 
 
 
-needed_keys = ['guest', 'baths', 'beds', 'bedrooms']
+needed_keys = ['description','host_name','guest', 'baths', 'beds', 'bedrooms']
 
 # Create a new dictionary with only the needed keys
 filtered_result = {key: result[key] for key in needed_keys}
 
 # Print the filtered result
-print(result)
+print(filtered_result)
 
 
 # needed_keys = ['price_per_night','orig_price_per_night','cleaning_fee', 'service_fee', 'total_price']

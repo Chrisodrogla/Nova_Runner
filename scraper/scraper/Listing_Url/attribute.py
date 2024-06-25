@@ -26,7 +26,7 @@ def write_json_file(data, file_path):
 
 def scrape_airbnb_details(data, scraper):
     updated_data = []
-    needed_keys = ['guest', 'baths', 'beds', 'bedrooms']
+    needed_keys = ['description','host_name','guest', 'baths', 'beds', 'bedrooms']
 
     for item in data:
         config = {"url": item['airbnb_link']}

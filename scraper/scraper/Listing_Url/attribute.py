@@ -41,6 +41,17 @@ def scrape_airbnb_details(data, scraper, target_dict):
         filtered_result['listing_id'] = listing_id
         filtered_result['property_id'] = target_dict.get(listing_id, '')
 
+        # Extract City, State, and Country from the address
+        address_parts = item['address'].split('--')
+        if len(address_parts) >= 3:
+            filtered_result['City'] = address_parts[0]
+            filtered_result['State'] = address_parts[1]
+            filtered_result['Country'] = address_parts[-1]
+        else:
+            filtered_result['City'] = ''
+            filtered_result['State'] = ''
+            filtered_result['Country'] = ''
+
         # Combine the original item with the filtered result
         combined_result = {**item, **filtered_result}
         updated_data.append(combined_result)

@@ -1,12 +1,7 @@
 name: Data to GSheet
 
-
 on:
   workflow_dispatch: # This allows manual triggering of the workflow
-#
-#  schedule:
-#  - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
-
 
 jobs:
   run_python_script:
@@ -23,11 +18,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
-
         pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
     - name: Run Python Script
       env:
         GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
       run: |
-        python scraper/scraper/Listing_Url/data_to_google.py
+        python scraper/scraper/Listing_Url/data_to_google.py listings

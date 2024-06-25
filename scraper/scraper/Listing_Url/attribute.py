@@ -4,7 +4,6 @@ import logging
 import time
 import os
 
-
 # Add the 'scraper' directory to the sys.path
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 
@@ -24,9 +23,9 @@ def write_json_file(data, file_path):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
-def scrape_airbnb_details(data, scraper):
+def scrape_airbnb_details(data, scraper, target_dict):
     updated_data = []
-    needed_keys = ['description','host_name','guest', 'baths', 'beds', 'bedrooms']
+    needed_keys = ['description', 'host_name', 'guest', 'baths', 'beds', 'bedrooms']
 
     for item in data:
         config = {"url": item['airbnb_link']}
@@ -34,6 +33,13 @@ def scrape_airbnb_details(data, scraper):
 
         # Create a new dictionary with only the needed keys
         filtered_result = {key: result[key] for key in needed_keys}
+
+        # Extract listing_id from airbnb_link
+        listing_id = item['airbnb_link'].split('/')[-1]
+
+        # Add listing_id and property_id to the result
+        filtered_result['listing_id'] = listing_id
+        filtered_result['property_id'] = target_dict.get(listing_id, '')
 
         # Combine the original item with the filtered result
         combined_result = {**item, **filtered_result}
@@ -50,7 +56,10 @@ def main():
     data = read_json_file(input_file)
     target_list = read_json_file(target_file)
 
-    target_ids = {item['link'].split('/')[-1] for item in target_list}
+    # Create a dictionary from target_list for quick lookup
+    target_dict = {item['link'].split('/')[-1]: item['property_id'] for item in target_list}
+
+    target_ids = set(target_dict.keys())
 
     # Create a dictionary to ensure only one entry per target ID
     filtered_data_dict = {}
@@ -64,7 +73,7 @@ def main():
 
     scraper = AirbnbComDetailStrategy(logger)
 
-    updated_data = scrape_airbnb_details(filtered_data, scraper)
+    updated_data = scrape_airbnb_details(filtered_data, scraper, target_dict)
 
     write_json_file(updated_data, output_file)
 

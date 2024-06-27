@@ -24,4 +24,4 @@ jobs:
       env:
         GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
       run: |
-        python scraper/scraper/Listing_Url/data_to_google.py listings
+        python scraper/scraper/Listing_Url/data_to_google.py market

@@ -75,6 +75,7 @@ for listing in listings:
 
         output_entry = {
             "listing_link_format": listing_link,
+            'airbnb_link': airbnb_link,
             "rental_id": rental_id,
             "beds": beds,
             "guest": guest,

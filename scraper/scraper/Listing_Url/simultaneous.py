@@ -49,7 +49,7 @@ def chunks(lst, n):
 
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
-needed_keys = ['host_name','listingId','url','orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date',
+needed_keys = ['host_name','listingId','productId','url','orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date',
                'check_out_date']
 
 final_results = []

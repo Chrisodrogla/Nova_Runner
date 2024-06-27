@@ -31,6 +31,7 @@ def scrape_rental(rental, scraper, needed_keys):
     filtered_results = filter_results(result, needed_keys)
     final_results = []
     for filtered_result in filtered_results:
+        filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
         final_result = {
             "rental_id": rental["rental_id"],
             **filtered_result
@@ -44,7 +45,7 @@ def chunks(lst, n):
 
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
-needed_keys = ['host_name', 'listingId', 'productId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
+needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
 
 final_results = []
 errors = []

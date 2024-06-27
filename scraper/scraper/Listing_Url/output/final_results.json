@@ -1,0 +1,5402 @@
+[
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 239.0,
+        "total_price": 1933.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 578.0,
+        "service_fee": 380.0,
+        "total_price": 3074.0,
+        "price_per_night": 529.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 268.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 158.0,
+        "total_price": 1275.0,
+        "price_per_night": 192.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 282.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1387.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 299.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 165.0,
+        "total_price": 1336.0,
+        "price_per_night": 219.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 291.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 175.0,
+        "total_price": 1415.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 176.0,
+        "total_price": 1419.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 885.0,
+        "cleaning_fee": 690.0,
+        "service_fee": 479.0,
+        "total_price": 3869.0,
+        "price_per_night": 675.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 275.0,
+        "service_fee": 187.0,
+        "total_price": 1514.0,
+        "price_per_night": 263.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 396.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 246.0,
+        "total_price": 1989.0,
+        "price_per_night": 330.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 183.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 131.0,
+        "total_price": 1056.0,
+        "price_per_night": 157.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 176.0,
+        "total_price": 1419.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 258.0,
+        "service_fee": 161.0,
+        "total_price": 1299.0,
+        "price_per_night": 220.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 367.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 245.0,
+        "total_price": 1978.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 399.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 225.0,
+        "total_price": 1816.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 112.0,
+        "total_price": 906.0,
+        "price_per_night": 141.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 176.0,
+        "total_price": 1419.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 396.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 246.0,
+        "total_price": 1989.0,
+        "price_per_night": 330.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 131.0,
+        "total_price": 1056.0,
+        "price_per_night": 157.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 201.0,
+        "total_price": 1626.0,
+        "price_per_night": 263.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 367.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 245.0,
+        "total_price": 1978.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 165.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 164.0,
+        "total_price": 1328.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 317.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 192.0,
+        "total_price": 1553.0,
+        "price_per_night": 267.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 324.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 170.0,
+        "total_price": 1371.0,
+        "price_per_night": 219.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 115.0,
+        "total_price": 933.0,
+        "price_per_night": 147.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 265.0,
+        "service_fee": 209.0,
+        "total_price": 1689.0,
+        "price_per_night": 304.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 160.0,
+        "total_price": 1294.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 239.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 147.0,
+        "total_price": 1189.0,
+        "price_per_night": 180.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 296.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 211.0,
+        "total_price": 1706.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 308.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1393.0,
+        "price_per_night": 224.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 304.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 184.0,
+        "total_price": 1485.0,
+        "price_per_night": 243.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 252.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 148.0,
+        "total_price": 1195.0,
+        "price_per_night": 181.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 344.0,
+        "service_fee": 158.0,
+        "total_price": 1278.0,
+        "price_per_night": 194.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 388.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 250.0,
+        "total_price": 2021.0,
+        "price_per_night": 349.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 266.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 180.0,
+        "total_price": 1458.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 491.0,
+        "total_price": 3967.0,
+        "price_per_night": 719.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 180.0,
+        "total_price": 1455.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 236.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 150.0,
+        "total_price": 1215.0,
+        "price_per_night": 179.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 239.0,
+        "total_price": 1933.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 150.0,
+        "total_price": 1215.0,
+        "price_per_night": 179.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 189.0,
+        "service_fee": 142.0,
+        "total_price": 1150.0,
+        "price_per_night": 205.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 2295.0,
+        "cleaning_fee": 475.0,
+        "service_fee": 909.0,
+        "total_price": 7351.0,
+        "price_per_night": 1492.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 381.0,
+        "service_fee": 180.0,
+        "total_price": 1457.0,
+        "price_per_night": 224.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 284.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 182.0,
+        "total_price": 1469.0,
+        "price_per_night": 252.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 237.0,
+        "cleaning_fee": 205.0,
+        "service_fee": 150.0,
+        "total_price": 1211.0,
+        "price_per_night": 214.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 271.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 161.0,
+        "total_price": 1304.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 495.0,
+        "service_fee": 274.0,
+        "total_price": 2211.0,
+        "price_per_night": 361.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 275.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 170.0,
+        "total_price": 1377.0,
+        "price_per_night": 214.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 214.0,
+        "total_price": 1728.0,
+        "price_per_night": 244.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 262.0,
+        "cleaning_fee": 315.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 202.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 400.0,
+        "cleaning_fee": 495.0,
+        "service_fee": 263.0,
+        "total_price": 2125.0,
+        "price_per_night": 342.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 222.0,
+        "total_price": 1795.0,
+        "price_per_night": 320.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 241.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 142.0,
+        "total_price": 1146.0,
+        "price_per_night": 181.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 376.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 211.0,
+        "total_price": 1704.0,
+        "price_per_night": 286.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 152.0,
+        "total_price": 1232.0,
+        "price_per_night": 171.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 175.0,
+        "total_price": 1414.0,
+        "price_per_night": 236.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 517.0,
+        "cleaning_fee": 475.0,
+        "service_fee": 302.0,
+        "total_price": 2443.0,
+        "price_per_night": 417.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 358.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 242.0,
+        "total_price": 1953.0,
+        "price_per_night": 322.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 335.0,
+        "service_fee": 146.0,
+        "total_price": 1181.0,
+        "price_per_night": 175.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 191.0,
+        "total_price": 1547.0,
+        "price_per_night": 257.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 222.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 143.0,
+        "total_price": 1153.0,
+        "price_per_night": 178.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 291.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 197.0,
+        "total_price": 1593.0,
+        "price_per_night": 243.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 168.0,
+        "cleaning_fee": 205.0,
+        "service_fee": 107.0,
+        "total_price": 865.0,
+        "price_per_night": 138.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 234.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 142.0,
+        "total_price": 1148.0,
+        "price_per_night": 189.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 282.0,
+        "service_fee": 184.0,
+        "total_price": 1485.0,
+        "price_per_night": 255.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 385.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 248.0,
+        "total_price": 2005.0,
+        "price_per_night": 333.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 297.0,
+        "total_price": 2399.0,
+        "price_per_night": 420.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 352.0,
+        "cleaning_fee": 420.0,
+        "service_fee": 229.0,
+        "total_price": 1850.0,
+        "price_per_night": 300.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 314.0,
+        "cleaning_fee": 289.0,
+        "service_fee": 0,
+        "total_price": 1238.0,
+        "price_per_night": 237.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 352.0,
+        "cleaning_fee": 420.0,
+        "service_fee": 229.0,
+        "total_price": 1850.0,
+        "price_per_night": 300.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 314.0,
+        "cleaning_fee": 360.0,
+        "service_fee": 208.0,
+        "total_price": 1684.0,
+        "price_per_night": 279.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 329.0,
+        "cleaning_fee": 269.0,
+        "service_fee": 0,
+        "total_price": 1159.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 248.0,
+        "cleaning_fee": 219.0,
+        "service_fee": 157.0,
+        "total_price": 1270.0,
+        "price_per_night": 224.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 183.0,
+        "total_price": 1476.0,
+        "price_per_night": 224.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 172.0,
+        "total_price": 1394.0,
+        "price_per_night": 206.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 240.0,
+        "total_price": 1937.0,
+        "price_per_night": 305.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 174.0,
+        "total_price": 1409.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 182.0,
+        "total_price": 1472.0,
+        "price_per_night": 235.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 491.0,
+        "total_price": 3971.0,
+        "price_per_night": 720.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 230.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1288.0,
+        "price_per_night": 208.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 187.0,
+        "total_price": 1513.0,
+        "price_per_night": 244.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 318.0,
+        "cleaning_fee": 200.0,
+        "service_fee": 194.0,
+        "total_price": 1569.0,
+        "price_per_night": 294.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 385.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 239.0,
+        "total_price": 1931.0,
+        "price_per_night": 317.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 375.0,
+        "cleaning_fee": 450.0,
+        "service_fee": 209.0,
+        "total_price": 1693.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 509.0,
+        "total_price": 4115.0,
+        "price_per_night": 752.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 491.0,
+        "total_price": 3971.0,
+        "price_per_night": 720.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 164.0,
+        "total_price": 1328.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 161.0,
+        "total_price": 1299.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 391.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 241.0,
+        "total_price": 1946.0,
+        "price_per_night": 351.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 318.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 194.0,
+        "total_price": 1570.0,
+        "price_per_night": 257.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 329.0,
+        "service_fee": 171.0,
+        "total_price": 1385.0,
+        "price_per_night": 221.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 650.0,
+        "service_fee": 402.0,
+        "total_price": 3248.0,
+        "price_per_night": 549.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 519.0,
+        "service_fee": 383.0,
+        "total_price": 3098.0,
+        "price_per_night": 549.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1285.0,
+        "price_per_night": 207.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 184.0,
+        "total_price": 1484.0,
+        "price_per_night": 250.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 290.0,
+        "service_fee": 176.0,
+        "total_price": 1422.0,
+        "price_per_night": 239.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 526.0,
+        "cleaning_fee": 570.0,
+        "service_fee": 344.0,
+        "total_price": 2779.0,
+        "price_per_night": 466.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 146.0,
+        "total_price": 1183.0,
+        "price_per_night": 202.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 172.0,
+        "total_price": 1394.0,
+        "price_per_night": 206.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 430.0,
+        "service_fee": 315.0,
+        "total_price": 2545.0,
+        "price_per_night": 450.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 282.0,
+        "service_fee": 211.0,
+        "total_price": 1709.0,
+        "price_per_night": 304.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 175.0,
+        "total_price": 1414.0,
+        "price_per_night": 236.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 340.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 184.0,
+        "total_price": 1484.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 491.0,
+        "cleaning_fee": 345.0,
+        "service_fee": 227.0,
+        "total_price": 1838.0,
+        "price_per_night": 317.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 399.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 254.0,
+        "total_price": 2054.0,
+        "price_per_night": 344.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 249.0,
+        "total_price": 2010.0,
+        "price_per_night": 321.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 318.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 194.0,
+        "total_price": 1570.0,
+        "price_per_night": 257.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 491.0,
+        "total_price": 3971.0,
+        "price_per_night": 720.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 158.0,
+        "total_price": 1278.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 240.0,
+        "total_price": 1937.0,
+        "price_per_night": 305.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 608.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 395.0,
+        "total_price": 3192.0,
+        "price_per_night": 550.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 474.0,
+        "total_price": 3833.0,
+        "price_per_night": 690.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 279.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 169.0,
+        "total_price": 1369.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 371.0,
+        "service_fee": 189.0,
+        "total_price": 1528.0,
+        "price_per_night": 242.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 187.0,
+        "total_price": 1513.0,
+        "price_per_night": 244.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 234.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 147.0,
+        "total_price": 1186.0,
+        "price_per_night": 185.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 471.0,
+        "total_price": 3807.0,
+        "price_per_night": 684.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 514.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 0,
+        "total_price": 1660.0,
+        "price_per_night": 315.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 183.0,
+        "total_price": 1476.0,
+        "price_per_night": 224.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 894.0,
+        "cleaning_fee": 694.0,
+        "service_fee": 537.0,
+        "total_price": 4339.0,
+        "price_per_night": 777.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 395.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 214.0,
+        "total_price": 1731.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 321.0,
+        "cleaning_fee": 425.0,
+        "service_fee": 207.0,
+        "total_price": 1671.0,
+        "price_per_night": 260.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 345.0,
+        "cleaning_fee": 359.0,
+        "service_fee": 219.0,
+        "total_price": 1772.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 134.0,
+        "total_price": 1084.0,
+        "price_per_night": 180.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 214.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 147.0,
+        "total_price": 1186.0,
+        "price_per_night": 190.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 273.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 161.0,
+        "total_price": 1300.0,
+        "price_per_night": 204.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 448.0,
+        "service_fee": 215.0,
+        "total_price": 1735.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 474.0,
+        "total_price": 3833.0,
+        "price_per_night": 690.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 176.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 121.0,
+        "total_price": 981.0,
+        "price_per_night": 153.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 191.0,
+        "total_price": 1547.0,
+        "price_per_night": 257.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 220.0,
+        "total_price": 1776.0,
+        "price_per_night": 254.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 158.0,
+        "total_price": 1280.0,
+        "price_per_night": 182.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 500.0,
+        "total_price": 4040.0,
+        "price_per_night": 735.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 161.0,
+        "total_price": 1299.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 230.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1288.0,
+        "price_per_night": 208.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 195.0,
+        "cleaning_fee": 199.0,
+        "service_fee": 108.0,
+        "total_price": 873.0,
+        "price_per_night": 142.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 212.0,
+        "total_price": 1716.0,
+        "price_per_night": 301.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 267.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 172.0,
+        "total_price": 1390.0,
+        "price_per_night": 217.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 314.0,
+        "cleaning_fee": 289.0,
+        "service_fee": 0,
+        "total_price": 1229.0,
+        "price_per_night": 235.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 271.0,
+        "total_price": 2190.0,
+        "price_per_night": 400.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1285.0,
+        "price_per_night": 207.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 1039.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 558.0,
+        "total_price": 4512.0,
+        "price_per_night": 839.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 345.0,
+        "cleaning_fee": 359.0,
+        "service_fee": 219.0,
+        "total_price": 1772.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 274.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 147.0,
+        "total_price": 1190.0,
+        "price_per_night": 191.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 829.0,
+        "cleaning_fee": 650.0,
+        "service_fee": 312.0,
+        "total_price": 2520.0,
+        "price_per_night": 390.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 230.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1288.0,
+        "price_per_night": 208.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 420.0,
+        "service_fee": 246.0,
+        "total_price": 1988.0,
+        "price_per_night": 331.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 176.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 121.0,
+        "total_price": 981.0,
+        "price_per_night": 153.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 168.0,
+        "cleaning_fee": 205.0,
+        "service_fee": 107.0,
+        "total_price": 865.0,
+        "price_per_night": 138.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 498.0,
+        "total_price": 4022.0,
+        "price_per_night": 731.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 237.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 145.0,
+        "total_price": 1171.0,
+        "price_per_night": 187.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 161.0,
+        "total_price": 1299.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 310.0,
+        "service_fee": 156.0,
+        "total_price": 1263.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 455.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 282.0,
+        "total_price": 2282.0,
+        "price_per_night": 394.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 238.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 139.0,
+        "total_price": 1126.0,
+        "price_per_night": 177.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 1000.0,
+        "service_fee": 1285.0,
+        "total_price": 10385.0,
+        "price_per_night": 2025.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 0,
+        "service_fee": 147.0,
+        "total_price": 1188.0,
+        "price_per_night": 260.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 279.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 169.0,
+        "total_price": 1369.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 232.0,
+        "total_price": 1875.0,
+        "price_per_night": 312.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 225.0,
+        "cleaning_fee": 275.0,
+        "service_fee": 130.0,
+        "total_price": 1053.0,
+        "price_per_night": 162.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 145.0,
+        "total_price": 1171.0,
+        "price_per_night": 187.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 307.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1388.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 275.0,
+        "service_fee": 147.0,
+        "total_price": 1191.0,
+        "price_per_night": 192.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 220.0,
+        "total_price": 1776.0,
+        "price_per_night": 254.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 267.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 172.0,
+        "total_price": 1390.0,
+        "price_per_night": 217.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 297.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 183.0,
+        "total_price": 1481.0,
+        "price_per_night": 237.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 173.0,
+        "total_price": 1398.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 514.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 0,
+        "total_price": 1660.0,
+        "price_per_night": 315.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 230.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 147.0,
+        "total_price": 1185.0,
+        "price_per_night": 185.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 285.0,
+        "service_fee": 241.0,
+        "total_price": 1946.0,
+        "price_per_night": 355.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 390.0,
+        "service_fee": 315.0,
+        "total_price": 2549.0,
+        "price_per_night": 461.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 223.0,
+        "total_price": 1804.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 498.0,
+        "total_price": 4022.0,
+        "price_per_night": 731.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 310.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 202.0,
+        "total_price": 1632.0,
+        "price_per_night": 270.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 415.0,
+        "service_fee": 268.0,
+        "total_price": 2163.0,
+        "price_per_night": 370.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 198.0,
+        "total_price": 1598.0,
+        "price_per_night": 276.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 268.0,
+        "total_price": 2163.0,
+        "price_per_night": 399.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 319.0,
+        "service_fee": 277.0,
+        "total_price": 2241.0,
+        "price_per_night": 411.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 388.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 214.0,
+        "total_price": 1731.0,
+        "price_per_night": 298.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 410.0,
+        "service_fee": 166.0,
+        "total_price": 1343.0,
+        "price_per_night": 192.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 145.0,
+        "total_price": 1175.0,
+        "price_per_night": 200.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 366.0,
+        "total_price": 2956.0,
+        "price_per_night": 560.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 290.0,
+        "service_fee": 176.0,
+        "total_price": 1422.0,
+        "price_per_night": 239.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 390.0,
+        "service_fee": 315.0,
+        "total_price": 2549.0,
+        "price_per_night": 461.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 2127.0,
+        "cleaning_fee": 850.0,
+        "service_fee": 1097.0,
+        "total_price": 8864.0,
+        "price_per_night": 1729.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 293.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 168.0,
+        "total_price": 1361.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 450.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 251.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 420.0,
+        "service_fee": 257.0,
+        "total_price": 2079.0,
+        "price_per_night": 351.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1285.0,
+        "price_per_night": 207.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 173.0,
+        "total_price": 1398.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 180.0,
+        "total_price": 1455.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 225.0,
+        "service_fee": 147.0,
+        "total_price": 1185.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 575.0,
+        "service_fee": 418.0,
+        "total_price": 3381.0,
+        "price_per_night": 597.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 173.0,
+        "total_price": 1398.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 352.0,
+        "cleaning_fee": 235.0,
+        "service_fee": 193.0,
+        "total_price": 1560.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 291.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 188.0,
+        "total_price": 1517.0,
+        "price_per_night": 252.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 285.0,
+        "service_fee": 241.0,
+        "total_price": 1946.0,
+        "price_per_night": 355.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 245.0,
+        "service_fee": 135.0,
+        "total_price": 1091.0,
+        "price_per_night": 178.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 361.0,
+        "cleaning_fee": 374.0,
+        "service_fee": 236.0,
+        "total_price": 1908.0,
+        "price_per_night": 325.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 320.0,
+        "service_fee": 131.0,
+        "total_price": 1061.0,
+        "price_per_night": 153.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 389.0,
+        "service_fee": 321.0,
+        "total_price": 2594.0,
+        "price_per_night": 471.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 198.0,
+        "total_price": 1601.0,
+        "price_per_night": 264.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 145.0,
+        "total_price": 1171.0,
+        "price_per_night": 187.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 296.0,
+        "cleaning_fee": 259.0,
+        "service_fee": 188.0,
+        "total_price": 1517.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 0,
+        "service_fee": 147.0,
+        "total_price": 1188.0,
+        "price_per_night": 260.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1019172721312127453",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 176.0,
+        "total_price": 1419.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 176.0,
+        "total_price": 1419.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 271.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 161.0,
+        "total_price": 1304.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 222.0,
+        "service_fee": 154.0,
+        "total_price": 1247.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 399.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 225.0,
+        "total_price": 1816.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 291.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 175.0,
+        "total_price": 1415.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 239.0,
+        "total_price": 1933.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 259.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 293.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 198.0,
+        "total_price": 1603.0,
+        "price_per_night": 251.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 345.0,
+        "cleaning_fee": 359.0,
+        "service_fee": 219.0,
+        "total_price": 1772.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 152.0,
+        "total_price": 1232.0,
+        "price_per_night": 171.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 225.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 282.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 340.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 184.0,
+        "total_price": 1484.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 152.0,
+        "total_price": 1232.0,
+        "price_per_night": 171.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 205.0,
+        "total_price": 1657.0,
+        "price_per_night": 282.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 196.0,
+        "total_price": 1585.0,
+        "price_per_night": 248.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 275.0,
+        "service_fee": 187.0,
+        "total_price": 1514.0,
+        "price_per_night": 263.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 275.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 170.0,
+        "total_price": 1377.0,
+        "price_per_night": 214.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 222.0,
+        "service_fee": 154.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 0.0,
+        "price_per_night": 0.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 324.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 170.0,
+        "total_price": 1371.0,
+        "price_per_night": 219.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 299.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 165.0,
+        "total_price": 1336.0,
+        "price_per_night": 219.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 500.0,
+        "service_fee": 189.0,
+        "total_price": 1528.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 500.0,
+        "service_fee": 189.0,
+        "total_price": 1528.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 165.0,
+        "total_price": 1331.0,
+        "price_per_night": 207.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 158.0,
+        "total_price": 1278.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 282.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1387.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 220.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 158.0,
+        "total_price": 1276.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 279.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 169.0,
+        "total_price": 1369.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 180.0,
+        "total_price": 1455.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 181.0,
+        "total_price": 1463.0,
+        "price_per_night": 238.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 266.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 180.0,
+        "total_price": 1458.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 455.0,
+        "service_fee": 215.0,
+        "total_price": 1736.0,
+        "price_per_night": 267.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 307.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1388.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 214.0,
+        "total_price": 1728.0,
+        "price_per_night": 244.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 220.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 158.0,
+        "total_price": 1276.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 282.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1387.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 608.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 395.0,
+        "total_price": 3192.0,
+        "price_per_night": 550.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 266.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 180.0,
+        "total_price": 1458.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 307.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 172.0,
+        "total_price": 1388.0,
+        "price_per_night": 223.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 329.0,
+        "service_fee": 171.0,
+        "total_price": 1385.0,
+        "price_per_night": 221.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 268.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 158.0,
+        "total_price": 1275.0,
+        "price_per_night": 192.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 214.0,
+        "total_price": 1728.0,
+        "price_per_night": 244.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 278.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 158.0,
+        "total_price": 1277.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 293.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 168.0,
+        "total_price": 1361.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 252.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 148.0,
+        "total_price": 1195.0,
+        "price_per_night": 181.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 425.0,
+        "service_fee": 212.0,
+        "total_price": 1715.0,
+        "price_per_night": 270.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 829.0,
+        "cleaning_fee": 650.0,
+        "service_fee": 312.0,
+        "total_price": 2520.0,
+        "price_per_night": 390.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 204.0,
+        "total_price": 1650.0,
+        "price_per_night": 274.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 319.0,
+        "service_fee": 131.0,
+        "total_price": 1062.0,
+        "price_per_night": 153.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 327.0,
+        "cleaning_fee": 398.0,
+        "service_fee": 204.0,
+        "total_price": 1648.0,
+        "price_per_night": 262.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 319.0,
+        "service_fee": 131.0,
+        "total_price": 1062.0,
+        "price_per_night": 153.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 232.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 153.0,
+        "total_price": 1235.0,
+        "price_per_night": 186.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 297.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 183.0,
+        "total_price": 1481.0,
+        "price_per_night": 237.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 327.0,
+        "cleaning_fee": 398.0,
+        "service_fee": 204.0,
+        "total_price": 1648.0,
+        "price_per_night": 262.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 650.0,
+        "service_fee": 402.0,
+        "total_price": 3248.0,
+        "price_per_night": 549.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 550.0,
+        "service_fee": 393.0,
+        "total_price": 3175.0,
+        "price_per_night": 558.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 302.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 159.0,
+        "total_price": 1286.0,
+        "price_per_night": 201.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 342.0,
+        "cleaning_fee": 465.0,
+        "service_fee": 239.0,
+        "total_price": 1934.0,
+        "price_per_night": 308.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 296.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 211.0,
+        "total_price": 1706.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 318.0,
+        "cleaning_fee": 200.0,
+        "service_fee": 194.0,
+        "total_price": 1569.0,
+        "price_per_night": 294.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 270.0,
+        "service_fee": 139.0,
+        "total_price": 1125.0,
+        "price_per_night": 179.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 500.0,
+        "service_fee": 189.0,
+        "total_price": 1528.0,
+        "price_per_night": 210.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 204.0,
+        "total_price": 1650.0,
+        "price_per_night": 274.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 410.0,
+        "service_fee": 171.0,
+        "total_price": 1382.0,
+        "price_per_night": 200.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 413.0,
+        "cleaning_fee": 497.0,
+        "service_fee": 277.0,
+        "total_price": 2238.0,
+        "price_per_night": 366.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 220.0,
+        "total_price": 1776.0,
+        "price_per_night": 254.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 220.0,
+        "service_fee": 148.0,
+        "total_price": 1199.0,
+        "price_per_night": 208.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 266.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 160.0,
+        "total_price": 1296.0,
+        "price_per_night": 209.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 279.0,
+        "total_price": 2252.0,
+        "price_per_night": 369.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 220.0,
+        "service_fee": 148.0,
+        "total_price": 1199.0,
+        "price_per_night": 208.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 396.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 246.0,
+        "total_price": 1989.0,
+        "price_per_night": 330.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 700.0,
+        "service_fee": 0,
+        "total_price": 3220.0,
+        "price_per_night": 630.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 180.0,
+        "service_fee": 127.0,
+        "total_price": 1030.0,
+        "price_per_night": 181.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 239.0,
+        "cleaning_fee": 338.0,
+        "service_fee": 160.0,
+        "total_price": 1294.0,
+        "price_per_night": 199.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 210.0,
+        "total_price": 1698.0,
+        "price_per_night": 272.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 199.0,
+        "total_price": 1609.0,
+        "price_per_night": 254.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 146.0,
+        "total_price": 1183.0,
+        "price_per_night": 178.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 659.0,
+        "service_fee": 567.0,
+        "total_price": 4586.0,
+        "price_per_night": 840.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 223.0,
+        "total_price": 1804.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 260.0,
+        "service_fee": 178.0,
+        "total_price": 1438.0,
+        "price_per_night": 250.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 381.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 159.0,
+        "total_price": 1284.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 540.0,
+        "service_fee": 220.0,
+        "total_price": 1776.0,
+        "price_per_night": 254.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 272.0,
+        "cleaning_fee": 330.0,
+        "service_fee": 176.0,
+        "total_price": 1420.0,
+        "price_per_night": 229.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 591.0,
+        "service_fee": 369.0,
+        "total_price": 2980.0,
+        "price_per_night": 505.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 296.0,
+        "cleaning_fee": 259.0,
+        "service_fee": 188.0,
+        "total_price": 1517.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 279.0,
+        "total_price": 2252.0,
+        "price_per_night": 369.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 514.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 0,
+        "total_price": 1776.0,
+        "price_per_night": 344.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 223.0,
+        "total_price": 1804.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 314.0,
+        "cleaning_fee": 360.0,
+        "service_fee": 208.0,
+        "total_price": 1684.0,
+        "price_per_night": 279.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 228.0,
+        "total_price": 1846.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 347.0,
+        "total_price": 2807.0,
+        "price_per_night": 465.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 395.0,
+        "cleaning_fee": 380.0,
+        "service_fee": 226.0,
+        "total_price": 1826.0,
+        "price_per_night": 305.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 131.0,
+        "total_price": 1056.0,
+        "price_per_night": 157.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 519.0,
+        "service_fee": 383.0,
+        "total_price": 3098.0,
+        "price_per_night": 549.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 280.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 164.0,
+        "total_price": 1326.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 223.0,
+        "total_price": 1804.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 230.0,
+        "total_price": 1861.0,
+        "price_per_night": 320.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 395.0,
+        "cleaning_fee": 360.0,
+        "service_fee": 235.0,
+        "total_price": 1899.0,
+        "price_per_night": 326.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 282.0,
+        "service_fee": 211.0,
+        "total_price": 1707.0,
+        "price_per_night": 304.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 599.0,
+        "service_fee": 347.0,
+        "total_price": 2807.0,
+        "price_per_night": 465.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 261.0,
+        "total_price": 2113.0,
+        "price_per_night": 363.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 591.0,
+        "service_fee": 369.0,
+        "total_price": 2980.0,
+        "price_per_night": 505.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 293.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 168.0,
+        "total_price": 1361.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 171.0,
+        "total_price": 1381.0,
+        "price_per_night": 240.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 525.0,
+        "service_fee": 311.0,
+        "total_price": 2516.0,
+        "price_per_night": 420.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 296.0,
+        "cleaning_fee": 259.0,
+        "service_fee": 188.0,
+        "total_price": 1517.0,
+        "price_per_night": 268.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 146.0,
+        "total_price": 1177.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 258.0,
+        "service_fee": 161.0,
+        "total_price": 1299.0,
+        "price_per_night": 220.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 270.0,
+        "service_fee": 139.0,
+        "total_price": 1125.0,
+        "price_per_night": 179.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 385.0,
+        "service_fee": 265.0,
+        "total_price": 2145.0,
+        "price_per_night": 374.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 175.0,
+        "total_price": 1414.0,
+        "price_per_night": 236.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 345.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 189.0,
+        "total_price": 1529.0,
+        "price_per_night": 260.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 450.0,
+        "service_fee": 234.0,
+        "total_price": 1889.0,
+        "price_per_night": 301.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 220.0,
+        "service_fee": 173.0,
+        "total_price": 1400.0,
+        "price_per_night": 252.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 1000.0,
+        "service_fee": 1285.0,
+        "total_price": 10385.0,
+        "price_per_night": 2025.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 233.0,
+        "total_price": 1887.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 425.0,
+        "service_fee": 212.0,
+        "total_price": 1715.0,
+        "price_per_night": 270.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 285.0,
+        "service_fee": 188.0,
+        "total_price": 1517.0,
+        "price_per_night": 261.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 257.0,
+        "total_price": 2078.0,
+        "price_per_night": 355.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 168.0,
+        "total_price": 1355.0,
+        "price_per_night": 222.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 180.0,
+        "total_price": 1455.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 478.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 0,
+        "total_price": 1928.0,
+        "price_per_night": 382.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 311.0,
+        "cleaning_fee": 355.0,
+        "service_fee": 201.0,
+        "total_price": 1624.0,
+        "price_per_night": 267.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 591.0,
+        "service_fee": 369.0,
+        "total_price": 2980.0,
+        "price_per_night": 505.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 829.0,
+        "cleaning_fee": 650.0,
+        "service_fee": 312.0,
+        "total_price": 2520.0,
+        "price_per_night": 390.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 738.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 403.0,
+        "total_price": 3257.0,
+        "price_per_night": 589.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 261.0,
+        "total_price": 2113.0,
+        "price_per_night": 363.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 450.0,
+        "service_fee": 225.0,
+        "total_price": 1821.0,
+        "price_per_night": 287.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 258.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 180.0,
+        "total_price": 1455.0,
+        "price_per_night": 234.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 115.0,
+        "total_price": 933.0,
+        "price_per_night": 147.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 201.0,
+        "total_price": 1626.0,
+        "price_per_night": 263.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 269.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 159.0,
+        "total_price": 1287.0,
+        "price_per_night": 195.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 799.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 341.0,
+        "total_price": 2753.0,
+        "price_per_night": 503.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 297.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 183.0,
+        "total_price": 1481.0,
+        "price_per_night": 237.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 478.0,
+        "cleaning_fee": 400.0,
+        "service_fee": 0,
+        "total_price": 1928.0,
+        "price_per_night": 382.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 213.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 146.0,
+        "total_price": 1182.0,
+        "price_per_night": 189.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 163.0,
+        "total_price": 1319.0,
+        "price_per_night": 219.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 212.0,
+        "total_price": 1716.0,
+        "price_per_night": 301.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 381.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 159.0,
+        "total_price": 1284.0,
+        "price_per_night": 211.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 269.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 159.0,
+        "total_price": 1287.0,
+        "price_per_night": 195.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 280.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 164.0,
+        "total_price": 1326.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 339.0,
+        "service_fee": 158.0,
+        "total_price": 1279.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 699.0,
+        "service_fee": 437.0,
+        "total_price": 3532.0,
+        "price_per_night": 599.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 336.0,
+        "cleaning_fee": 490.0,
+        "service_fee": 233.0,
+        "total_price": 1885.0,
+        "price_per_night": 291.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 799.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 341.0,
+        "total_price": 2753.0,
+        "price_per_night": 503.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 495.0,
+        "service_fee": 274.0,
+        "total_price": 2211.0,
+        "price_per_night": 361.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 0,
+        "total_price": 1541.0,
+        "price_per_night": 298.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 190.0,
+        "total_price": 1535.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 367.0,
+        "cleaning_fee": 477.0,
+        "service_fee": 245.0,
+        "total_price": 1978.0,
+        "price_per_night": 314.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 137.0,
+        "total_price": 1104.0,
+        "price_per_night": 167.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 249.0,
+        "service_fee": 146.0,
+        "total_price": 1177.0,
+        "price_per_night": 196.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 325.0,
+        "cleaning_fee": 269.0,
+        "service_fee": 0,
+        "total_price": 1214.0,
+        "price_per_night": 236.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 245.0,
+        "service_fee": 141.0,
+        "total_price": 1140.0,
+        "price_per_night": 189.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 435.0,
+        "service_fee": 234.0,
+        "total_price": 1890.0,
+        "price_per_night": 305.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 413.0,
+        "cleaning_fee": 395.0,
+        "service_fee": 261.0,
+        "total_price": 2109.0,
+        "price_per_night": 363.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 213.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 146.0,
+        "total_price": 1182.0,
+        "price_per_night": 189.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 592.0,
+        "cleaning_fee": 340.0,
+        "service_fee": 217.0,
+        "total_price": 1753.0,
+        "price_per_night": 299.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 435.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 245.0,
+        "total_price": 1983.0,
+        "price_per_night": 341.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 374.0,
+        "cleaning_fee": 360.0,
+        "service_fee": 182.0,
+        "total_price": 1470.0,
+        "price_per_night": 232.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 199.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 139.0,
+        "total_price": 1123.0,
+        "price_per_night": 171.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 315.0,
+        "service_fee": 181.0,
+        "total_price": 1460.0,
+        "price_per_night": 241.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 167.0,
+        "total_price": 1347.0,
+        "price_per_night": 203.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 187.0,
+        "total_price": 1512.0,
+        "price_per_night": 250.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 329.0,
+        "cleaning_fee": 275.0,
+        "service_fee": 157.0,
+        "total_price": 1268.0,
+        "price_per_night": 209.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 325.0,
+        "service_fee": 213.0,
+        "total_price": 1722.0,
+        "price_per_night": 296.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 295.0,
+        "service_fee": 198.0,
+        "total_price": 1598.0,
+        "price_per_night": 276.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 294.0,
+        "cleaning_fee": 240.0,
+        "service_fee": 168.0,
+        "total_price": 1359.0,
+        "price_per_night": 238.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 284.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 169.0,
+        "total_price": 1363.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 224.0,
+        "total_price": 1807.0,
+        "price_per_night": 296.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 261.0,
+        "total_price": 2113.0,
+        "price_per_night": 363.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 253.0,
+        "total_price": 2043.0,
+        "price_per_night": 385.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 200.0,
+        "total_price": 1616.0,
+        "price_per_night": 292.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 329.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 213.0,
+        "total_price": 1719.0,
+        "price_per_night": 289.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 159.0,
+        "total_price": 1284.0,
+        "price_per_night": 207.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 224.0,
+        "total_price": 1807.0,
+        "price_per_night": 296.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 291.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 188.0,
+        "total_price": 1518.0,
+        "price_per_night": 239.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 228.0,
+        "total_price": 1844.0,
+        "price_per_night": 329.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 399.0,
+        "service_fee": 198.0,
+        "total_price": 1603.0,
+        "price_per_night": 252.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 198.0,
+        "total_price": 1601.0,
+        "price_per_night": 264.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 443.0,
+        "cleaning_fee": 370.0,
+        "service_fee": 212.0,
+        "total_price": 1712.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 112.0,
+        "total_price": 906.0,
+        "price_per_night": 141.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 230.0,
+        "service_fee": 115.0,
+        "total_price": 933.0,
+        "price_per_night": 147.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 600.0,
+        "service_fee": 515.0,
+        "total_price": 4164.0,
+        "price_per_night": 762.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 425.0,
+        "service_fee": 210.0,
+        "total_price": 1696.0,
+        "price_per_night": 265.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 693.0,
+        "cleaning_fee": 736.0,
+        "service_fee": 400.0,
+        "total_price": 3236.0,
+        "price_per_night": 525.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 274.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 164.0,
+        "total_price": 1324.0,
+        "price_per_night": 220.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 388.0,
+        "cleaning_fee": 375.0,
+        "service_fee": 250.0,
+        "total_price": 2021.0,
+        "price_per_night": 349.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 285.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 198.0,
+        "total_price": 1597.0,
+        "price_per_night": 245.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 231.0,
+        "total_price": 1866.0,
+        "price_per_night": 284.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 335.0,
+        "service_fee": 245.0,
+        "total_price": 1983.0,
+        "price_per_night": 351.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 309.0,
+        "cleaning_fee": 447.0,
+        "service_fee": 211.0,
+        "total_price": 1706.0,
+        "price_per_night": 262.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 137.0,
+        "total_price": 1104.0,
+        "price_per_night": 167.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 284.0,
+        "cleaning_fee": 280.0,
+        "service_fee": 174.0,
+        "total_price": 1409.0,
+        "price_per_night": 239.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 180.0,
+        "total_price": 1453.0,
+        "price_per_night": 226.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 333.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 176.0,
+        "total_price": 1423.0,
+        "price_per_night": 242.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 369.0,
+        "service_fee": 173.0,
+        "total_price": 1399.0,
+        "price_per_night": 215.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 385.0,
+        "service_fee": 322.0,
+        "total_price": 2601.0,
+        "price_per_night": 474.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 424.0,
+        "service_fee": 223.0,
+        "total_price": 1802.0,
+        "price_per_night": 289.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 234.0,
+        "total_price": 1893.0,
+        "price_per_night": 290.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 210.0,
+        "cleaning_fee": 300.0,
+        "service_fee": 144.0,
+        "total_price": 1164.0,
+        "price_per_night": 180.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 240.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 165.0,
+        "total_price": 1335.0,
+        "price_per_night": 218.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 239.0,
+        "cleaning_fee": 324.0,
+        "service_fee": 147.0,
+        "total_price": 1189.0,
+        "price_per_night": 180.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 330.0,
+        "cleaning_fee": 499.0,
+        "service_fee": 230.0,
+        "total_price": 1862.0,
+        "price_per_night": 283.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 350.0,
+        "service_fee": 0,
+        "total_price": 1256.0,
+        "price_per_night": 227.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 249.0,
+        "cleaning_fee": 279.0,
+        "service_fee": 145.0,
+        "total_price": 1171.0,
+        "price_per_night": 187.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 344.0,
+        "service_fee": 158.0,
+        "total_price": 1278.0,
+        "price_per_night": 194.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 295.0,
+        "cleaning_fee": 349.0,
+        "service_fee": 198.0,
+        "total_price": 1601.0,
+        "price_per_night": 264.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 250.0,
+        "service_fee": 253.0,
+        "total_price": 2043.0,
+        "price_per_night": 385.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    },
+    {
+        "rental_id": "1076647410356569199",
+        "orig_price_per_night": 266.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 160.0,
+        "total_price": 1296.0,
+        "price_per_night": 209.0,
+        "check_in_date": "2024-08-12",
+        "check_out_date": "2024-08-16"
+    }
+]

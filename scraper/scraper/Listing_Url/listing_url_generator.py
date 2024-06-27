@@ -63,7 +63,6 @@ for listing in listings:
     baths = listing["baths"]
     beds = listing["beds"]
     bedrooms = listing["bedrooms"]
-    rankbreeze_Id = listing["rankbreeze_Id"]
     airbnb_link = listing["airbnb_link"]
 
     for i in range(number_of_weeks):
@@ -76,8 +75,13 @@ for listing in listings:
 
         output_entry = {
             "listing_link_format": listing_link,
-            "rankbreeze_Id": rankbreeze_Id,
-            "rental_id": rental_id
+            "rental_id": rental_id,
+            "beds": beds,
+            "guest": guest,
+            "bedrooms": bedrooms,
+            "baths": baths,
+            "start_date": current_start_date.isoformat(),
+            "end_date": current_end_date.isoformat()
         }
 
         output.append(output_entry)

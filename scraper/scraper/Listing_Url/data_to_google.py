@@ -58,7 +58,7 @@ def update_listings_sheet(data):
     df = pd.DataFrame(data)
 
     # Select only the required columns
-    df = df[['host_name', 'address']]
+    df = df[['listing_id','property_id','address']]
 
     # Write new data to the "Listings" sheet starting from row 2
     service.spreadsheets().values().update(

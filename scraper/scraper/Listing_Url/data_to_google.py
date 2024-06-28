@@ -4,6 +4,7 @@ import json
 import os
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
+from datetime import datetime
 
 # Google Sheets setup
 SHEET_ID = '1RG-5uy_k3GbpDYINKDAZLh0UomU3U41N-Pk50Qtaus8'
@@ -76,18 +77,32 @@ def update_listings_sheet(data):
         body={"values": df.values.tolist()}
     ).execute()
 
-
 def update_marketdata_sheet(market_data):
     # Create DataFrame from Market JSON data
     df = pd.DataFrame(market_data)
 
+    # Add 'Updatedat' column with the current date
+    df['Updatedat'] = datetime.today().strftime('%Y-%m-%d')
+
     # Write new data to the "MarketData" sheet starting from row 2
-    service.spreadsheets().values().update(
+    service.spreadsheets().values().append(
         spreadsheetId=SHEET_ID,
         range=f"{MARKETDATA_SHEET_NAME}!A2",
         valueInputOption="RAW",
         body={"values": df.values.tolist()}
     ).execute()
+
+# def update_marketdata_sheet(market_data):
+#     # Create DataFrame from Market JSON data
+#     df = pd.DataFrame(market_data)
+#
+#     # Write new data to the "MarketData" sheet starting from row 2
+#     service.spreadsheets().values().update(
+#         spreadsheetId=SHEET_ID,
+#         range=f"{MARKETDATA_SHEET_NAME}!A2",
+#         valueInputOption="RAW",
+#         body={"values": df.values.tolist()}
+#     ).execute()
 
 
 def update_searchjobtable_sheet(searchjobtable_data):

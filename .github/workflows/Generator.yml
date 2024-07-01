@@ -2,10 +2,10 @@ name: Generator
 
 on:
     workflow_dispatch:
-    workflow_run:
-      workflows: ["Attributes"]
-      types:
-        - completed
+#    workflow_run:
+#      workflows: ["Attributes"]
+#      types:
+#        - completed
 # on:
 #   workflow_dispatch: # This allows manual triggering of the workflow
 

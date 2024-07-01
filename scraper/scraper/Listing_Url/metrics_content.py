@@ -29,8 +29,8 @@ service = build("sheets", "v4", credentials=credentials)
 eastern_tz = pytz.timezone("America/New_York")
 current_time = datetime.datetime.now(eastern_tz)
 
-username = os.environ['D_USERNAME_SECRET']
-passw = os.environ['D_PASSWORD_SECRET']
+username = os.environ['RANKB_USERNAME_SECRET']
+passw = os.environ['RANKB_PASSWORD_SECRET']
 website = "https://app.rankbreeze.com/listings"
 
 # Set up Chrome WebDriver
@@ -53,10 +53,9 @@ log.click()
 time.sleep(3)
 
 proxy_links = [
-    "https://app.rankbreeze.com/rankings/70461",
-    "https://app.rankbreeze.com/rankings/70460",
-    "https://app.rankbreeze.com/rankings/70459",
-    "https://app.rankbreeze.com/rankings/70458",
+    "https://app.rankbreeze.com/rankings/77336",
+    "https://app.rankbreeze.com/rankings/77335",
+
 ]
 
 data = []

@@ -1,0 +1,32 @@
+name: Review_Scraper
+
+on:
+  workflow_dispatch: # This allows manual triggering of the workflow
+  schedule:
+    - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
+
+jobs:
+  run_python_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9' # You can specify a different Python version if needed
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        python -m pip install --upgrade pip
+        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+    - name: Run Python Script
+      env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
+      run: |
+        python scraper/scraper/Listing_Url/metrics_content.py

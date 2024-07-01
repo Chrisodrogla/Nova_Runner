@@ -1,4 +1,4 @@
-name: Review_Scraper
+name: Metrics_Scraper
 
 on:
   workflow_dispatch: # This allows manual triggering of the workflow

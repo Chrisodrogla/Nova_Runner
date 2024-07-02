@@ -18,7 +18,7 @@ SHEET_LEAD_TIMES = 'rankbrz_lead_times'
 SHEET_AIRBNB_OCCUPANCY = 'rankbrz_abnb_occu'
 SHEET_AVG_DAILY_RATES = 'rankbrz_daily_rates'
 SHEET_REVENUE = 'rankbrz_revenue'
-JSON_FILE_PATH = "scraper/scraper/Listing_Url/json_file/listing_attribute.json"
+# JSON_FILE_PATH = "scraper/scraper/Listing_Url/json_file/listing_attribute.json"
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
@@ -53,17 +53,17 @@ log.click()
 time.sleep(3)
 
 
-
-# Read JSON data from local file
-with open(JSON_FILE_PATH, 'r') as file:
-    data = json.load(file)
-proxy_links = [item['proxy_link'] for item in data]
-
-# proxy_links = [
-#     "https://app.rankbreeze.com/rankings/77336",
-#     "https://app.rankbreeze.com/rankings/77335",
 #
-# ]
+# # Read JSON data from local file
+# with open(JSON_FILE_PATH, 'r') as file:
+#     data = json.load(file)
+# proxy_links = [item['proxy_link'] for item in data]
+
+proxy_links = [
+    "https://app.rankbreeze.com/rankings/77336",
+    "https://app.rankbreeze.com/rankings/77335",
+
+]
 
 data = []
 overall_impressions = []

@@ -60,8 +60,8 @@ time.sleep(3)
 # proxy_links = [item['proxy_link'] for item in data]
 
 proxy_links = [
-    "https://app.rankbreeze.com/rankings/77336",
-    "https://app.rankbreeze.com/rankings/77335",
+    "https://app.rankbreeze.com/rankings/73635",
+    "https://app.rankbreeze.com/rankings/69711",
 
 ]
 

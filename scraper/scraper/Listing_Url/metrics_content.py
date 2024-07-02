@@ -9,15 +9,15 @@ from googleapiclient.discovery import build
 
 # Google Sheets setup
 SHEET_ID = '1RG-5uy_k3GbpDYINKDAZLh0UomU3U41N-Pk50Qtaus8'
-SHEET_DATA = 'Data'
-SHEET_IMPRESSIONS = 'impressions'
-SHEET_CLICK_THROUGHS = 'click'
-SHEET_LISTING_VIEWS = 'listing_v'
-SHEET_CONVERSION_RATE = 'conversion_r'
-SHEET_LEAD_TIMES = 'lead_times'
-SHEET_AIRBNB_OCCUPANCY = 'abnb_occu'
-SHEET_AVG_DAILY_RATES = 'daily_rates'
-SHEET_REVENUE = 'revenue'
+SHEET_DATA = 'rankbrz_Data'
+SHEET_IMPRESSIONS = 'rankbrz_impressions'
+SHEET_CLICK_THROUGHS = 'rankbrz_click'
+SHEET_LISTING_VIEWS = 'rankbrz_listing_v'
+SHEET_CONVERSION_RATE = 'rankbrz_conversion_r'
+SHEET_LEAD_TIMES = 'rankbrz_lead_times'
+SHEET_AIRBNB_OCCUPANCY = 'rankbrz_abnb_occu'
+SHEET_AVG_DAILY_RATES = 'rankbrz_daily_rates'
+SHEET_REVENUE = 'rankbrz_revenue'
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")

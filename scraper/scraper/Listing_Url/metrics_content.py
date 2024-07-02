@@ -61,7 +61,7 @@ time.sleep(3)
 
 proxy_links = [
     "https://app.rankbreeze.com/rankings/73635",
-    "https://app.rankbreeze.com/rankings/69711",
+    "https://app.rankbreeze.com/rankings/73636",
 
 ]
 

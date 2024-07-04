@@ -18,7 +18,7 @@ options.add_argument("--window-size=1920x1080")
 options.add_argument("--display=:99")  # Set display to Xvfb
 
 # Google Sheets setup
-SHEET_ID = '1RG-5uy_k3GbpDYINKDAZLh0UomU3U41N-Pk50Qtaus8'
+SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
 SHEET_NAME1 = 'Reviews'  # Sheet to clear data below header and write new data
 
 # Get Google Sheets credentials from environment variable

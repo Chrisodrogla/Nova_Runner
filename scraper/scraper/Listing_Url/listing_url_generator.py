@@ -45,7 +45,7 @@ def get_next_weekday(start_date, target_weekday, weeks_in_advance=3):
 number_of_weeks = 1  # Number of weeks for each listing
 target_weekday = 0  # The starting week day Monday0 Tuesday1 .....
 days_in_week = 4  # example if target_weekday is 0 and we input 4 in here then Monday to Thursday (4 days)
-weeks_in_advance = 4  # Start date is 4 weeks from today
+weeks_in_advance = 6  # Start date is 4 weeks from today
 
 
 # Current date

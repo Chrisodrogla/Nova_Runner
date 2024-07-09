@@ -4,7 +4,7 @@ name: Attributes
 on:
 
   schedule:
-    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC  
+    - cron: '16 16 * * *'  # Runs at 4:15 PM UTC
   workflow_dispatch:
 
 

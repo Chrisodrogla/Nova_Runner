@@ -1,11 +1,3 @@
-#name: Runner 1
-#
-#on:
-#  workflow_dispatch:
-#  workflow_run:
-#    workflows: ["Generator"]
-#    types:
-#      - completed
 name: Runner 1
 
 on:

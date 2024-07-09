@@ -3,7 +3,7 @@ name: Attributes
 
 on:
 
-  schedule:
+#  schedule:
 #    - cron: '16 16 * * *'  # Runs at 4:15 PM UTC
   workflow_dispatch:
 

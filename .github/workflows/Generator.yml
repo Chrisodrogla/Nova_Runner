@@ -3,8 +3,8 @@ name: Generator
 
 on:
 
-  schedule:
-    - cron: '16 20 * * *'  # Runs at 4:15 PM UTC
+#  schedule:
+#    - cron: '16 20 * * *'  # Runs at 4:15 PM UTC
   workflow_dispatch:
 
 

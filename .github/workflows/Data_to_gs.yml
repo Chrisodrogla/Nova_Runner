@@ -3,9 +3,9 @@ name: Data to GSheet
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '15 50 * * *'  # Runs at 4:15 PM UTC
+  schedule:
 
+    - cron: "30 14 * * *" # 10:30 PM UTC+8 (14:30 UTC)
 jobs:
   run_python_script:
     runs-on: ubuntu-latest

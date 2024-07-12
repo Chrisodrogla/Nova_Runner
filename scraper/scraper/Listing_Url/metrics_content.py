@@ -61,13 +61,13 @@ time.sleep(3)
 #
 # time.sleep(2)
 
-driver.find_element("xpath", """(//div[@class="form-group"]/input)[1]""").send_keys(username)
-time.sleep(2)
-driver.find_element("xpath", """(//div[@class="form-group"]/input)[2]""").send_keys(passw)
-log = driver.find_element("xpath", """(//div[@class="form-group"]/input)[3]""")
-time.sleep(2)
-log.click()
-time.sleep(20)
+# driver.find_element("xpath", """(//div[@class="form-group"]/input)[1]""").send_keys(username)
+# time.sleep(2)
+# driver.find_element("xpath", """(//div[@class="form-group"]/input)[2]""").send_keys(passw)
+# log = driver.find_element("xpath", """(//div[@class="form-group"]/input)[3]""")
+# time.sleep(2)
+# log.click()
+# time.sleep(20)
 
 proxy_links = []
 

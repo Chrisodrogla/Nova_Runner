@@ -245,3 +245,7 @@ update_google_sheet(SHEET_ID, SHEET_LEAD_TIMES, overall_lead_times)
 update_google_sheet(SHEET_ID, SHEET_AIRBNB_OCCUPANCY, overall_airbnb_occupancy)
 update_google_sheet(SHEET_ID, SHEET_AVG_DAILY_RATES, overall_avg_daily_rates)
 update_google_sheet(SHEET_ID, SHEET_REVENUE, overall_revenue)
+
+
+
+print(website)

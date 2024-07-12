@@ -56,14 +56,70 @@ time.sleep(3)
 #
 # # Read JSON data from local file
 # with open(JSON_FILE_PATH, 'r') as file:
-#     data = json.load(file)
-# proxy_links = [item['proxy_link'] for item in data]
 
-proxy_links = [
-    "https://app.rankbreeze.com/rankings/73635",
-    "https://app.rankbreeze.com/rankings/73636",
+# driver.get(website)
+#
+# time.sleep(2)
 
-]
+driver.find_element("xpath", """(//div[@class="form-group"]/input)[1]""").send_keys(username)
+time.sleep(2)
+driver.find_element("xpath", """(//div[@class="form-group"]/input)[2]""").send_keys(passw)
+log = driver.find_element("xpath", """(//div[@class="form-group"]/input)[3]""")
+time.sleep(2)
+log.click()
+time.sleep(20)
+
+proxy_links = []
+
+while True:
+    # Get all the desired links on the current page
+    links = driver.find_elements("xpath", """//a[@class="btn btn-outline-primary card-btn custom-nav-button mr-1"]""")
+    for link in links:
+        web = link.get_attribute("href")
+        proxy_links.append(web)
+
+    time.sleep(10)
+    # Check if there's a "Next" button on the page
+    next_buttons = driver.find_elements("xpath", """//span[@class="next"]""")
+    if len(next_buttons) > 0:
+        # Click the first "Next" button
+        next_buttons[0].click()
+    else:
+
+        links = driver.find_elements("xpath",
+                                     """//a[@class="btn btn-outline-primary card-btn custom-nav-button mr-1"]""")
+        for link in links:
+            web = link.get_attribute("href")
+            proxy_links.append(web)
+        # No "Next" button, exit the loop
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# proxy_links = [
+#     "https://app.rankbreeze.com/rankings/73635",
+#     "https://app.rankbreeze.com/rankings/73636",
+#
+# ]
 
 data = []
 overall_impressions = []

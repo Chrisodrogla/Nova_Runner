@@ -117,7 +117,7 @@ while True:
 
 proxy_links = [
     "https://app.rankbreeze.com/rankings/73636",
-    "https://app.rankbreeze.com/rankings/73635",
+    "https://app.rankbreeze.com/rankings/73635"
     # "https://app.rankbreeze.com/rankings/78269",
 ]
 

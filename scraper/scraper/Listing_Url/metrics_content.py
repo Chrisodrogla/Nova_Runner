@@ -139,8 +139,8 @@ for website in proxy_links:
     link_Id = website.strip("https://app.rankbreeze.com/rankings/")
 
     proxy_title = driver.find_element("xpath", """//*[@id="get-email"]/div/main/div[3]/div[1]/h2""").get_attribute("innerText")
-    print(website)
-    guest_satisfaction = driver.find_element("xpath", """(//div[@class="single-value"]/b)[1]""").get_attribute("innerText")
+
+    guest_satisfaction = driver.find_element("xpath", """(//div[@class="single-value"]/b)""").get_attribute("innerText")
     reviews_count = driver.find_element("xpath", """(//div[@class="single-value"]/b)[2]|(//div[@class="single-value"]/b)""").get_attribute("innerText")
 
     date_str = current_time.strftime("%Y-%m-%d")

@@ -115,11 +115,11 @@ while True:
 
 
 
-# proxy_links = [
-#     "https://app.rankbreeze.com/rankings/73635",
-#     "https://app.rankbreeze.com/rankings/73636",
-#
-# ]
+proxy_links = [
+    "https://app.rankbreeze.com/rankings/77938",
+    "https://app.rankbreeze.com/rankings/77939",
+    "https://app.rankbreeze.com/rankings/78269",
+]
 
 data = []
 overall_impressions = []

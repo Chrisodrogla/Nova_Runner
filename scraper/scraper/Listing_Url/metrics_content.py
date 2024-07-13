@@ -259,5 +259,5 @@ update_google_sheet(SHEET_ID, SHEET_AVG_DAILY_RATES, overall_avg_daily_rates)
 update_google_sheet(SHEET_ID, SHEET_REVENUE, overall_revenue)
 
 
-
+print(proxy_links)
 

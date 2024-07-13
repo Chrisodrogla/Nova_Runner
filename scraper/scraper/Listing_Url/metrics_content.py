@@ -115,11 +115,11 @@ while True:
 
 
 
-proxy_links = [
-    "https://app.rankbreeze.com/rankings/73636",
-    "https://app.rankbreeze.com/rankings/73635"
-    # "https://app.rankbreeze.com/rankings/78269",
-]
+# proxy_links = [
+#     "https://app.rankbreeze.com/rankings/73636",
+#     "https://app.rankbreeze.com/rankings/73635"
+#     # "https://app.rankbreeze.com/rankings/78269",
+# ]
 
 data = []
 overall_impressions = []
@@ -138,7 +138,7 @@ for website in proxy_links:
     link = website
     link_Id = website.strip("https://app.rankbreeze.com/rankings/")
 
-    proxy_title = driver.find_element("xpath", """//*[@id="get-email"]/div/main/div[3]/div[1]/h2""").get_attribute("innerText")
+    proxy_title = driver.find_element("xpath", """//*[@id="get-email"]/div/main/div[3]/div[1]/h2|//div[@class="row single-rankings-title"]/div/h2""").get_attribute("innerText")
 
     guest_satisfaction = driver.find_element("xpath", """(//div[@class="single-value"]/b)""").get_attribute("innerText")
     reviews_count = driver.find_element("xpath", """(//div[@class="single-value"]/b)[2]|(//div[@class="single-value"]/b)""").get_attribute("innerText")

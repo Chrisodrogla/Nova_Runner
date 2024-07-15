@@ -3,8 +3,9 @@ name: Attributes
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '15 15 * * *'
+  schedule:
+    - cron: '0 0 * * MON'  # This cron expression runs the job at 00:00 UTC every Monday
+
 
 
 jobs:

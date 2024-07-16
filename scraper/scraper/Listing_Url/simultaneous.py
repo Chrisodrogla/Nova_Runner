@@ -8,6 +8,7 @@ import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
 
+
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
 
@@ -18,9 +19,8 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
 def filter_results(result, needed_keys):
     filtered_results = []
     for listing in result:
-        for item in listing:
-            filtered_result = {key: item.get(key, None) for key in needed_keys}
-            filtered_results.append(filtered_result)
+        filtered_result = {key: listing.get(key, None) for key in needed_keys}
+        filtered_results.append(filtered_result)
     return filtered_results
 
 def scrape_rental(rental, scraper, needed_keys):

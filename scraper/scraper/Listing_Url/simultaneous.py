@@ -1,18 +1,14 @@
 import json
-import csv
 import sys
 import time
 import os
-# sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
-sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
+
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
 
-# # with open('scraper/scraper/Listing_Url/final_rental_link.json', 'r') as f:
-# with open('json_file/final_rental_link.json', 'r') as f:
 with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') as f:
     data = json.load(f)
     rental_links = data[batch_id]
@@ -20,11 +16,9 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
 def filter_results(result, needed_keys):
     filtered_results = []
     for listing in result:
-        for item in listing:
-            filtered_result = {key: item.get(key, None) for key in needed_keys}
-            filtered_results.append(filtered_result)
+        filtered_result = {key: listing.get(key, None) for key in needed_keys}
+        filtered_results.append(filtered_result)
     return filtered_results
-
 
 def scrape_rental(rental, scraper, needed_keys):
     config = {"url": rental["listing_link_format"]}
@@ -34,24 +28,20 @@ def scrape_rental(rental, scraper, needed_keys):
     for filtered_result in filtered_results:
         final_result = {
             "JobID": rental["JobID"],
-            "JobID": rental["JobID"],
+            "check_in_date": rental["check_in_date"],
+            "check_out_date": rental["check_out_date"],
             **filtered_result
         }
         final_results.append(final_result)
     return final_results
 
-
-
 def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
-
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
-# needed_keys = ['orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date',
-#                'check_out_date']
-needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
+needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
 
 final_results = []
 errors = []
@@ -79,7 +69,6 @@ seconds = int(elapsed_time % 60)
 # Load existing data from the JSON file
 existing_data = []
 
-# with open('output/final_results.json', 'r') as existing_file:
 with open('scraper/scraper/Listing_Url/output/final_results.json', 'r') as existing_file:
     existing_data = json.load(existing_file)
 
@@ -87,15 +76,5 @@ with open('scraper/scraper/Listing_Url/output/final_results.json', 'r') as exist
 existing_data.extend(final_results)
 
 # Write the updated data back to the JSON file
-# with open('output/final_results.json', 'w') as updated_file:
 with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
     json.dump(existing_data, updated_file, indent=4)
-
-print("Data appended and saved to 'output/final_results.json'.")
-
-print(final_results)
-print("DONE SAMPLE")
-
-
-
-print(f"Time takes {minutes} minutes and {seconds} seconds")

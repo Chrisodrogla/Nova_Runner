@@ -3,7 +3,6 @@ import csv
 import sys
 import time
 import os
-# sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
@@ -19,8 +18,9 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
 def filter_results(result, needed_keys):
     filtered_results = []
     for listing in result:
-        filtered_result = {key: listing.get(key, None) for key in needed_keys}
-        filtered_results.append(filtered_result)
+        for item in listing:
+            filtered_result = {key: item.get(key, None) for key in needed_keys}
+            filtered_results.append(filtered_result)
     return filtered_results
 
 def scrape_rental(rental, scraper, needed_keys):

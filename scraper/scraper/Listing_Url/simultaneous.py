@@ -29,10 +29,9 @@ def scrape_rental(rental, scraper, needed_keys):
     filtered_results = filter_results(result, needed_keys)
     final_results = []
     for filtered_result in filtered_results:
+        filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
         final_result = {
             "JobID": rental["JobID"],
-            "check_in_date": rental["check_in_date"],
-            "check_out_date": rental["check_out_date"],
             **filtered_result
         }
         final_results.append(final_result)
@@ -44,7 +43,7 @@ def chunks(lst, n):
 
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
-needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
+needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
 
 final_results = []
 errors = []
@@ -64,20 +63,15 @@ for rental_chunk in chunks(rental_links, 3):
                 errors.append(error_message)
 
 end_time = time.time()
-
 elapsed_time = end_time - start_time
 minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
-# Load existing data from the JSON file
-existing_data = []
-
-with open('scraper/scraper/Listing_Url/output/final_results.json', 'r') as existing_file:
-    existing_data = json.load(existing_file)
-
-# Append your new data to the existing list
-existing_data.extend(final_results)
-
-# Write the updated data back to the JSON file
+# Write the new data to the JSON file, replacing the existing data
 with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
-    json.dump(existing_data, updated_file, indent=4)
+    json.dump(final_results, updated_file, indent=4)
+
+print("Data replaced and saved to 'output/final_results.json'.")
+print(final_results)
+print("DONE SAMPLE")
+print(f"Time takes {minutes} minutes and {seconds} seconds")

@@ -1,18 +1,5 @@
 [
     {
-        "JobID": "27",
-        "host_name": "Cristian",
-        "listingId": "937043553598042009",
-        "url": "https://www.airbnb.com/rooms/937043553598042009",
-        "orig_price_per_night": 0.0,
-        "cleaning_fee": 0,
-        "service_fee": 0,
-        "total_price": 0.0,
-        "price_per_night": 414.0,
-        "check_in_date": "2024-10-14",
-        "check_out_date": "2024-10-17"
-    },
-    {
         "JobID": "2",
         "host_name": "Magical Vacation Homes",
         "listingId": "39077019",
@@ -37,5 +24,18 @@
         "price_per_night": 417.0,
         "check_in_date": "2024-07-29",
         "check_out_date": "2024-08-01"
+    },
+    {
+        "JobID": "27",
+        "host_name": "Cristian",
+        "listingId": "937043553598042009",
+        "url": "https://www.airbnb.com/rooms/937043553598042009",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 0,
+        "service_fee": 0,
+        "total_price": 0.0,
+        "price_per_night": 414.0,
+        "check_in_date": "2024-10-14",
+        "check_out_date": "2024-10-17"
     }
 ]

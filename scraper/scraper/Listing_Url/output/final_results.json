@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "JobID": "2",
+        "host_name": "Dennis",
+        "listingId": "44754422",
+        "url": "https://www.airbnb.com/rooms/44754422?adults=13&check_in=2024-07-22&check_out=2024-07-25",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 299.0,
+        "service_fee": 161.0,
+        "total_price": 2494.0,
+        "price_per_night": 831.0,
+        "check_in_date": "2024-07-22",
+        "check_out_date": "2024-07-25"
+    },
+    {
+        "JobID": "3",
+        "host_name": "Rodrigo",
+        "listingId": "726632788970468904",
+        "url": "https://www.airbnb.com/rooms/726632788970468904?adults=13&check_in=2024-07-22&check_out=2024-07-25",
+        "orig_price_per_night": 1005.0,
+        "cleaning_fee": 419.0,
+        "service_fee": 148.0,
+        "total_price": 1764.0,
+        "price_per_night": 588.0,
+        "check_in_date": "2024-07-22",
+        "check_out_date": "2024-07-25"
+    }
+]

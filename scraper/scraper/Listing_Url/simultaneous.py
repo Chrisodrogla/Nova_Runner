@@ -83,6 +83,9 @@ for rental_chunk in chunks(rental_links, 3):
                 logger.error(error_message)
                 errors.append(error_message)
 
+    # Add a 5-second delay between each batch of 3 URLs
+    time.sleep(5)
+
 end_time = time.time()
 elapsed_time = end_time - start_time
 minutes = int(elapsed_time // 60)

@@ -8,12 +8,6 @@ import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
 
-import pandas as pd
-
-from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
-from datetime import datetime
-
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
 
@@ -46,17 +40,12 @@ def scrape_rental(rental, scraper, needed_keys):
         filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
         final_result = {
             "JobID": rental["JobID"],
-            "InfoID": rental["InfoID"],
             **filtered_result,
             "check_in_date": check_in_date,
             "check_out_date": check_out_date
         }
         final_results.append(final_result)
     return final_results
-
-def chunks(lst, n):
-    for i in range(0, len(lst), n):
-        yield lst[i:i + n]
 
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
@@ -65,15 +54,19 @@ needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleanin
 final_results = []
 errors = []
 
-# Process each rental link individually
-for rental in rental_links:
-    try:
-        rental_results = scrape_rental(rental, scraper, needed_keys)
-        final_results.extend(rental_results)
-    except Exception as e:
-        error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
-        logger.error(error_message)
-        errors.append(error_message)
+# Process each rental link concurrently
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    futures = {executor.submit(scrape_rental, rental, scraper, needed_keys): rental for rental in rental_links}
+
+    for future in concurrent.futures.as_completed(futures):
+        rental = futures[future]
+        try:
+            rental_results = future.result()
+            final_results.extend(rental_results)
+        except Exception as e:
+            error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
+            logger.error(error_message)
+            errors.append(error_message)
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -84,35 +77,7 @@ seconds = int(elapsed_time % 60)
 with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
     json.dump(final_results, updated_file, indent=4)
 
-
-
-
-
-# Google Sheets setup
-SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-MARKETDATA_SHEET_NAME = 'JobTable_Results'
-
-
-# Get Google Sheets credentials from environment variable
-GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
-credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
-
-# Create Google Sheets API service
-service = build("sheets", "v4", credentials=credentials)
-
-
-df = pd.DataFrame(final_results)
-
-# Clear all data below header in the "Review" sheet
-service.spreadsheets().values().clear(
-    spreadsheetId=SHEET_ID,
-    range=f"{MARKETDATA_SHEET_NAME}!A2:Z"
-).execute()
-
-# Write new data to the "Review" sheet starting from row 2
-service.spreadsheets().values().update(
-    spreadsheetId=SHEET_ID,
-    range=f"{MARKETDATA_SHEET_NAME}!A2",
-    valueInputOption="RAW",
-    body={"values": df.values.tolist()}
-).execute()
+print("Data replaced and saved to 'output/final_results.json'.")
+print(final_results)
+print("DONE SAMPLE")
+print(f"Time taken: {minutes} minutes and {seconds} seconds")

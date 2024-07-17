@@ -40,6 +40,7 @@ def scrape_rental(rental, scraper, needed_keys):
         filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
         final_result = {
             "JobID": rental["JobID"],
+            "InfoID": rental["InfoID"],
             **filtered_result,
             "check_in_date": check_in_date,
             "check_out_date": check_out_date

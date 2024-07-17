@@ -1,13 +1,26 @@
 [
     {
-        "JobID": "2",
-        "host_name": "Magical Vacation Homes",
-        "listingId": "39077019",
-        "url": "https://www.airbnb.com/rooms/39077019?adults=13&check_in=2024-07-29&check_out=2024-08-01",
+        "JobID": "27",
+        "host_name": "Cristian",
+        "listingId": "937043553598042009",
+        "url": "https://www.airbnb.com/rooms/937043553598042009",
         "orig_price_per_night": 0.0,
         "cleaning_fee": 0,
         "service_fee": 0,
-        "total_price": 0.0,
+        "total_price": 1241.0,
+        "price_per_night": 414.0,
+        "check_in_date": "2024-10-14",
+        "check_out_date": "2024-10-17"
+    },
+    {
+        "JobID": "2",
+        "host_name": "Magical Vacation Homes",
+        "listingId": "39077019",
+        "url": "https://www.airbnb.com/rooms/39077019",
+        "orig_price_per_night": 0.0,
+        "cleaning_fee": 0,
+        "service_fee": 0,
+        "total_price": 5497.0,
         "price_per_night": 1832.0,
         "check_in_date": "2024-07-22",
         "check_out_date": "2024-07-25"
@@ -16,26 +29,13 @@
         "JobID": "3",
         "host_name": "Jaime",
         "listingId": "879263986434941236",
-        "url": "https://www.airbnb.com/rooms/879263986434941236?adults=13&check_in=2024-07-29&check_out=2024-08-01",
+        "url": "https://www.airbnb.com/rooms/879263986434941236",
         "orig_price_per_night": 0.0,
         "cleaning_fee": 250.0,
         "service_fee": 131.0,
-        "total_price": 0.0,
+        "total_price": 1250.0,
         "price_per_night": 417.0,
         "check_in_date": "2024-07-29",
         "check_out_date": "2024-08-01"
-    },
-    {
-        "JobID": "27",
-        "host_name": "Cristian",
-        "listingId": "937043553598042009",
-        "url": "https://www.airbnb.com/rooms/937043553598042009?adults=13&check_in=2024-07-29&check_out=2024-08-01",
-        "orig_price_per_night": 0.0,
-        "cleaning_fee": 0,
-        "service_fee": 0,
-        "total_price": 0.0,
-        "price_per_night": 414.0,
-        "check_in_date": "2024-10-14",
-        "check_out_date": "2024-10-17"
     }
 ]

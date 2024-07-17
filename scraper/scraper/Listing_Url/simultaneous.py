@@ -20,6 +20,9 @@ def filter_results(result, needed_keys):
     for listing in result:
         for item in listing:
             filtered_result = {key: item.get(key, None) for key in needed_keys}
+            # Split the url at '?' to keep only the base URL
+            if 'url' in filtered_result:
+                filtered_result['url'] = filtered_result['url'].split('?')[0]
             filtered_results.append(filtered_result)
     return filtered_results
 

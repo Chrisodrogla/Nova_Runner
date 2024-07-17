@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
 
-    - cron: "30 14 * * *" # 10:30 PM UTC+8 (14:30 UTC)
+    - cron: "40 15 * * *" # 11:40 PM UTC+8 (14:30 UTC)
 jobs:
   run_python_script:
     runs-on: ubuntu-latest

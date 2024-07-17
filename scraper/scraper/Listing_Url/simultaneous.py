@@ -1,5 +1,4 @@
 import json
-import csv
 import sys
 import time
 import os
@@ -46,22 +45,29 @@ logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
 needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
 
-final_results = []
+final_results_dict = {rental["JobID"]: None for rental in rental_links}
 errors = []
 
 # Process the rental links in chunks of 3
 for rental_chunk in chunks(rental_links, 3):
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(scrape_rental, rental, scraper, needed_keys) for rental in rental_chunk]
+        futures = {executor.submit(scrape_rental, rental, scraper, needed_keys): rental for rental in rental_chunk}
 
         for future in concurrent.futures.as_completed(futures):
+            rental = futures[future]
             try:
                 result = future.result()
-                final_results.extend(result)
+                final_results_dict[rental["JobID"]] = result
             except Exception as e:
-                error_message = f"Error occurred: {e}"
+                error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
                 logger.error(error_message)
                 errors.append(error_message)
+
+# Flatten the dictionary to a list while preserving order based on initial rental_links
+final_results = []
+for rental in rental_links:
+    if final_results_dict[rental["JobID"]]:
+        final_results.extend(final_results_dict[rental["JobID"]])
 
 end_time = time.time()
 elapsed_time = end_time - start_time

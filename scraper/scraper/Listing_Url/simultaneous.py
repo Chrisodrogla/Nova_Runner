@@ -2,11 +2,11 @@ import json
 import sys
 import time
 import os
+from urllib.parse import urlparse, parse_qs
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
-
 
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
@@ -23,16 +23,26 @@ def filter_results(result, needed_keys):
             filtered_results.append(filtered_result)
     return filtered_results
 
+def extract_dates_from_url(url):
+    parsed_url = urlparse(url)
+    query_params = parse_qs(parsed_url.query)
+    check_in_date = query_params.get('checkin', [None])[0]
+    check_out_date = query_params.get('checkout', [None])[0]
+    return check_in_date, check_out_date
+
 def scrape_rental(rental, scraper, needed_keys):
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
     filtered_results = filter_results(result, needed_keys)
     final_results = []
+    check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
     for filtered_result in filtered_results:
         filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
         final_result = {
             "JobID": rental["JobID"],
-            **filtered_result
+            **filtered_result,
+            "check_in_date": check_in_date,
+            "check_out_date": check_out_date
         }
         final_results.append(final_result)
     return final_results
@@ -43,7 +53,7 @@ def chunks(lst, n):
 
 logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
-needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'check_in_date', 'check_out_date']
+needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
 
 final_results_dict = {rental["JobID"]: None for rental in rental_links}
 errors = []

@@ -1,16 +1,20 @@
 {
     "Batch1": [
         {
-            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&checkin=2024-10-14&checkout=2024-10-17&adults=13&search_mode=regular_search&min_bedrooms=5&query=Kissimmee%2C%20Florida%2C%20United%20States&ne_lat=28.329103313064554&ne_lng=-81.4653054553454&sw_lat=28.328763304933243&sw_lng=-81.4656362549681&zoom=20.90570815272094&zoom_level=20.90570815272094&search_by_map=true&search_type=user_map_move&tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&place_id=ChIJ5wsVNxqE3YgRDcL9EZfN55Q&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-08-01&monthly_length=3&monthly_end_date=2024-11-01&price_filter_input_type=0&price_filter_num_nights=3&channel=EXPLORE&currency=USD",
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimmee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-07-22&checkout=2024-07-25&adults=13&search_mode=regular_search&min_bedrooms=6&query=Kissimmee%2C%20Florida%2C%20United%20Statescurrency=USD",
             "JobID": "2",
             "InfoID": "1"
 
         },
         {
-            "listing_link_format": "https://www.airbnb.ca/s/Kissimmee--Florida--United-States/homes?date_picker_type=calendar&checkin=2024-07-22&checkout=2024-07-25&adults=13&search_mode=regular_search&min_bedrooms=6&query=Kissimmee%2C%20Florida%2C%20United%20States&tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&place_id=ChIJ5wsVNxqE3YgRDcL9EZfN55Q&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-08-01&monthly_length=3&monthly_end_date=2024-11-01&price_filter_input_type=0&price_filter_num_nights=3&channel=EXPLORE&ne_lat=28.370208568505472&ne_lng=-81.52261417339429&sw_lat=28.369348061578595&sw_lng=-81.52345169712129&zoom=19.56553567958655&zoom_level=19.56553567958655&search_by_map=true&search_type=user_map_move&currency=USD",
-            "JobID": "3",
+            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-10-14&checkout=2024-10-17&adults=13&search_mode=regular_search&min_bedrooms=5&query=Kissimmee%2C%20Florida%2C%20United%20States&ne_lat=28.331581185154494&ne_lng=-81.46120901452502&sw_lat=28.325830996416965&sw_lng=-81.46688030979124&zoom=17.22775471050796&zoom_level=17.22775471050796&search_by_map=true&search_type=user_map_move&currency=USD",
+            "JobID": "27",
             "InfoID": "2"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimmee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-07-29&checkout=2024-08-01&adults=13&search_mode=regular_search&min_bedrooms=6&query=Kissimmee%2C%20Florida%2C%20United%20States&currency=USD",
+            "JobID": "3",
+            "InfoID": "1"
         }
-
     ]
 }

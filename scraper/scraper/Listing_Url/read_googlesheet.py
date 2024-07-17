@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-JobTable = 'JobTable_Results'
+JobTable = 'JobTable'
 
 searchjobtable_file_path = 'scraper/scraper/Listing_Url/json_file/final_rental_link.json'
 

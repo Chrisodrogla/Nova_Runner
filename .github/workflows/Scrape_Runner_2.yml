@@ -31,4 +31,4 @@ jobs:
 
 
       run: |
-        BATCH_ID=Batch1 python scraper/scraper/Listing_Url/simultaneous.py
+        BATCH_ID=Batch2 python scraper/scraper/Listing_Url/simultaneous.py

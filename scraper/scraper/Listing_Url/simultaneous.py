@@ -55,29 +55,18 @@ logger = logging.getLogger(__name__)
 scraper = AirbnbComSearchStrategy(logger)
 needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
 
-final_results_dict = {rental["JobID"]: None for rental in rental_links}
+final_results = []
 errors = []
 
-# Process the rental links in chunks of 3
-for rental_chunk in chunks(rental_links, 3):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = {executor.submit(scrape_rental, rental, scraper, needed_keys): rental for rental in rental_chunk}
-
-        for future in concurrent.futures.as_completed(futures):
-            rental = futures[future]
-            try:
-                result = future.result()
-                final_results_dict[rental["JobID"]] = result
-            except Exception as e:
-                error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
-                logger.error(error_message)
-                errors.append(error_message)
-
-# Flatten the dictionary to a list while preserving order based on initial rental_links
-final_results = []
+# Process each rental link individually
 for rental in rental_links:
-    if final_results_dict[rental["JobID"]]:
-        final_results.extend(final_results_dict[rental["JobID"]])
+    try:
+        rental_results = scrape_rental(rental, scraper, needed_keys)
+        final_results.extend(rental_results)
+    except Exception as e:
+        error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
+        logger.error(error_message)
+        errors.append(error_message)
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -91,4 +80,4 @@ with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updat
 print("Data replaced and saved to 'output/final_results.json'.")
 print(final_results)
 print("DONE SAMPLE")
-print(f"Time takes {minutes} minutes and {seconds} seconds")
+print(f"Time taken: {minutes} minutes and {seconds} seconds")

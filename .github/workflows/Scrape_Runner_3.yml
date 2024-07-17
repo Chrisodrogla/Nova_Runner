@@ -1,9 +1,9 @@
-name: Runner 3
+name: Run Batch 3
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
+  schedule:
+    - cron: "10 14 * * *" # 10:10 PM UTC+8 (14:10 UTC)
 
 jobs:
   run-scraper:
@@ -31,4 +31,4 @@ jobs:
 
 
       run: |
-        BATCH_ID=Batch1 python scraper/scraper/Listing_Url/simultaneous.py
+        BATCH_ID=Batch3 python scraper/scraper/Listing_Url/simultaneous.py

@@ -106,6 +106,10 @@ credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CRE
 service = build("sheets", "v4", credentials=credentials)
 
 
+# Add Run_Date column to the final_results
+for result in final_results:
+    result['Run_Date'] = datetime.now().strftime('%Y-%m-%d')
+
 df = pd.DataFrame(final_results)
 
 # Clear all data below header in the "Review" sheet
@@ -115,10 +119,9 @@ service.spreadsheets().values().clear(
 ).execute()
 
 # Write new data to the "Review" sheet starting from row 2
-service.spreadsheets().values().update(
+service.spreadsheets().values().append(
     spreadsheetId=SHEET_ID,
     range=f"{MARKETDATA_SHEET_NAME}!A2",
     valueInputOption="RAW",
     body={"values": df.values.tolist()}
 ).execute()
-

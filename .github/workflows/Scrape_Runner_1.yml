@@ -1,4 +1,4 @@
-name: Runner 1
+name: Run Batch 1
 
 on:
   workflow_dispatch:

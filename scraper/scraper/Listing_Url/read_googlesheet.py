@@ -27,6 +27,17 @@ values = result.get('values', [])
 # Convert Google Sheets data to DataFrame
 df = pd.DataFrame(values[1:], columns=values[0])
 
+# Debugging: print out the column names to verify
+print("Column names in DataFrame:", df.columns.tolist())
+
+# Ensure column names are correct
+expected_columns = ['JobID', 'InfoID', 'StartDate', 'EndDate', 'URL']
+missing_columns = [col for col in expected_columns if col not in df.columns]
+
+if missing_columns:
+    print(f"Missing columns in DataFrame: {missing_columns}")
+    sys.exit(1)
+
 # Generate JSON format
 data = {}
 batch_size = 3

@@ -7,7 +7,7 @@
         "orig_price_per_night": 0.0,
         "cleaning_fee": 0,
         "service_fee": 0,
-        "total_price": 1241.0,
+        "total_price": 0.0,
         "price_per_night": 414.0,
         "check_in_date": "2024-10-14",
         "check_out_date": "2024-10-17"
@@ -20,7 +20,7 @@
         "orig_price_per_night": 0.0,
         "cleaning_fee": 0,
         "service_fee": 0,
-        "total_price": 5497.0,
+        "total_price": 0.0,
         "price_per_night": 1832.0,
         "check_in_date": "2024-07-22",
         "check_out_date": "2024-07-25"
@@ -33,7 +33,7 @@
         "orig_price_per_night": 0.0,
         "cleaning_fee": 250.0,
         "service_fee": 131.0,
-        "total_price": 1250.0,
+        "total_price": 0.0,
         "price_per_night": 417.0,
         "check_in_date": "2024-07-29",
         "check_out_date": "2024-08-01"

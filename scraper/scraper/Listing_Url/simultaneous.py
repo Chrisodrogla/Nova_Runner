@@ -112,11 +112,6 @@ for result in final_results:
 
 df = pd.DataFrame(final_results)
 
-# Clear all data below header in the "Review" sheet
-service.spreadsheets().values().clear(
-    spreadsheetId=SHEET_ID,
-    range=f"{MARKETDATA_SHEET_NAME}!A2:Z"
-).execute()
 
 # Write new data to the "Review" sheet starting from row 2
 service.spreadsheets().values().append(

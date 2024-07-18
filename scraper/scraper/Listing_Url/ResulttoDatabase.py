@@ -7,7 +7,7 @@ import pyodbc
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-JobTable = 'JobTable_Results2'
+JobTable = 'JobTable_Results'
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
@@ -52,15 +52,16 @@ connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
-# Insert data into SQL Server table
-for index, row in df.iterrows():
-    cursor.execute("""
-        INSERT INTO JobDataResults (JobID, InfoID, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, row['JobID'], row['InfoID'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
-
-# Commit changes
-conn.commit()
+# Insert data into SQL Server table in batches
+batch_size = 100000  # Adjust batch size as needed
+for start in range(0, len(df), batch_size):
+    batch = df.iloc[start:start+batch_size]
+    for index, row in batch.iterrows():
+        cursor.execute("""
+            INSERT INTO JobDataResults (JobID, InfoID, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, row['JobID'], row['InfoID'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
+    conn.commit()
 
 # Close connection
 conn.close()

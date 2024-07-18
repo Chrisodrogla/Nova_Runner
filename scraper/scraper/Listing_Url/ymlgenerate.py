@@ -1,7 +1,7 @@
 import os
 
 # Define the range of file numbers
-start = 21
+start = 1
 end = 108
 
 # Directory where the files will be created

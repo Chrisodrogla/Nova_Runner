@@ -29,6 +29,5 @@ jobs:
       env:
         GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
 
-
       run: |
         BATCH_ID=Batch21 python scraper/scraper/Listing_Url/simultaneous.py

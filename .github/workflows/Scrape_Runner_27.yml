@@ -1,9 +1,9 @@
-name: Runner 27
+name: Run Batch 27
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '15 16 * * *'  # Runs at 4:15 PM UTC
+  schedule:
+    - cron: "10 14 * * *" # 10:10 PM UTC+8 (14:10 UTC)
 
 jobs:
   run-scraper:
@@ -22,7 +22,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install gspread oauth2client pandas gspread-dataframe
+        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
     - name: Run scraper script
+      env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+
       run: |
         BATCH_ID=Batch27 python scraper/scraper/Listing_Url/simultaneous.py

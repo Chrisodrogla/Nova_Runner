@@ -95,7 +95,7 @@ seconds = int(elapsed_time % 60)
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-MARKETDATA_SHEET_NAME = 'JobTable_Results'
+MARKETDATA_SHEET_NAME = 'JobTable_Results2'
 
 
 # Get Google Sheets credentials from environment variable

@@ -2,11 +2,9 @@ import os
 
 # Define the range of file numbers
 start = 1
-<<<<<<< HEAD
-end = 20
-=======
+
 end = 108
->>>>>>> b1d7eb089ac72bb3f1764d21412399a95d66d525
+
 
 # Directory where the files will be created
 directory = r"C:\Users\calgo\Github_vscode_Cloned\Nova_Runner\.github\workflows"

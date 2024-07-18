@@ -1,11 +1,9 @@
 import pandas as pd
-import sys
 import json
 import os
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
-import datetime
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
@@ -32,20 +30,20 @@ print("Column names in DataFrame:", df.columns.tolist())
 # Ensure column names are correct
 columns = ['JobID', 'InfoID', 'host_name', 'listingId', 'Url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'StartDate', 'EndDate', 'Run_Date']
 
-# Ensure that columns match the expected order and names
-df = df[columns]
+# Rename DataFrame columns to match SQL table column names
+df.columns = ['JobID', 'InfoID', 'HostName', 'ListingID', 'URL', 'OrigPricePerNight', 'CleaningFee', 'ServiceFee', 'TotalPrice', 'PricePerNight', 'StartDate', 'EndDate', 'RunDate']
 
 # Convert data types to match SQL table
 df['JobID'] = df['JobID'].astype(int)
 df['InfoID'] = df['InfoID'].astype(int)
-df['orig_price_per_night'] = df['orig_price_per_night'].astype(float)
-df['cleaning_fee'] = df['cleaning_fee'].astype(float)
-df['service_fee'] = df['service_fee'].astype(float)
-df['total_price'] = df['total_price'].astype(float)
-df['price_per_night'] = df['price_per_night'].astype(float)
+df['OrigPricePerNight'] = df['OrigPricePerNight'].astype(float)
+df['CleaningFee'] = df['CleaningFee'].astype(float)
+df['ServiceFee'] = df['ServiceFee'].astype(float)
+df['TotalPrice'] = df['TotalPrice'].astype(float)
+df['PricePerNight'] = df['PricePerNight'].astype(float)
 df['StartDate'] = pd.to_datetime(df['StartDate'])
 df['EndDate'] = pd.to_datetime(df['EndDate'])
-df['Run_Date'] = pd.to_datetime(df['Run_Date'])
+df['RunDate'] = pd.to_datetime(df['RunDate'])
 
 # Connection string from environment variable
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
@@ -57,9 +55,9 @@ cursor = conn.cursor()
 # Insert data into SQL Server table
 for index, row in df.iterrows():
     cursor.execute("""
-        INSERT INTO JobDataResults (JobID, InfoID, host_name, listingId, Url, orig_price_per_night, cleaning_fee, service_fee, total_price, price_per_night, StartDate, EndDate, Run_Date)
+        INSERT INTO JobDataResults (JobID, InfoID, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, row['JobID'], row['InfoID'], row['host_name'], row['listingId'], row['Url'], row['orig_price_per_night'], row['cleaning_fee'], row['service_fee'], row['total_price'], row['price_per_night'], row['StartDate'], row['EndDate'], row['Run_Date'])
+    """, row['JobID'], row['InfoID'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
 
 # Commit changes
 conn.commit()

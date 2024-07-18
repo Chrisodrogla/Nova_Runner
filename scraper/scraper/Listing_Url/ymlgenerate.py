@@ -17,8 +17,8 @@ template = """name: Run Batch {batch_number}
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "40 3 * * *" # 11:40 AM PH time
+  # schedule:
+  #   - cron: "40 3 * * *" # 11:40 AM PH time
 
 jobs:
   run-scraper:

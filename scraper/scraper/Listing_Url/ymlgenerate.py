@@ -1,8 +1,8 @@
 import os
 
 # Define the range of file numbers
-start = 21
-end = 108
+start = 1
+end = 20
 
 # Directory where the files will be created
 directory = r"C:\Users\calgo\Github_vscode_Cloned\Nova_Runner\.github\workflows"
@@ -16,7 +16,7 @@ template = """name: Run Batch {batch_number}
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 14 * * *" # 10:10 PM UTC+8 (14:10 UTC)
+    - cron: "40 3 * * *" # 11:40 AM PH time
 
 jobs:
   run-scraper:

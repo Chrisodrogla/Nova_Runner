@@ -3,7 +3,7 @@ name: Run Batch 16
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 14 * * *" # 10:10 PM UTC+8 (14:10 UTC)
+    - cron: "40 3 * * *" # 11:40 AM PH time
 
 jobs:
   run-scraper:
@@ -28,7 +28,6 @@ jobs:
     - name: Run scraper script
       env:
         GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
-
 
       run: |
         BATCH_ID=Batch16 python scraper/scraper/Listing_Url/simultaneous.py

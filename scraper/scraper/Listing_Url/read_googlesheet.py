@@ -31,7 +31,7 @@ df = pd.DataFrame(values[1:], columns=values[0])
 print("Column names in DataFrame:", df.columns.tolist())
 
 # Ensure column names are correct
-expected_columns = ['JobID', 'InfoID', 'StartDate', 'EndDate', 'URL']
+expected_columns = ['JobID', 'InfoID', 'StartDate', 'EndDate', 'URL','Status']
 missing_columns = [col for col in expected_columns if col not in df.columns]
 
 if missing_columns:

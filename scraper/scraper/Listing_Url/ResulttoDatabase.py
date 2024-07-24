@@ -7,7 +7,7 @@ import pyodbc
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-JobTable = 'JobTable_Results2'
+JobTable = 'JobTable_Results'
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
@@ -51,6 +51,10 @@ connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 # Establish SQL Server connection
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
+
+# Delete all data from the SQL Server table
+cursor.execute("DELETE FROM JobDataResults")
+conn.commit()
 
 # Insert data into SQL Server table in batches
 batch_size = 100000  # Adjust batch size as needed

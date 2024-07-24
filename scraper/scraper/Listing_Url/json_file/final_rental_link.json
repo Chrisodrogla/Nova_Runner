@@ -6648,11 +6648,6 @@
             "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-10-14&checkout=2024-10-17&adults=16&search_mode=regular_search&min_bedrooms=7&query=Kissimmee%2C%20Florida%2C%20United%20States",
             "JobID": "1288",
             "InfoID": "99"
-        },
-        {
-            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-10-14&checkout=2024-10-17&adults=16&search_mode=regular_search&min_bedrooms=7&query=Kissimmee%2C%20Florida%2C%20United%20States",
-            "JobID": "123456",
-            "InfoID": "100"
         }
     ]
 }

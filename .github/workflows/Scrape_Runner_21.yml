@@ -2,8 +2,8 @@ name: Run Batch 21
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "40 3 * * *" # 11:40 AM PH time
+  schedule:
+    - cron: "30 15 * * *" # 11:30 PM PH time
 
 jobs:
   run-scraper:

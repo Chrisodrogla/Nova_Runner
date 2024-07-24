@@ -13,9 +13,9 @@ import pandas as pd
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
+
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
-
 
 with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') as f:
     data = json.load(f)
@@ -88,15 +88,9 @@ elapsed_time = end_time - start_time
 minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
-# Write the new data to the JSON file, replacing the existing data
-# with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
-#     json.dump(final_results, updated_file, indent=4)
-
-
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-MARKETDATA_SHEET_NAME = 'JobTable_Results2'
-
+MARKETDATA_SHEET_NAMES = ['JobTable_Results', 'JobTable_Results2', 'JobTable_Results3']
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
@@ -105,18 +99,33 @@ credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CRE
 # Create Google Sheets API service
 service = build("sheets", "v4", credentials=credentials)
 
-
 # Add Run_Date column to the final_results
 for result in final_results:
     result['Run_Date'] = datetime.now().strftime('%Y-%m-%d')
 
 df = pd.DataFrame(final_results)
 
+def get_sheet_cell_count(sheet_name):
+    sheet = service.spreadsheets().get(spreadsheetId=SHEET_ID, ranges=[sheet_name], includeGridData=False).execute()
+    sheet_info = sheet['sheets'][0]
+    return sheet_info['properties']['gridProperties']['rowCount'] * sheet_info['properties']['gridProperties']['columnCount']
 
-# Write new data to the "Review" sheet starting from row 2
-service.spreadsheets().values().append(
-    spreadsheetId=SHEET_ID,
-    range=f"{MARKETDATA_SHEET_NAME}!A2",
-    valueInputOption="RAW",
-    body={"values": df.values.tolist()}
-).execute()
+def append_to_sheet(sheet_name, data):
+    service.spreadsheets().values().append(
+        spreadsheetId=SHEET_ID,
+        range=f"{sheet_name}!A2",
+        valueInputOption="RAW",
+        body={"values": data}
+    ).execute()
+
+# Check each sheet for available space and append data accordingly
+for sheet_name in MARKETDATA_SHEET_NAMES:
+    try:
+        cell_count = get_sheet_cell_count(sheet_name)
+        if cell_count + df.size <= 10000000:
+            append_to_sheet(sheet_name, df.values.tolist())
+            break
+    except Exception as e:
+        error_message = f"Error occurred: {e} while appending data to {sheet_name}"
+        logger.error(error_message)
+        errors.append(error_message)

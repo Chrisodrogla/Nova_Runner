@@ -7,7 +7,7 @@ import pyodbc
 
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-JobTable = 'JobTable_Results2'
+JobTable = 'JobTable_Results'
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")

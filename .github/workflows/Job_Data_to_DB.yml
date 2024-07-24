@@ -1,7 +1,9 @@
 name: JobdataResult to SQL
 
 on:
-  workflow_dispatch: # This allows manual triggering of the workflow
+  workflow_dispatch:
+#  schedule:
+#    - cron: "0 20 * * *" runs at 4:00 am ph time
 
 jobs:
   run_python_script:

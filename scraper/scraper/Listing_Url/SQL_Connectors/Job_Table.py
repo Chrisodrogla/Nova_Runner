@@ -38,7 +38,7 @@ df['URL'] = df['URL'].astype(str)
 df['Status'] = df['Status'].astype(str)
 
 # Connection string from environment variable
-connection_string = os.environ.get('SECRET_SQL_CONNECTION_STRING')
+connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
 # Establish SQL Server connection
 conn = pyodbc.connect(connection_string)

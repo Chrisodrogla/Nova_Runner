@@ -40,7 +40,7 @@ if missing_columns:
 
 # Generate JSON format
 data = {}
-batch_size = 12
+batch_size = 6
 batch_number = 1
 
 for i in range(0, len(df), batch_size):

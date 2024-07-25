@@ -18,9 +18,6 @@ sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SHEET_ID, range=LISTINGS_TABLE).execute()
 values = result.get('values', [])
 
-# Print values to understand structure
-print("Data read from Google Sheets:", values)
-
 # Check if values have data and headers
 if len(values) > 0:
     df = pd.DataFrame(values[1:], columns=values[0])
@@ -37,9 +34,15 @@ if len(values) > 0:
     # Convert data types to match SQL table
     df['ListingID'] = df['ListingID'].astype(str)
     df['PropertyID'] = df['PropertyID'].astype(str)
-    df['IsMainListing'] = pd.to_numeric(df['IsMainListing'], errors='coerce')  # Convert to float to handle potential decimal values (0 or 1)
-    df['DateCreated'] = pd.to_datetime(df['DateCreated'], errors='coerce')  # Handle possible invalid dates
-    df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], errors='coerce')  # Handle possible invalid dates
+
+    # Convert 'IsMainListing' to BIT, i.e., 0 or 1
+    df['IsMainListing'] = df['IsMainListing'].map(
+        lambda x: 1 if x in [1, '1', 'True', True] else 0 if x in [0, '0', 'False', False] else None)
+
+    # Convert to DATE, with errors='coerce' to handle invalid dates
+    df['DateCreated'] = pd.to_datetime(df['DateCreated'], format='%Y-%m-%d', errors='coerce')
+    df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], format='%Y-%m-%d', errors='coerce')
+
     df['Status'] = df['Status'].astype(str)
 
     # Connection string from environment variable using secrets on github
@@ -52,12 +55,13 @@ if len(values) > 0:
     # Insert data into SQL Server table in batches
     batch_size = 100000
     for start in range(0, len(df), batch_size):
-        batch = df.iloc[start:start+batch_size]
+        batch = df.iloc[start:start + batch_size]
         for index, row in batch.iterrows():
             cursor.execute("""
                 INSERT INTO Listings (ListingID, PropertyID, IsMainListing, DateCreated, DateUpdated, Status)
                 VALUES (?, ?, ?, ?, ?, ?)
-            """, row['ListingID'], row['PropertyID'], row['IsMainListing'], row['DateCreated'], row['DateUpdated'], row['Status'])
+            """, row['ListingID'], row['PropertyID'], row['IsMainListing'], row['DateCreated'], row['DateUpdated'],
+                           row['Status'])
         conn.commit()
 
     # Close connection

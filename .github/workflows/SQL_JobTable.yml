@@ -1,4 +1,4 @@
-name: Listings to SQL
+name: Jobtable to SQL
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: JobdataResult to SQL
+name: Properties to SQL
 
 on:
   workflow_dispatch:

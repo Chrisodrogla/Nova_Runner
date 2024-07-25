@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
 
-SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
+SHEET_ID = '18qCzoA5vi0EKlBf1s8sgC8F1NhSLxD_7L2rNAQcOkVY'
 PROPERTIES_TABLE = 'Properties'
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))

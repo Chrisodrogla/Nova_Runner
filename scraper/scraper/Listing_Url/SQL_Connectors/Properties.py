@@ -22,48 +22,49 @@ df = pd.DataFrame(values[1:], columns=values[0])
 
 print("Column names in DataFrame:", df.columns.tolist())
 
-# Adjust column names based on actual DataFrame columns
-# Verify the column names that are actually in the DataFrame
-actual_columns = df.columns.tolist()
-print("Actual columns:", actual_columns)
-
-# Define the correct column names based on actual columns
-# Replace '...' with actual column names as per your DataFrame
+# Define the correct column names based on actual DataFrame columns
 column_mapping = {
     'PropertyID': 'PropertyID',
     'PropertyName': 'PropertyName',
-    'InfoID': 'InfoID',  # Adjust these as needed
     'HostName': 'HostName',
-    'CoHostName': 'CoHostName',
-    'NumberOfBedRooms': 'NumberOfBedRooms',
+    'NumberOfLivingRooms': 'NumberOfBedRooms',  # Assumed mapping
     'NumberOfBathrooms': 'NumberOfBathrooms',
     'NumberOfGuests': 'NumberOfGuests',
-    'ResortName': 'ResortName',
     'City': 'City',
     'State': 'State',
     'Country': 'Country',
-    'SearchRange': 'SearchRange',
-    'MainListingID': 'MainListingID'
+    'MainListingID': 'MainListingID',
+    'Url': 'URL'  # Handle extra column or adjust as needed
 }
 
-# Apply the correct column names
+# Rename columns in DataFrame
 df.rename(columns=column_mapping, inplace=True)
 
 # Convert data types to match SQL table
 df['PropertyID'] = df['PropertyID'].astype(str)
 df['PropertyName'] = df['PropertyName'].astype(str)
-df['InfoID'] = df['InfoID'].astype(str)
 df['HostName'] = df['HostName'].astype(str)
-df['CoHostName'] = df['CoHostName'].astype(str)
 df['NumberOfBedRooms'] = df['NumberOfBedRooms'].astype(float)  # Use float in case there are decimals
 df['NumberOfBathrooms'] = df['NumberOfBathrooms'].astype(float)  # Already float
 df['NumberOfGuests'] = df['NumberOfGuests'].astype(float)  # Use float in case there are decimals
-df['ResortName'] = df['ResortName'].astype(str)
 df['City'] = df['City'].astype(str)
 df['State'] = df['State'].astype(str)
 df['Country'] = df['Country'].astype(str)
-df['SearchRange'] = df['SearchRange'].astype(float)  # Use float in case there are decimals
-df['MainListingID'] = df['MainListingID'].astype(str)
+
+# Handle missing or empty MainListingID
+df['MainListingID'] = df['MainListingID'].replace('', None)  # Replace empty strings with None (NULL)
+
+# Handle missing columns
+# Add any missing columns with default values if necessary
+for column in ['InfoID', 'CoHostName', 'ResortName', 'SearchRange']:
+    if column not in df.columns:
+        df[column] = None  # Or set a default value
+
+# Convert new columns to appropriate data types
+df['InfoID'] = df['InfoID'].astype(str)
+df['CoHostName'] = df['CoHostName'].astype(str)
+df['ResortName'] = df['ResortName'].astype(str)
+df['SearchRange'] = df['SearchRange'].astype(float)  # Use float if needed
 
 # Connection string from environment variable using secrets on github
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')

@@ -5,57 +5,53 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
 
-
-SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-JobTable = 'JobTable_Results'
+# Google Sheets details
+SHEET_ID = '18qCzoA5vi0EKlBf1s8sgC8F1NhSLxD_7L2rNAQcOkVY'
+PROPERTIES_RANGE = 'Properties'
+LISTINGS_RANGE = 'Listings'
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
+
+
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
-#Google Sheets API service
 service = build("sheets", "v4", credentials=credentials)
 
-#Read data from Google Sheets
-sheet = service.spreadsheets()
-result = sheet.values().get(spreadsheetId=SHEET_ID, range=JobTable).execute()
-values = result.get('values', [])
 
-df = pd.DataFrame(values[1:], columns=values[0])
+def read_sheet_data(sheet_id, range_name):
+    sheet = service.spreadsheets()
+    result = sheet.values().get(spreadsheetId=sheet_id, range=range_name).execute()
+    values = result.get('values', [])
+    if not values:
+        return pd.DataFrame()
+    return pd.DataFrame(values[1:], columns=values[0])
 
-print("Column names in DataFrame:", df.columns.tolist())
 
-columns = ['JobID', 'InfoID', 'host_name', 'listingId', 'Url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'StartDate', 'EndDate', 'Run_Date']
 
-df.columns = ['JobID', 'InfoID', 'HostName', 'ListingID', 'URL', 'OrigPricePerNight', 'CleaningFee', 'ServiceFee', 'TotalPrice', 'PricePerNight', 'StartDate', 'EndDate', 'RunDate']
+properties_df = read_sheet_data(SHEET_ID, PROPERTIES_RANGE)
+listings_df = read_sheet_data(SHEET_ID, LISTINGS_RANGE)
 
-# Convert data types to match SQL table
-df['JobID'] = df['JobID'].astype(int)
-df['InfoID'] = df['InfoID'].astype(int)
-df['OrigPricePerNight'] = df['OrigPricePerNight'].astype(float)
-df['CleaningFee'] = df['CleaningFee'].astype(float)
-df['ServiceFee'] = df['ServiceFee'].astype(float)
-df['TotalPrice'] = df['TotalPrice'].astype(float)
-df['PricePerNight'] = df['PricePerNight'].astype(float)
-df['StartDate'] = pd.to_datetime(df['StartDate'])
-df['EndDate'] = pd.to_datetime(df['EndDate'])
-df['RunDate'] = pd.to_datetime(df['RunDate'])
 
-# Connection string from environment variable using secrets on github
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Establish SQL Server connection
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
-# Insert data into SQL Server table in batches
-batch_size = 100000 
-for start in range(0, len(df), batch_size):
-    batch = df.iloc[start:start+batch_size]
-    for index, row in batch.iterrows():
-        cursor.execute("""
-            INSERT INTO JobDataResults (JobID, InfoID, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, row['JobID'], row['InfoID'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
+
+def insert_data_to_sql(table_name, df):
+    columns = ', '.join(df.columns)
+    placeholders = ', '.join(['?'] * len(df.columns))
+    insert_query = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
+
+    for row in df.itertuples(index=False, name=None):
+        cursor.execute(insert_query, row)
+
     conn.commit()
 
-# Close connection
+
+
+insert_data_to_sql('Properties', properties_df)
+
+
+insert_data_to_sql('Listings', listings_df)
+
 conn.close()

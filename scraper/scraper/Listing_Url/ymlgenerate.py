@@ -3,7 +3,7 @@ import os
 # Define the range of file numbers
 start = 1
 
-end = 108
+end = 215
 
 
 # Directory where the files will be created
@@ -18,7 +18,7 @@ template = """name: Run Batch {batch_number}
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 15 * * *" # 11:30 PM PH time
+    - cron: "30 2 * * *" # 11:30 PM PH time
 
 jobs:
   run-scraper:

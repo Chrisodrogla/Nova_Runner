@@ -1,4 +1,4 @@
-name: Properties to SQL
+name: Listings to SQL
 
 on:
   workflow_dispatch:

@@ -18,41 +18,49 @@ sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SHEET_ID, range=LISTINGS_TABLE).execute()
 values = result.get('values', [])
 
-df = pd.DataFrame(values[1:], columns=values[0])
+# Print values to understand structure
+print("Data read from Google Sheets:", values)
 
-print("Column names in DataFrame:", df.columns.tolist())
+# Check if values have data and headers
+if len(values) > 0:
+    df = pd.DataFrame(values[1:], columns=values[0])
 
-# Rename columns in DataFrame to match expected SQL table schema
-df.columns = ['ListingID', 'PropertyID', 'IsMainListing', 'DateCreated', 'DateUpdated', 'Status']
+    # Print column names to verify
+    print("Column names in DataFrame:", df.columns.tolist())
 
-# Replace blank values with None (NULL) for columns
-df = df.replace('', None)
+    # Rename columns in DataFrame to match expected SQL table schema
+    df.columns = ['ListingID', 'PropertyID', 'IsMainListing', 'DateCreated', 'DateUpdated', 'Status']
 
-# Convert data types to match SQL table
-df['ListingID'] = df['ListingID'].astype(str)
-df['PropertyID'] = df['PropertyID'].astype(str)
-df['IsMainListing'] = df['IsMainListing'].astype(float)  # Convert to float to handle potential decimal values (0 or 1)
-df['DateCreated'] = pd.to_datetime(df['DateCreated'], errors='coerce')  # Handle possible invalid dates
-df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], errors='coerce')  # Handle possible invalid dates
-df['Status'] = df['Status'].astype(str)
+    # Replace blank values with None (NULL) for columns
+    df = df.replace('', None)
 
-# Connection string from environment variable using secrets on github
-connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
+    # Convert data types to match SQL table
+    df['ListingID'] = df['ListingID'].astype(str)
+    df['PropertyID'] = df['PropertyID'].astype(str)
+    df['IsMainListing'] = pd.to_numeric(df['IsMainListing'], errors='coerce')  # Convert to float to handle potential decimal values (0 or 1)
+    df['DateCreated'] = pd.to_datetime(df['DateCreated'], errors='coerce')  # Handle possible invalid dates
+    df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], errors='coerce')  # Handle possible invalid dates
+    df['Status'] = df['Status'].astype(str)
 
-# Establish SQL Server connection
-conn = pyodbc.connect(connection_string)
-cursor = conn.cursor()
+    # Connection string from environment variable using secrets on github
+    connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Insert data into SQL Server table in batches
-batch_size = 100000
-for start in range(0, len(df), batch_size):
-    batch = df.iloc[start:start+batch_size]
-    for index, row in batch.iterrows():
-        cursor.execute("""
-            INSERT INTO Listings (ListingID, PropertyID, IsMainListing, DateCreated, DateUpdated, Status)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, row['ListingID'], row['PropertyID'], row['IsMainListing'], row['DateCreated'], row['DateUpdated'], row['Status'])
-    conn.commit()
+    # Establish SQL Server connection
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
 
-# Close connection
-conn.close()
+    # Insert data into SQL Server table in batches
+    batch_size = 100000
+    for start in range(0, len(df), batch_size):
+        batch = df.iloc[start:start+batch_size]
+        for index, row in batch.iterrows():
+            cursor.execute("""
+                INSERT INTO Listings (ListingID, PropertyID, IsMainListing, DateCreated, DateUpdated, Status)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, row['ListingID'], row['PropertyID'], row['IsMainListing'], row['DateCreated'], row['DateUpdated'], row['Status'])
+        conn.commit()
+
+    # Close connection
+    conn.close()
+else:
+    print("No data found in the specified Google Sheets range.")

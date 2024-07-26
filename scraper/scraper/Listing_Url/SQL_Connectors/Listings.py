@@ -18,14 +18,11 @@ sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SHEET_ID, range=LISTINGS_TABLE).execute()
 values = result.get('values', [])
 
-# Print raw values for debugging
 print("Raw values from Google Sheets:", values)
-
-# Check if there are headers
 if not values or len(values) < 2:
     raise ValueError("Data from Google Sheets is empty or missing headers")
 
-# Create DataFrame
+
 try:
     df = pd.DataFrame(values[1:], columns=values[0])
 except ValueError as e:
@@ -34,27 +31,21 @@ except ValueError as e:
 
 print("Column names in DataFrame:", df.columns.tolist())
 
-# Rename columns in DataFrame
+
 df.columns = ['ListingID', 'PropertyID', 'IsMainListing', 'DateCreated', 'DateUpdated', 'Status']
 
-# Handle missing or blank values
+
 df['ListingID'] = df['ListingID'].astype(str)
 df['PropertyID'] = df['PropertyID'].astype(str)
-
-# Replace blank or missing values in 'IsMainListing' with a default value (e.g., 0) or None
-df['IsMainListing'] = df['IsMainListing'].replace('', None).astype(float)  # Convert to float, handle None as NULL
-
-# Replace blank or invalid dates with None
-df['DateCreated'] = pd.to_datetime(df['DateCreated'], errors='coerce')  # Coerce errors to NaT (not a time)
-df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], errors='coerce')  # Coerce errors to NaT (not a time)
-
-# Replace blank values in 'Status' with None or a default value (e.g., 'Unknown')
+df['IsMainListing'] = df['IsMainListing'].replace('', None).astype(float)
+df['DateCreated'] = pd.to_datetime(df['DateCreated'], errors='coerce')
+df['DateUpdated'] = pd.to_datetime(df['DateUpdated'], errors='coerce')
 df['Status'] = df['Status'].replace('', None).astype(str)
 
-# Connection string from environment variable using secrets on github
+
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Establish SQL Server connection
+
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 

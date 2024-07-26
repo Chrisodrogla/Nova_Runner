@@ -22,49 +22,46 @@ df = pd.DataFrame(values[1:], columns=values[0])
 
 print("Column names in DataFrame:", df.columns.tolist())
 
-# Define the correct column names based on actual DataFrame columns
+
 column_mapping = {
     'PropertyID': 'PropertyID',
     'PropertyName': 'PropertyName',
     'HostName': 'HostName',
-    'NumberOfLivingRooms': 'NumberOfBedRooms',  # Assumed mapping
+    'NumberOfLivingRooms': 'NumberOfBedRooms',
     'NumberOfBathrooms': 'NumberOfBathrooms',
     'NumberOfGuests': 'NumberOfGuests',
     'City': 'City',
     'State': 'State',
     'Country': 'Country',
     'MainListingID': 'MainListingID',
-    'Url': 'URL'  # Handle extra column or adjust as needed
+    'Url': 'URL'
 }
 
-# Rename columns in DataFrame
-df.rename(columns=column_mapping, inplace=True)
 
-# Convert data types to match SQL table
+df.rename(columns=column_mapping, inplace=True)
 df['PropertyID'] = df['PropertyID'].astype(str)
 df['PropertyName'] = df['PropertyName'].astype(str)
 df['HostName'] = df['HostName'].astype(str)
-df['NumberOfBedRooms'] = df['NumberOfBedRooms'].astype(float)  # Use float in case there are decimals
-df['NumberOfBathrooms'] = df['NumberOfBathrooms'].astype(float)  # Already float
-df['NumberOfGuests'] = df['NumberOfGuests'].astype(float)  # Use float in case there are decimals
+df['NumberOfBedRooms'] = df['NumberOfBedRooms'].astype(float)
+df['NumberOfBathrooms'] = df['NumberOfBathrooms'].astype(float)
+df['NumberOfGuests'] = df['NumberOfGuests'].astype(float)
 df['City'] = df['City'].astype(str)
 df['State'] = df['State'].astype(str)
 df['Country'] = df['Country'].astype(str)
 
 # Handle missing or empty MainListingID
-df['MainListingID'] = df['MainListingID'].replace('', None)  # Replace empty strings with None (NULL)
+df['MainListingID'] = df['MainListingID'].replace('', None)
 
-# Handle missing columns
-# Add any missing columns with default values if necessary
+
 for column in ['InfoID', 'CoHostName', 'ResortName', 'SearchRange']:
     if column not in df.columns:
-        df[column] = None  # Or set a default value
+        df[column] = None
 
-# Convert new columns to appropriate data types
+
 df['InfoID'] = df['InfoID'].astype(str)
 df['CoHostName'] = df['CoHostName'].astype(str)
 df['ResortName'] = df['ResortName'].astype(str)
-df['SearchRange'] = df['SearchRange'].astype(float)  # Use float if needed
+df['SearchRange'] = df['SearchRange'].astype(float)
 
 # Connection string from environment variable using secrets on github
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')

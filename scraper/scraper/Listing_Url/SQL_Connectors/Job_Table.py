@@ -14,8 +14,6 @@ credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CRE
 
 # Google Sheets API service
 service = build("sheets", "v4", credentials=credentials)
-
-# Read data from Google Sheets
 sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SHEET_ID, range=SHEET_NAME).execute()
 values = result.get('values', [])
@@ -23,10 +21,8 @@ values = result.get('values', [])
 # Convert to DataFrame
 df = pd.DataFrame(values[1:], columns=values[0])
 
-# Print column names for debugging
-print("Column names in DataFrame:", df.columns.tolist())
 
-# Ensure column names are correct
+print("Column names in DataFrame:", df.columns.tolist())
 df.columns = ['JobID', 'InfoID', 'StartDate', 'EndDate', 'URL', 'Status']
 
 # Convert data types to match SQL table
@@ -37,14 +33,13 @@ df['EndDate'] = pd.to_datetime(df['EndDate'], errors='coerce')
 df['URL'] = df['URL'].astype(str)
 df['Status'] = df['Status'].astype(str)
 
-# Connection string from environment variable
+
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Establish SQL Server connection
+# this will connect to sql server
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
-# Insert data into SQL Server table in batches
 batch_size = 100000
 for start in range(0, len(df), batch_size):
     batch = df.iloc[start:start+batch_size]

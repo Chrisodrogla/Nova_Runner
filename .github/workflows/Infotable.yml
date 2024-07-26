@@ -1,0 +1,32 @@
+name: SQL Infotable
+
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: "40 8 * * *" # 12:40 PM PH time
+jobs:
+  run_python_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas selenium pyodbc
+        pip install gspread oauth2client pandas gspread-dataframe
+        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+    - name: Run scraper script
+      env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+        SECRET_CHRISTIANSQL_STRING: ${{ secrets.SECRET_CHRISTIANSQL_STRING }}
+      run: |
+        python scraper/scraper/Listing_Url/SQL_Connectors/generate_info.py

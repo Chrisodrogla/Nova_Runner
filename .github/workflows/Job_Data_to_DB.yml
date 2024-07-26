@@ -3,8 +3,7 @@ name: JobdataResult to SQL
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *" runs at 4:00 am ph time
-
+    - cron: "40 8 * * *" # 12:40 PM PH time
 jobs:
   run_python_script:
     runs-on: ubuntu-latest

@@ -41,10 +41,10 @@ for i in range(0, len(df), batch_size):
     data[batch_key] = []
     for _, row in batch.iterrows():
         start_date = row['StartDate']
-        if row['Status'] == 'PASSED' or start_date < current_date:
-            # Update Status to 'PASSED' if the start date is in the past and it's not already 'PASSED'
-            if row['Status'] != 'PASSED' and start_date < current_date:
-                update_query = f"UPDATE JobTable SET Status = 'PASSED' WHERE JobID = ?"
+        if row['Status'] == 'PAST' or start_date < current_date:
+            # Update Status to 'PAST' if the start date is in the past and it's not already 'PAST'
+            if row['Status'] != 'PAST' and start_date < current_date:
+                update_query = f"UPDATE JobTable SET Status = 'PAST' WHERE JobID = ?"
                 cursor = conn.cursor()
                 cursor.execute(update_query, row['JobID'])
                 conn.commit()

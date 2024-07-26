@@ -47,7 +47,7 @@ conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
 # Insert data into SQL Server table in batches
-batch_size = 100000
+batch_size = 500000
 for start in range(0, len(df), batch_size):
     batch = df.iloc[start:start+batch_size]
     for index, row in batch.iterrows():

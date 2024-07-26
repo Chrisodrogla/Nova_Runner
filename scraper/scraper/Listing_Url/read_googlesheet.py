@@ -32,7 +32,7 @@ current_date = datetime.now().date()
 
 # Generate JSON format
 data = {}
-batch_size = 3
+batch_size = 12
 batch_number = 1
 
 for i in range(0, len(df), batch_size):

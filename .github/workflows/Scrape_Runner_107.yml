@@ -3,7 +3,7 @@ name: Run Batch 107
 on:
   workflow_dispatch:
   schedule:
-    - cron: "40 7 * * *" # 11:40 AM PH time
+    - cron: "40 4 * * *" # 12:40 PM PH time
 jobs:
   run-scraper:
     runs-on: ubuntu-latest

@@ -9,7 +9,6 @@ connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
 # Establish SQL Server connection
 conn = pyodbc.connect(connection_string)
-cursor = conn.cursor()
 
 # SQL query to fetch data from JobTable
 query = "SELECT JobID, InfoID, StartDate, EndDate, URL, Status FROM JobTable"
@@ -29,7 +28,7 @@ if missing_columns:
     sys.exit(1)
 
 # Get current date
-current_date = datetime.now()
+current_date = datetime.now().date()
 
 # Generate JSON format
 data = {}
@@ -41,12 +40,13 @@ for i in range(0, len(df), batch_size):
     batch_key = f"Batch{batch_number}"
     data[batch_key] = []
     for _, row in batch.iterrows():
-        start_date = datetime.strptime(row['StartDate'], '%Y-%m-%d')  # Adjust the date format if necessary
+        start_date = row['StartDate']
         if row['Status'] == 'PASSED' or start_date < current_date:
             # Update Status to 'PASSED' if the start date is in the past and it's not already 'PASSED'
             if row['Status'] != 'PASSED' and start_date < current_date:
-                update_query = f"UPDATE JobTable SET Status = 'PASSED' WHERE JobID = {row['JobID']}"
-                cursor.execute(update_query)
+                update_query = f"UPDATE JobTable SET Status = 'PASSED' WHERE JobID = ?"
+                cursor = conn.cursor()
+                cursor.execute(update_query, row['JobID'])
                 conn.commit()
             continue
         data[batch_key].append({

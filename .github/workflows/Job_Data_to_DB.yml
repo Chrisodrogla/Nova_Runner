@@ -2,8 +2,8 @@ name: JobdataResult to SQL
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: "0 20 * * *" runs at 4:00 am ph time
+  schedule:
+    - cron: "0 8 * * *" runs at 4:00 am ph time
 
 jobs:
   run_python_script:

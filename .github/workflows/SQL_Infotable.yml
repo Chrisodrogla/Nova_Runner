@@ -1,4 +1,4 @@
-name: SQL Generate Infotable
+name: Generate Infotable to SQL
 
 on:
   workflow_dispatch:

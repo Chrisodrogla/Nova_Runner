@@ -21,7 +21,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client pyodbc
 
     - name: Run Python Script
       env:

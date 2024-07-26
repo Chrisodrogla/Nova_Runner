@@ -2,10 +2,9 @@ import pandas as pd
 import os
 import pyodbc
 
-# Connection string from environment variable using secrets on github
+
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Establish SQL Server connection
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
@@ -41,9 +40,9 @@ if existing_info_ids:
 else:
     next_info_id = 1
 
-# Prepare data for insertion
+
 data_to_insert = []
-info_mapping = {}  # Dictionary to map unique properties to their InfoID
+info_mapping = {}
 for _, row in unique_properties.iterrows():
     data_to_insert.append((next_info_id, row['NumberOfBedRooms'], row['NumberOfGuests'], row['City'], row['State'], row['Country'], row['SearchRange']))
     info_mapping[(row['NumberOfBedRooms'], row['NumberOfGuests'], row['City'], row['State'], row['Country'], row['SearchRange'])] = next_info_id

@@ -28,6 +28,9 @@ if missing_columns:
     print(f"Missing columns in DataFrame: {missing_columns}")
     sys.exit(1)
 
+# Get current date
+current_date = datetime.now()
+
 # Generate JSON format
 data = {}
 batch_size = 3
@@ -38,6 +41,14 @@ for i in range(0, len(df), batch_size):
     batch_key = f"Batch{batch_number}"
     data[batch_key] = []
     for _, row in batch.iterrows():
+        start_date = datetime.strptime(row['StartDate'], '%Y-%m-%d')  # Adjust the date format if necessary
+        if row['Status'] == 'PASSED' or start_date < current_date:
+            # Update Status to 'PASSED' if the start date is in the past and it's not already 'PASSED'
+            if row['Status'] != 'PASSED' and start_date < current_date:
+                update_query = f"UPDATE JobTable SET Status = 'PASSED' WHERE JobID = {row['JobID']}"
+                cursor.execute(update_query)
+                conn.commit()
+            continue
         data[batch_key].append({
             "listing_link_format": row['URL'],
             "JobID": row['JobID'],

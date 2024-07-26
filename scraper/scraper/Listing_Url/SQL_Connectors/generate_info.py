@@ -43,8 +43,10 @@ else:
 
 # Prepare data for insertion
 data_to_insert = []
+info_mapping = {}  # Dictionary to map unique properties to their InfoID
 for _, row in unique_properties.iterrows():
     data_to_insert.append((next_info_id, row['NumberOfBedRooms'], row['NumberOfGuests'], row['City'], row['State'], row['Country'], row['SearchRange']))
+    info_mapping[(row['NumberOfBedRooms'], row['NumberOfGuests'], row['City'], row['State'], row['Country'], row['SearchRange'])] = next_info_id
     next_info_id += 1
 
 # Insert data into InfoTable
@@ -56,7 +58,24 @@ VALUES (?, ?, ?, ?, ?, ?, ?)
 cursor.executemany(insert_query, data_to_insert)
 conn.commit()
 
+# Update InfoID in Properties table
+for index, row in properties_df.iterrows():
+    property_tuple = (row['NumberOfBedRooms'], row['NumberOfGuests'], row['City'], row['State'], row['Country'], row['SearchRange'])
+    if property_tuple in info_mapping:
+        properties_df.at[index, 'InfoID'] = info_mapping[property_tuple]
+
+# Update the Properties table with the new InfoID values
+update_query = """
+UPDATE [dbo].[Properties]
+SET InfoID = ?
+WHERE PropertyID = ?
+"""
+
+update_data = properties_df[['InfoID', 'PropertyID']].values.tolist()
+cursor.executemany(update_query, update_data)
+conn.commit()
+
 # Close connection
 conn.close()
 
-print("Data inserted successfully into InfoTable.")
+print("Data inserted successfully into InfoTable and Properties table updated.")

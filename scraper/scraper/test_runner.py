@@ -8,32 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 scraper = AirbnbComDetailStrategy(logger)
-config = {"url": "https://www.airbnb.com/s/Davenport--Florida--United-States/homes?tab_id=home_tab&refinement_paths[]=/homes&flexible_trip_lengths[]=one_week&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&source=structured_search_input_header&search_type=autocomplete_click&query=Davenport,%20Florida,%20United%20States&price_filter_num_nights=4&rank_mode=default&date_picker_type=calendar&checkin=2024-08-05&checkout=2024-08-09&min_bedrooms=5&min_beds=8&min_bathrooms=5&adults=13&currency=USD"}
+config = {"url": "https://www.airbnb.com/rooms/713932389993706415?category_tag=Tag%3A8851&enable_m3_private_room=true&search_mode=flex_destinations_search&check_in=2024-07-28&check_out=2024-07-31&source_impression_id=p3_1722017227_P3B910jZU9nSTxtJ&previous_page_section_name=1000&federated_search_id=7536b9e1-13d9-4c2e-b142-7f29fa8030ec"}
 result = scraper.execute(config)
-# print(result)
 
-
-#
-# needed_keys = ['price_per_night','orig_price_per_night','cleaning_fee', 'service_fee', 'total_price']
-#
-# # Create a new dictionary with only the needed keys
-# filtered_result = {key: result[key] for key in needed_keys}
-
-# Print the filtered result
-# print(result)
-
-
-
-needed_keys = ['price_per_night','orig_price_per_night','cleaning_fee', 'service_fee', 'total_price']
-
-
-filtered_results = []
-
-
-for listing in result:
-    for item in listing:
-        filtered_result = {key: item[key] for key in needed_keys}
-        filtered_results.append(filtered_result)
-
-print(filtered_results)
-print(len(filtered_results))
+print(result)

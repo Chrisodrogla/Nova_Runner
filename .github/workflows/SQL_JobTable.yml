@@ -30,4 +30,4 @@ jobs:
         GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
         SECRET_CHRISTIANSQL_STRING: ${{ secrets.SECRET_CHRISTIANSQL_STRING }}
       run: |
-        python scraper/scraper/Listing_Url/SQL_Connectors/Job_Table.py
+        python scraper/scraper/Listing_Url/SQL_Connectors/generate_job.py

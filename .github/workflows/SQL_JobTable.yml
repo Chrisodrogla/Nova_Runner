@@ -1,4 +1,4 @@
-name: Jobtable to SQL
+name: Generate Jobtable to SQL
 
 on:
   workflow_dispatch:

@@ -13,7 +13,7 @@ def generate_url(city, state, country, checkin, checkout, guests, bedrooms, sear
     return url
 
 
-def upload_jobs(date_file="dates.csv"):
+def upload_jobs(date_file="scraper/scraper/Listing_Url/SQL_Connectors/dates.csv"):
     # Connection string from environment variable using secrets on GitHub
     connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
@@ -69,7 +69,7 @@ def upload_jobs(date_file="dates.csv"):
             job_id += 1
             job_data.append((job_id, info_id, start_date, end_date, url, "PENDING"))
 
-    # Insert data to jobtable
+    # Insert data into JobTable
     insert_query = """
     INSERT INTO [dbo].[JobTable] ([JobID], [InfoID], [StartDate], [EndDate], [URL], [Status])
     VALUES (?, ?, ?, ?, ?, ?)
@@ -77,7 +77,7 @@ def upload_jobs(date_file="dates.csv"):
     cursor.executemany(insert_query, job_data)
     conn.commit()
 
-    # Close SQL
+    # Close connection
     conn.close()
 
     print("Data inserted successfully into JobTable.")

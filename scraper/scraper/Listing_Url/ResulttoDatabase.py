@@ -5,16 +5,15 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
 
-
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
 JobTable = 'JobTable_Results'
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
-#Google Sheets API service
+# Google Sheets API service
 service = build("sheets", "v4", credentials=credentials)
 
-#Read data from Google Sheets
+# Read data from Google Sheets
 sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SHEET_ID, range=JobTable).execute()
 values = result.get('values', [])
@@ -39,12 +38,16 @@ df['StartDate'] = pd.to_datetime(df['StartDate'])
 df['EndDate'] = pd.to_datetime(df['EndDate'])
 df['RunDate'] = pd.to_datetime(df['RunDate'])
 
-# Connection string from environment variable using secrets on github
+# Connection string from environment variable using secrets on GitHub
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
 # Establish SQL Server connection
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
+
+# Delete all existing data in the SQL Server table
+cursor.execute("DELETE FROM JobDataResults;")
+conn.commit()
 
 # Insert data into SQL Server table in batches
 batch_size = 500000
@@ -59,3 +62,12 @@ for start in range(0, len(df), batch_size):
 
 # Close connection
 conn.close()
+
+# Clear the data in the Google Sheets table except the column names
+clear_range = f"{JobTable}!A2:Z"
+body = {
+    "range": clear_range,
+    "majorDimension": "ROWS",
+    "values": []
+}
+result = sheet.values().update(spreadsheetId=SHEET_ID, range=clear_range, valueInputOption="RAW", body=body).execute()

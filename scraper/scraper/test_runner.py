@@ -1,14 +1,64 @@
-
+import time
 import sys
-sys.path.insert(0,"C:\\Users\\calgo\\Github_vscode_Cloned\\nova_scraper_-1\\scraper")
+sys.path.insert(0,"C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 
-from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy
+
+from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy #AirbnbComDetailStrategy
 import logging
 
 logger = logging.getLogger(__name__)
 
-scraper = AirbnbComDetailStrategy(logger)
-config = {"url": "https://www.airbnb.com/rooms/713932389993706415?category_tag=Tag%3A8851&enable_m3_private_room=true&search_mode=flex_destinations_search&check_in=2024-07-28&check_out=2024-07-31&source_impression_id=p3_1722017227_P3B910jZU9nSTxtJ&previous_page_section_name=1000&federated_search_id=7536b9e1-13d9-4c2e-b142-7f29fa8030ec"}
+start_time = time.time()
+
+scraper = AirbnbComSearchStrategy(logger)                  #AirbnbComDetailStrategy
+config = {"url": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-26&checkout=2024-08-29&adults=9&search_mode=regular_search&min_bedrooms=12&"}
+
+
+
 result = scraper.execute(config)
 
-print(result)
+
+############################################################################################################################################################
+
+# needed_keys = ['guest', 'baths', 'beds', 'bedrooms']
+# needed_keys = ['cohost']
+
+# Create a new dictionary with only the needed keys
+# filtered_result = {key: result[key] for key in needed_keys}
+
+# Print the filtered result
+
+# print("##################################################################################################################################################################################")
+
+# print(result)
+# print(filtered_result)
+
+
+
+############################################################################################################################################################
+needed_keys = ['orig_price_per_night','cleaning_fee', 'service_fee', 'total_price', 'price_per_night','total_price']
+
+
+filtered_results = []
+
+
+for listing in result:
+    for item in listing:
+        filtered_result = {key: item[key] for key in needed_keys}
+        filtered_results.append(filtered_result)
+
+print(filtered_results)
+print(len(filtered_results))
+
+# Record the end time
+end_time = time.time()
+
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+minutes = int(elapsed_time // 60)
+seconds = int(elapsed_time % 60)
+
+print(f"Time takes {minutes} minutes and {seconds} seconds")
+
+#
+# print(result)

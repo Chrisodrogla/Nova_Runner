@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 start_time = time.time()
 
 scraper = AirbnbComSearchStrategy(logger)                  #AirbnbComDetailStrategy
-config = {"url": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-26&checkout=2024-08-29&adults=9&search_mode=regular_search&min_bedrooms=12&"}
+config = {"url": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-09&checkout=2024-09-12&adults=28&search_mode=regular_search&min_bedrooms=10&  "}
 
 
 

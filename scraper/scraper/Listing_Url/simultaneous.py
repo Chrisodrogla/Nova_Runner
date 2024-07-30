@@ -71,7 +71,7 @@ final_results = []
 errors = []
 
 # Process the rental links in chunks of 3
-for rental_chunk in chunks(rental_links, 3):
+for rental_chunk in chunks(rental_links, 1):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = {executor.submit(scrape_rental, rental, scraper, needed_keys): rental for rental in rental_chunk}
 

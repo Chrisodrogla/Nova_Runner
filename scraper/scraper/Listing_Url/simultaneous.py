@@ -40,6 +40,8 @@ def extract_dates_from_url(url):
     return check_in_date, check_out_date
 
 def scrape_rental(rental, scraper, needed_keys):
+
+    time.sleep(30)
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
     filtered_results = filter_results(result, needed_keys)

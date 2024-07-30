@@ -26,9 +26,6 @@ def filter_results(result, needed_keys):
     for listing in result:
         for item in listing:
             filtered_result = {key: item.get(key, None) for key in needed_keys}
-            # Split the url at '?' to keep only the base URL
-            if 'url' in filtered_result:
-                filtered_result['url'] = filtered_result['url'].split('?')[0]
             filtered_results.append(filtered_result)
     return filtered_results
 
@@ -40,8 +37,6 @@ def extract_dates_from_url(url):
     return check_in_date, check_out_date
 
 def scrape_rental(rental, scraper, needed_keys):
-
-    time.sleep(30)
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
     filtered_results = filter_results(result, needed_keys)
@@ -70,29 +65,33 @@ needed_keys = ['host_name', 'listingId', 'url', 'orig_price_per_night', 'cleanin
 final_results = []
 errors = []
 
-# Process the rental links in chunks of 3
-for rental_chunk in chunks(rental_links, 1):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = {executor.submit(scrape_rental, rental, scraper, needed_keys): rental for rental in rental_chunk}
-
-        for future in concurrent.futures.as_completed(futures):
-            rental = futures[future]
-            try:
-                rental_results = future.result()
-                final_results.extend(rental_results)
-            except Exception as e:
-                error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
-                logger.error(error_message)
-                errors.append(error_message)
+# Process each rental link individually
+for rental in rental_links:
+    try:
+        rental_results = scrape_rental(rental, scraper, needed_keys)
+        final_results.extend(rental_results)
+    except Exception as e:
+        error_message = f"Error occurred: {e} for JobID: {rental['JobID']}"
+        logger.error(error_message)
+        errors.append(error_message)
 
 end_time = time.time()
 elapsed_time = end_time - start_time
 minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
+# Write the new data to the JSON file, replacing the existing data
+with open('scraper/scraper/Listing_Url/output/final_results.json', 'w') as updated_file:
+    json.dump(final_results, updated_file, indent=4)
+
+
+
+
+
 # Google Sheets setup
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-MARKETDATA_SHEET_NAMES = ['JobTable_Results', 'JobTable_Results2', 'JobTable_Results3']
+MARKETDATA_SHEET_NAME = 'JobTable_Results'
+
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
@@ -101,33 +100,19 @@ credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CRE
 # Create Google Sheets API service
 service = build("sheets", "v4", credentials=credentials)
 
-# Add Run_Date column to the final_results
-for result in final_results:
-    result['Run_Date'] = datetime.now().strftime('%Y-%m-%d')
 
 df = pd.DataFrame(final_results)
 
-def get_sheet_cell_count(sheet_name):
-    sheet = service.spreadsheets().get(spreadsheetId=SHEET_ID, ranges=[sheet_name], includeGridData=False).execute()
-    sheet_info = sheet['sheets'][0]
-    return sheet_info['properties']['gridProperties']['rowCount'] * sheet_info['properties']['gridProperties']['columnCount']
+# Clear all data below header in the "Review" sheet
+service.spreadsheets().values().clear(
+    spreadsheetId=SHEET_ID,
+    range=f"{MARKETDATA_SHEET_NAME}!A2:Z"
+).execute()
 
-def append_to_sheet(sheet_name, data):
-    service.spreadsheets().values().append(
-        spreadsheetId=SHEET_ID,
-        range=f"{sheet_name}!A2",
-        valueInputOption="RAW",
-        body={"values": data}
-    ).execute()
-
-# Check each sheet for available space and append data accordingly
-for sheet_name in MARKETDATA_SHEET_NAMES:
-    try:
-        cell_count = get_sheet_cell_count(sheet_name)
-        if cell_count + df.size <= 10000000:
-            append_to_sheet(sheet_name, df.values.tolist())
-            break
-    except Exception as e:
-        error_message = f"Error occurred: {e} while appending data to {sheet_name}"
-        logger.error(error_message)
-        errors.append(error_message)
+# Write new data to the "Review" sheet starting from row 2
+service.spreadsheets().values().update(
+    spreadsheetId=SHEET_ID,
+    range=f"{MARKETDATA_SHEET_NAME}!A2",
+    valueInputOption="RAW",
+    body={"values": df.values.tolist()}
+).execute()

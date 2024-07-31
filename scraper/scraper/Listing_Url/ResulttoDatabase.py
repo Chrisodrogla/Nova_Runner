@@ -22,9 +22,10 @@ df = pd.DataFrame(values[1:], columns=values[0])
 
 print("Column names in DataFrame:", df.columns.tolist())
 
-columns = ['JobID', 'InfoID', 'host_name', 'listingId', 'Url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'StartDate', 'EndDate', 'Run_Date']
+# Ensure the DataFrame columns include the new Rank column
+columns = ['JobID', 'InfoID', 'Rank', 'host_name', 'listingId', 'Url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night', 'StartDate', 'EndDate', 'Run_Date']
 
-df.columns = ['JobID', 'InfoID', 'HostName', 'ListingID', 'URL', 'OrigPricePerNight', 'CleaningFee', 'ServiceFee', 'TotalPrice', 'PricePerNight', 'StartDate', 'EndDate', 'RunDate']
+df.columns = ['JobID', 'InfoID', 'Rank', 'HostName', 'ListingID', 'URL', 'OrigPricePerNight', 'CleaningFee', 'ServiceFee', 'TotalPrice', 'PricePerNight', 'StartDate', 'EndDate', 'RunDate']
 
 # Convert data types to match SQL table
 df['JobID'] = df['JobID'].astype(int)
@@ -38,7 +39,7 @@ df['StartDate'] = pd.to_datetime(df['StartDate'])
 df['EndDate'] = pd.to_datetime(df['EndDate'])
 df['RunDate'] = pd.to_datetime(df['RunDate'])
 
-# Connection string from environment variable using secrets on GitHub
+# Connection string from environment variable using secrets on github
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
 # Establish SQL Server connection
@@ -55,19 +56,10 @@ for start in range(0, len(df), batch_size):
     batch = df.iloc[start:start+batch_size]
     for index, row in batch.iterrows():
         cursor.execute("""
-            INSERT INTO JobDataResults (JobID, InfoID, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, row['JobID'], row['InfoID'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
+            INSERT INTO JobDataResults (JobID, InfoID, Rank, HostName, ListingID, URL, OrigPricePerNight, CleaningFee, ServiceFee, TotalPrice, PricePerNight, StartDate, EndDate, RunDate)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, row['JobID'], row['InfoID'], row['Rank'], row['HostName'], row['ListingID'], row['URL'], row['OrigPricePerNight'], row['CleaningFee'], row['ServiceFee'], row['TotalPrice'], row['PricePerNight'], row['StartDate'], row['EndDate'], row['RunDate'])
     conn.commit()
 
 # Close connection
 conn.close()
-
-# Clear the data in the Google Sheets table except the column names
-clear_range = f"{JobTable}!A2:Z"
-body = {
-    "range": clear_range,
-    "majorDimension": "ROWS",
-    "values": []
-}
-result = sheet.values().update(spreadsheetId=SHEET_ID, range=clear_range, valueInputOption="RAW", body=body).execute()

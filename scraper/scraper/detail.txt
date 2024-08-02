@@ -1,3 +1,6 @@
+
+Output from DetailStrategy
+
 {'label': 'Home in Kissimmee',
  'description': '15 BD/ 15BA Game Room/Pool! Veranda Palms (2441SD)',
  'image_url': 'https://a0.muscache.com/pictures/miso/Hosting-958036886603866738/original/22daf5f3-b76d-4c3a-82a6-f4bd3e2b3cc7.jpeg',

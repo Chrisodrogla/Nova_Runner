@@ -60,5 +60,6 @@ for listing in result:
         }
         filtered_results.append(filtered_result)
 
-print(filtered_results)
+# print(filtered_results)
+print(result)
 

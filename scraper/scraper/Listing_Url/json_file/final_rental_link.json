@@ -53,7 +53,7 @@
     ],
     "Batch2": [
         {
-            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-02&checkout=2024-09-05&adults=18&search_mode=regular_search&min_bedrooms=8&",
+            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-02&checkout=2024-09-05&adults=16&search_mode=regular_search&min_bedrooms=8&",
             "JobID": "397",
             "InfoID": "31"
         }

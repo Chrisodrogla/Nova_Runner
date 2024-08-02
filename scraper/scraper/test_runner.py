@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 start_time = time.time()
 
 scraper = AirbnbComSearchStrategy(logger)                  #AirbnbComDetailStrategy
-config = {"url": "https://www.airbnb.com/rooms/834175163702868485?source_impression_id=p3_1722365712_P3r9GGsYnpZvPh-d&check_in=2024-08-05&guests=1&adults=1&check_out=2024-08-08"}
+config = {"url": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-02&checkout=2024-09-05&adults=16&min_bedrooms=8"}
 
 
 
@@ -37,7 +37,7 @@ result = scraper.execute(config)
 
 
 # ############################################################################################################################################################
-needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
+needed_keys = ['rank','host_name', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
 # needed_keys = ['service_fee']
 
 filtered_results = []

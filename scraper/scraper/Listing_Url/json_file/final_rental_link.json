@@ -53,9 +53,54 @@
     ],
     "Batch2": [
         {
-            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-02&checkout=2024-09-05&adults=16&search_mode=regular_search&min_bedrooms=8&",
+            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-02&checkout=2024-09-05&adults=18&search_mode=regular_search&min_bedrooms=8&",
             "JobID": "397",
             "InfoID": "31"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-09&checkout=2024-09-12&adults=19&search_mode=regular_search&min_bedrooms=8&",
+            "JobID": "463",
+            "InfoID": "36"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-16&checkout=2024-09-19&adults=16&search_mode=regular_search&min_bedrooms=8&",
+            "JobID": "529",
+            "InfoID": "41"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-05&checkout=2024-08-08&adults=20&search_mode=regular_search&min_bedrooms=9&",
+            "JobID": "562",
+            "InfoID": "44"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-23&checkout=2024-09-26&adults=10&search_mode=regular_search&min_bedrooms=5&",
+            "JobID": "595",
+            "InfoID": "46"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-12&checkout=2024-08-15&adults=16&search_mode=regular_search&min_bedrooms=5&",
+            "JobID": "628",
+            "InfoID": "49"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-30&checkout=2024-10-03&adults=9&search_mode=regular_search&min_bedrooms=12&",
+            "JobID": "661",
+            "InfoID": "51"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-19&checkout=2024-08-22&adults=33&search_mode=regular_search&min_bedrooms=12&",
+            "JobID": "694",
+            "InfoID": "54"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-10-07&checkout=2024-10-10&adults=16&search_mode=regular_search&min_bedrooms=6&",
+            "JobID": "727",
+            "InfoID": "56"
+        },
+        {
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-08-26&checkout=2024-08-29&adults=12&search_mode=regular_search&min_bedrooms=5&",
+            "JobID": "760",
+            "InfoID": "59"
         }
     ],
     "Batch3": [

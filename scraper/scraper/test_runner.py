@@ -12,7 +12,7 @@ start_time = time.time()
 
 scraper = AirbnbComSearchStrategy(logger)
 config = {
-    "url": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&checkin=2024-09-02&checkout=2024-09-05&adults=16&min_bedrooms=8&tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&query=Davenport%2C%20Florida%2C%20United%20States&place_id=ChIJ7WLP2TJx3YgRrFN8JGEANew&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-09-01&monthly_length=3&monthly_end_date=2024-12-01&search_mode=regular_search&price_filter_input_type=0&price_filter_num_nights=3&channel=EXPLORE&ne_lat=28.31894078746552&ne_lng=-81.45936912287021&sw_lat=28.31872562255151&sw_lng=-81.45957665879274&zoom=22&zoom_level=22&search_by_map=true&search_type=user_map_move"
+    "url": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&checkin=2024-09-02&checkout=2024-09-05&adults=16&min_bedrooms=8&tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&query=Davenport%2C%20Florida%2C%20United%20States&place_id=ChIJ7WLP2TJx3YgRrFN8JGEANew&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-09-01&monthly_length=3&monthly_end_date=2024-12-01&search_mode=regular_search&price_filter_input_type=0&price_filter_num_nights=3&channel=EXPLORE&ne_lat=28.319260880857072&ne_lng=-81.45874706072539&sw_lat=28.31797568050151&sw_lng=-81.46041060063646&zoom=19.819766636170648&zoom_level=19.819766636170648&search_by_map=true&search_type=user_map_move"
 }
 
 result = scraper.execute(config)
@@ -60,6 +60,6 @@ for listing in result:
         }
         filtered_results.append(filtered_result)
 
-# print(filtered_results)
-print(result)
+print(filtered_results)
+
 

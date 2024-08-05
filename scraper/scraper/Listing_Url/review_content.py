@@ -268,7 +268,7 @@ link_websites1 = [
 # "https://www.airbnb.com/rooms/1076275611613180477",
     # Add more URLs as needed
 
-"https://www.airbnb.ca/rooms/918762988719784331?adults=10&children=2&search_mode=regular_search&check_in=2024-09-15&check_out=2024-09-20&source_impression_id=p3_1722873928_P3j4Gpz0A3k-tkCY&previous_page_section_name=1000&federated_search_id=e0c75b7d-f3e4-4970-8672-681bf1206859",
+"https://www.airbnb.ca/rooms/918762988719784331",
 ]
 
 DateToday = date.today()

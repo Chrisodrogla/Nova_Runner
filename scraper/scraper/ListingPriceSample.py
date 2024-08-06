@@ -44,13 +44,12 @@ else:
     total_price = cleaning_fee = service_fee = None
 
 filtered_result = {
-    'rank': result.get('rank'),
     'host_name': result.get('host_name'),
-    'orig_price_per_night': original_price.split('x')[0],
+    'orig_price_per_night': original_price.split('x')[0] if 'x' in original_price else original_price,
     'Cleaning fee': result.get('cleaning_fee'),
     'Airbnb service fee': result.get('service_fee'),
     'total_price': total_price,
-    'price_per_night': original_price.split('x')[0]
+    'price_per_night': original_price.split('x')[0] if 'x' in original_price else original_price
 }
 
 filtered_results.append(filtered_result)

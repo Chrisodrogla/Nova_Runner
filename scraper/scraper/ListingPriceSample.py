@@ -1,7 +1,7 @@
 import time
 import sys
 import logging
-
+import json
 sys.path.insert(0, "C:\\Users\\calgo\\PycharmProjects\\pythonProject\\nova_scraper_\\scraper")
 from scraper.strategies.airbnb_com.search_page import AirbnbComDetailStrategy  # AirbnbComDetailStrategy
 
@@ -55,4 +55,8 @@ filtered_result = {
 filtered_results.append(filtered_result)
 
 print(filtered_results)
-# print(result)
+
+
+# Write the filtered result to a JSON file
+with open('listing_price.json', 'w') as json_file:
+    json.dump(filtered_result, json_file, indent=4)

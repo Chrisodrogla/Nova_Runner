@@ -65,15 +65,26 @@ log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submi
 log1.click()
 
 # MEthod of getting the listing numbers available on the website
-time.sleep(3)
-all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )
-all_listing.click()
-time.sleep(2)
-lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
-Listings = []
-for list_item in lists:
-    div_id = list_item.get_attribute('id')
-    Listings.append(div_id)
+# time.sleep(3)
+# all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )
+# all_listing.click()
+# time.sleep(2)
+# lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
+# Listings = []
+# for list_item in lists:
+#     div_id = list_item.get_attribute('id')
+#     Listings.append(div_id)
+
+Listings = ['1008612218258117806',
+ '862225236403589050',
+ '953562785617772309',
+ '1075808915500918249',
+ '962985257513035512',
+ '988528048108079239',
+ '894996626436696750',
+ '1047224676448180120']
+
+time.sleep(5)
 
 # Scrape the Date_basis from a web element
 Date_basis = driver.find_element("xpath", """//div[@class="_x4llbi"]""").text.split(': ')[1]

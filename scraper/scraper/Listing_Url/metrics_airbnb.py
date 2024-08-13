@@ -82,6 +82,8 @@ time.sleep(10)
 # html_content = driver.page_source
 # print(html_content)
 
+driver.get(website)
+time.sleep(10)
 # MEthod of getting the listing numbers available on the website
 time.sleep(3)
 all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )

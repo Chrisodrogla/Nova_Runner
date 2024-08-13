@@ -79,20 +79,21 @@ log1.click()
 
 time.sleep(10)
 # Print the HTML content of the page
-html_content = driver.page_source
-print(html_content)
+# html_content = driver.page_source
+# print(html_content)
 
 # MEthod of getting the listing numbers available on the website
-# time.sleep(3)
-# all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )
-# all_listing.click()
-# time.sleep(2)
-# lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
-# Listings = []
-# for list_item in lists:
-#     div_id = list_item.get_attribute('id')
-#     Listings.append(div_id)
+time.sleep(3)
+all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )
+all_listing.click()
+time.sleep(2)
+lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
+Listings = []
+for list_item in lists:
+    div_id = list_item.get_attribute('id')
+    Listings.append(div_id)
 
+print(Listings)
 # Listings = ['1008612218258117806',
 #  '862225236403589050',
 #  '953562785617772309',

@@ -1,6 +1,13 @@
-import os
+import pandas as pd
+from datetime import date
 import time
-import datetime
+from selenium import webdriver
+from google.oauth2.service_account import Credentials
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+import os
+import json
+
 from selenium import webdriver
 import shutil
 import json
@@ -11,30 +18,35 @@ import pandas as pd
 from datetime import datetime, timedelta
 import calendar
 
-start_time = time.time()
+# Set up Chrome WebDriver with custom options
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920x1080")
+options.add_argument("--display=:99")  # Set display to Xvfb
+
+# Google Sheets setup
+SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
+SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new data
+
 
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-# Google Sheets setup
-SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
-SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new data
 
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
+# Create Google Sheets API service
+service = build("sheets", "v4", credentials=credentials)
 
-# Set up Chrome WebDriver with custom options
-options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
-options.add_argument("--display=:99")  # Set display to Xvfb
+
+
 
 driver = webdriver.Chrome(options=options)
 driver.get(website)
@@ -54,7 +66,7 @@ log1.click()
 
 # MEthod of getting the listing numbers available on the website
 time.sleep(3)
-all_listing = driver.find_element("xpath", """//*[@id="search-filters"]/div[2]/button""")
+all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""" )
 all_listing.click()
 time.sleep(2)
 lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
@@ -203,22 +215,14 @@ for listing in Listing_Urls:
 # Create a DataFrame from the results
 df = pd.DataFrame(results)
 
-# Record the end time
-end_time = time.time()
 
-# Calculate the elapsed time
-elapsed_time = end_time - start_time
-minutes = int(elapsed_time // 60)
-seconds = int(elapsed_time % 60)
-
-print(f"Time takes {minutes} minutes and {seconds} seconds")
-
+# Clear all data below header in the "Review" sheet
 service.spreadsheets().values().clear(
     spreadsheetId=SHEET_ID,
     range=f"{SHEET_NAME1}!A2:Z"
 ).execute()
 
-# Write new data to the 'Airbnb_Metrics' sheet starting from row 2
+# Write new data to the "Review" sheet starting from row 2
 service.spreadsheets().values().update(
     spreadsheetId=SHEET_ID,
     range=f"{SHEET_NAME1}!A2",

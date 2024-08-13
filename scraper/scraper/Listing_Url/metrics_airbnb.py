@@ -53,7 +53,7 @@ log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submi
 log1.click()
 
 # MEthod of getting the listing numbers available on the website
-time.sleep(3)
+time.sleep(10)
 all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
 all_listing.click()
 time.sleep(2)

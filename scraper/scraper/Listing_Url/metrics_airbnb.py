@@ -26,12 +26,15 @@ SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
-# Set up Chrome WebDriver
+
+# Set up Chrome WebDriver with custom options
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
-options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920x1080")
+options.add_argument("--display=:99")  # Set display to Xvfb
 
 driver = webdriver.Chrome(options=options)
 driver.get(website)

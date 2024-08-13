@@ -77,7 +77,7 @@ log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-
 log1.click()
 
 
-
+time.sleep(10)
 # Print the HTML content of the page
 html_content = driver.page_source
 print(html_content)

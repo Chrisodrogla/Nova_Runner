@@ -18,14 +18,14 @@ import pandas as pd
 from datetime import datetime, timedelta
 import calendar
 
-# Set up Chrome WebDriver with custom options
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
-options.add_argument("--display=:99")  # Set display to Xvfb
+# # Set up Chrome WebDriver with custom options
+# options = webdriver.ChromeOptions()
+# options.add_argument("--headless")
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+# options.add_argument("--disable-gpu")
+# options.add_argument("--window-size=1920x1080")
+# options.add_argument("--display=:99")  # Set display to Xvfb
 
 # Google Sheets setup
 SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
@@ -48,20 +48,32 @@ service = build("sheets", "v4", credentials=credentials)
 
 
 
+website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+
+# Set up Chrome WebDriver
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--no-sandbox")
+# options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920x1080")
+
+
 driver = webdriver.Chrome(options=options)
 driver.get(website)
 
+
 # Using the Login to Enter the Airbnb website
-log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
+log=driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
 log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
+driver.find_element("xpath", """//input[@inputmode="email"]""" ).send_keys(username)
 time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
-driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
+driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
 time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 
 

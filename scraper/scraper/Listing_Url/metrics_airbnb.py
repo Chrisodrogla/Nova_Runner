@@ -14,8 +14,8 @@ import calendar
 start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
-passw = os.environ['AIRBNB_PASSW_SECRET']
-
+# passw = os.environ['AIRBNB_PASSW_SECRET']
+passw = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
 website = "https://www.airbnb.com/login"
 
 # Set up Chrome WebDriver
@@ -44,7 +44,7 @@ log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submi
 log1.click()
 
 # MEthod of getting the listing numbers available on the website
-time.sleep(100)
+time.sleep(10)
 
 html_content = driver.page_source
 print(html_content)

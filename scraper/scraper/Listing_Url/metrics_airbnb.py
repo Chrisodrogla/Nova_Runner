@@ -1,15 +1,9 @@
 import os
 import time
-import datetime
 from selenium import webdriver
-import shutil
-import json
 from selenium.common.exceptions import NoSuchElementException
-import datetime
-import pytz
 import pandas as pd
-from datetime import datetime, timedelta
-import calendar
+from datetime import datetime
 
 start_time = time.time()
 
@@ -18,15 +12,14 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/login"
 
-# Set up Chrome WebDriver
-options = webdriver.ChromeOptions()
+# Set up Firefox WebDriver
+options = webdriver.FirefoxOptions()
 options.add_argument("--headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920x1080")
 
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Firefox(options=options)
 driver.get(website)
 
 # Using the Login to Enter the Airbnb website
@@ -43,7 +36,7 @@ time.sleep(2)
 log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 
-# MEthod of getting the listing numbers available on the website
+# Method of getting the listing numbers available on the website
 time.sleep(100)
 
 html_content = driver.page_source

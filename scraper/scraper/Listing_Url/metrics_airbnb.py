@@ -1,5 +1,3 @@
-
-
 import os
 import time
 import datetime
@@ -16,7 +14,7 @@ import calendar
 start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
-passw = os.environ['AIRBNB_PASSW_SECRET']
+passw = '111111111111111111111'
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 

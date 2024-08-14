@@ -31,4 +31,4 @@ jobs:
         AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
-        xvfb-run python scraper/scraper/Listing_Url/metrics_airbnb.py
+        python scraper/scraper/Listing_Url/metrics_airbnb.py

@@ -41,9 +41,13 @@ log1.click()
 time.sleep(2)
 driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
 time.sleep(2)
+log3=driver.find_element("xpath", """//div[@class="_1kkyzxv"]/button""")
+log3.click()
 log2=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log2.click()
+# log2.click()
 time.sleep(2)
+
+
 
 html_content = driver.page_source
 print(html_content)

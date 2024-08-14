@@ -25,7 +25,7 @@ passw = "Data@202asdsd4*"
 passw = "Data@2asdasds024*"
 passw = "Data@2asdasdassssssss024*"
 passw = "Data@2024*"
-website = "https://www.airbnb.com/login"
+website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 # Set up Chrome WebDriver
 options = webdriver.ChromeOptions()

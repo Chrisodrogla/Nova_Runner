@@ -34,8 +34,7 @@ log = driver.find_element("xpath", """//button[@aria-label="Continue with email"
 log.click()
 driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
 time.sleep(2)
-html_content = driver.page_source
-print(html_content)
+
 log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
@@ -45,8 +44,10 @@ log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submi
 log1.click()
 
 # MEthod of getting the listing numbers available on the website
-time.sleep(10)
+time.sleep(100)
 
+html_content = driver.page_source
+print(html_content)
 
 all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
 all_listing.click()

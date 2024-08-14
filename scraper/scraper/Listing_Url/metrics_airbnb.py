@@ -15,7 +15,16 @@ start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
 # passw = os.environ['AIRBNB_PASSW_SECRET']
-passw = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
+passw = "Data@202asdsd4*"
+passw = "Data@2asdasds024*"
+passw = "Data@2asdasdassssssss024*"
+passw = "Data@2024*"
 website = "https://www.airbnb.com/login"
 
 # Set up Chrome WebDriver

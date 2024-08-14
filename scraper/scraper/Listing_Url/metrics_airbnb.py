@@ -16,7 +16,7 @@ start_time = time.time()
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']
 
-website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+website = "https://www.airbnb.com/login"
 
 # Set up Chrome WebDriver
 options = webdriver.ChromeOptions()

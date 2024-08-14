@@ -23,8 +23,8 @@ SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
 SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new data
 
 
-username = os.environ['AIRBNB_USER_SECRET']
-passw = os.environ['AIRBNB_PASSW_SECRET']
+username = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
+passw = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 

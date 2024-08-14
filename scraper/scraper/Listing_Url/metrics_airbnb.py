@@ -11,20 +11,11 @@ import pandas as pd
 from datetime import datetime, timedelta
 import calendar
 
-start_time = time.time()
+
 
 username = os.environ['AIRBNB_USER_SECRET']
-# passw = os.environ['AIRBNB_PASSW_SECRET']
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-password = "ASDDDDDDDDDDDDDDASDSDAWEAXDAWEDASD"
-passw = "Data@202asdsd4*"
-passw = "Data@2asdasds024*"
-passw = "Data@2asdasdassssssss024*"
-passw = "Data@2024*"
+passw = os.environ['AIRBNB_PASSW_SECRET']
+
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 # Set up Chrome WebDriver
@@ -32,39 +23,27 @@ options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
+options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920x1080")
+
 
 driver = webdriver.Chrome(options=options)
 driver.get(website)
+time.sleep(5)
 
 # Using the Login to Enter the Airbnb website
-log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
+log=driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
 log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
+driver.find_element("xpath", """//input[@inputmode="email"]""" ).send_keys(username)
 time.sleep(2)
-
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
-driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
+driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
 time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-
-# MEthod of getting the listing numbers available on the website
-time.sleep(10)
+log2=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log2.click()
+time.sleep(2)
 
 html_content = driver.page_source
 print(html_content)
-
-all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
-all_listing.click()
-time.sleep(2)
-lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
-Listings = []
-for list_item in lists:
-    div_id = list_item.get_attribute('id')
-    Listings.append(div_id)
-
-print(Listings)

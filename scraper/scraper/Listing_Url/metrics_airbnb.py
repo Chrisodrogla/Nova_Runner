@@ -46,6 +46,9 @@ log1.click()
 
 # MEthod of getting the listing numbers available on the website
 time.sleep(10)
+html_content = driver.page_source
+print(html_content)
+
 all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
 all_listing.click()
 time.sleep(2)
@@ -56,6 +59,3 @@ for list_item in lists:
     Listings.append(div_id)
 
 print(Listings)
-
-html_content = driver.page_source
-print(html_content)

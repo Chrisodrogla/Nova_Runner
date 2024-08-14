@@ -14,8 +14,8 @@ import calendar
 start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
-# passw = os.environ['AIRBNB_PASSW_SECRET']
-passw = 'Data@2024*'
+passw = os.environ['AIRBNB_PASSW_SECRET']
+
 website = "https://www.airbnb.com/login"
 
 # Set up Chrome WebDriver

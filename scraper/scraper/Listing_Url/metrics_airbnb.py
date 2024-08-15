@@ -1,4 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 import json
@@ -52,29 +55,39 @@ options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(options=options)
 driver.get(website)
 
-# Using the Login to Enter the Airbnb website
-log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
+# Wait for the login button to be clickable and click it
+wait = WebDriverWait(driver, 20)
+log = wait.until(EC.element_to_be_clickable((By.XPATH, """//button[@aria-label="Continue with email"]""")))
 log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
+
+# Enter username
+wait.until(EC.presence_of_element_located((By.XPATH, """//input[@inputmode="email"]"""))).send_keys(username)
 time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+
+# Submit username and enter password
+log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
-driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
+wait.until(EC.presence_of_element_located((By.XPATH, """//input[@name="user[password]"]"""))).send_keys(passw)
 time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 
+# Wait for the page to load after logging in
 time.sleep(10)
 driver.get(website)
+html_content = driver.page_source
+print(html_content)
 time.sleep(10)
 
 # Method of getting the listing numbers available on the website
 time.sleep(3)
-all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
+all_listing = wait.until(EC.element_to_be_clickable((By.XPATH, """//div[@data-testid="listingPicker"]/button""")))
 all_listing.click()
+
 time.sleep(2)
-lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
+lists = wait.until(EC.presence_of_all_elements_located((By.XPATH, """//div[@class="_1a8jl99"]/div/div[1]""")))
+
 Listings = []
 for list_item in lists:
     div_id = list_item.get_attribute('id')

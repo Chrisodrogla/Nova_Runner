@@ -80,8 +80,18 @@ time.sleep(10)
 time.sleep(10)
 # driver.get(second)
 # Use JavaScript to remove the element from the DOM
+# Use JavaScript to remove the element from the DOM
 div_to_remove = driver.find_element("xpath", """//div[@class="o30qrr6 atm_wq_z68epy atm_mk_1n9t6rb atm_tk_idpfg4 atm_n3_idpfg4 atm_6i_idpfg4 atm_fq_idpfg4 atm_l1_1wugsn5 atm_kx_i4x0gi atm_26_dezgoh atm_y_1bbsqr7 atm_16_kb7nvz atm_12_1hrf63d atm_1c_16in4td atm_1k_10p890i atm_26_dezgoh__oggzyc o19htd17 dir dir-ltr"]""" )
 driver.execute_script("arguments[0].remove();", div_to_remove)
+try:
+    privacy = driver.find_element("xpath", """/html/body/div[5]/div/div/div[1]/div/div[3]/section/div[2]/div[2]/button""" )
+    privacy.click()
+
+
+    test = driver.find_element("xpath", """/html/body/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/header/div/div[1]/a""" )
+    test.click()
+except:
+    pass
 time.sleep(10)
 html_content = driver.page_source
 print(html_content)

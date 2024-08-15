@@ -47,7 +47,7 @@ website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 # # options.add_argument("--disable-gpu")
 # options.add_argument("--window-size=1920x1080")
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")  # Still run headless, but we'll try to mimic a normal browser
+# options.add_argument("--headless")  # Still run headless, but we'll try to mimic a normal browser
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")

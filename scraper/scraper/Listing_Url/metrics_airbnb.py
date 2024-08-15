@@ -75,11 +75,11 @@ log1.click()
 
 # Wait for the page to load after logging in
 time.sleep(10)
-driver.get(website)
+
+
+time.sleep(10)
 html_content = driver.page_source
 print(html_content)
-time.sleep(10)
-
 # Method of getting the listing numbers available on the website
 time.sleep(3)
 all_listing = wait.until(EC.element_to_be_clickable((By.XPATH, """//div[@data-testid="listingPicker"]/button""")))

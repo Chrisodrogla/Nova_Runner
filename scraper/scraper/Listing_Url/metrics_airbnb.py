@@ -14,8 +14,8 @@ SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new
 
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']
-website = "https://www.airbnb.com/performance/conversion/conversion_rate"
-second = "https://www.airbnb.ca/hosting/reservations/details/HM2ASRDWYT"
+# website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+website = "https://www.airbnb.ca/hosting/reservations/details/HM2ASRDWYT"
 # Get Google Sheets credentials from environment variable
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
@@ -78,7 +78,7 @@ time.sleep(10)
 
 
 time.sleep(10)
-driver.get(second)
+# driver.get(second)
 time.sleep(10)
 html_content = driver.page_source
 print(html_content)

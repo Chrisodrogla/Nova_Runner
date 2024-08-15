@@ -39,16 +39,41 @@ service = build("sheets", "v4", credentials=credentials)
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-# Set up Chrome WebDriver
+# # Set up Chrome WebDriver
+# options = webdriver.ChromeOptions()
+# options.add_argument("--headless")
+# options.add_argument("--disable-dev-shm-usage")
+# options.add_argument("--no-sandbox")
+# # options.add_argument("--disable-gpu")
+# options.add_argument("--window-size=1920x1080")
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")
+options.add_argument("--headless")  # Still run headless, but we'll try to mimic a normal browser
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
+options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920x1080")
 
-print(username)
-print(passw)
+# Additional options to avoid detection
+options.add_argument("--start-maximized")  # Start maximized to mimic a real browser window
+options.add_argument("--disable-blink-features=AutomationControlled")  # Disable automation detection
+options.add_argument("--incognito")  # Start in incognito mode
+
+# Add a realistic user-agent string
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36")
+
+# Disable WebDriver visibility
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+
+# Set preferences to reduce detection
+prefs = {
+    "profile.default_content_setting_values.notifications": 2,  # Disable notifications
+    "credentials_enable_service": False,  # Disable password manager
+    "profile.password_manager_enabled": False
+}
+options.add_experimental_option("prefs", prefs)
+
+
 
 driver = webdriver.Chrome(options=options)
 driver.get(website)

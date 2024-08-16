@@ -33,3 +33,9 @@ jobs:
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
         xvfb-run -a python scraper/scraper/Listing_Url/metrics_airbnb.py
+
+    - name: Upload HTML Content
+      uses: actions/upload-artifact@v3
+      with:
+        name: page-content
+        path: /tmp/page_content.html

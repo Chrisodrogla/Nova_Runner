@@ -1,43 +1,39 @@
-import os
-import time
-import datetime
-from selenium import webdriver
-import shutil
-import json
-from selenium.common.exceptions import NoSuchElementException
-import datetime
-import pytz
-import pandas as pd
-from datetime import datetime, timedelta
-import calendar
+name: Airbnb Metrics Login
 
-start_time = time.time()
+on:
+  workflow_dispatch: # This allows manual triggering of the workflow
+  schedule:
+    - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
 
-username = os.environ['AIRBNB_USER_SECRET']
-passw = os.environ['AIRBNB_PASSW_SECRET']
+jobs:
+  run_python_script:
+    runs-on: ubuntu-latest
 
-website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-# Set up Firefox WebDriver
-options = webdriver.FirefoxOptions()
-# options.add_argument("--headless")  # Uncomment this if you want to run in headless mode
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9' # You can specify a different Python version if needed
 
-driver = webdriver.Firefox(options=options)
-driver.get(website)
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        sudo apt-get install -y firefox
+        wget https://github.com/mozilla/geckodriver/releases/latest/download/geckodriver-v0.33.0-linux64.tar.gz
+        tar -xzf geckodriver-v0.33.0-linux64.tar.gz
+        sudo mv geckodriver /usr/local/bin/
+        rm geckodriver-v0.33.0-linux64.tar.gz
+        python -m pip install --upgrade pip
+        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
-# Using the Login to Enter the Airbnb websites first so the data becomes available
-log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
-log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
-time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-time.sleep(2)
-driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
-time.sleep(2)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
+    - name: Run Python Script
+      env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
+        AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}
+        AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
+      run: |
+        xvfb-run -a python scraper/scraper/Listing_Url/metrics_airbnb.py

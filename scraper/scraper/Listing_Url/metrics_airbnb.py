@@ -1,7 +1,6 @@
 import os
 import time
 from playwright.sync_api import sync_playwright
-import sys
 
 start_time = time.time()
 
@@ -27,10 +26,15 @@ with sync_playwright() as p:
     # Wait for navigation or page update if needed
     page.wait_for_load_state('networkidle')  # Wait for the network to be idle
 
-    # Print the HTML content after the login button is clicked
+    # Get the HTML content after the login button is clicked
     page_html = page.content()
-    sys.stdout.write(page_html + "\n")
-    sys.stdout.flush()
+
+    # Write HTML content to a file
+    with open('/tmp/page_content.html', 'w') as file:
+        file.write(page_html)
+
+    # Optionally, print the file path to verify
+    print("HTML content written to /tmp/page_content.html")
 
     # Add any additional scraping logic here
 

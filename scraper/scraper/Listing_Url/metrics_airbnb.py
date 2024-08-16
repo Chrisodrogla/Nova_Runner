@@ -1,53 +1,43 @@
 import os
 import time
-from requests_html import HTMLSession
+import datetime
+from selenium import webdriver
+import shutil
+import json
+from selenium.common.exceptions import NoSuchElementException
+import datetime
+import pytz
+import pandas as pd
+from datetime import datetime, timedelta
+import calendar
 
-# Get credentials from environment variables
+start_time = time.time()
+
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-# Initialize an HTML session
-session = HTMLSession()
+# Set up Firefox WebDriver
+options = webdriver.FirefoxOptions()
+# options.add_argument("--headless")  # Uncomment this if you want to run in headless mode
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--no-sandbox")
+# options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920x1080")
 
-# Get the login page
-response = session.get(website)
-response.html.render(sleep=2)  # Renders the JavaScript on the page
+driver = webdriver.Firefox(options=options)
+driver.get(website)
 
-# Find and click the "Continue with email" button using JavaScript
-continue_email_btn = response.html.xpath("//button[@aria-label='Continue with email']", first=True)
-if continue_email_btn:
-    session.run_script(f"document.querySelector('button[aria-label=\"Continue with email\"]').click()")
-
-# Enter the email
-email_input = response.html.xpath("//input[@inputmode='email']", first=True)
-if email_input:
-    email_input.send_keys(username)
-    time.sleep(2)
-
-# Click the submit button after entering the email using JavaScript
-session.run_script("document.querySelector('button[data-testid=\"signup-login-submit-btn\"]').click()")
+# Using the Login to Enter the Airbnb websites first so the data becomes available
+log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
+log.click()
+driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
 time.sleep(2)
-
-# Enter the password
-password_input = response.html.xpath("//input[@name='user[password]']", first=True)
-if password_input:
-    password_input.send_keys(passw)
-    time.sleep(2)
-
-# Click the submit button after entering the password using JavaScript
-session.run_script("document.querySelector('button[data-testid=\"signup-login-submit-btn\"]').click()")
-
-# After logging in, you can access the content on the desired page
+log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1.click()
 time.sleep(2)
-performance_page = session.get(website)
-performance_page.html.render(sleep=2)
-
-# Extract the data you need
-# For example, extracting a metric
-conversion_rate = performance_page.html.xpath("//span[contains(@class,'conversion-rate')]", first=True)
-if conversion_rate:
-    print("Conversion Rate:", conversion_rate.text)
-else:
-    print("Conversion Rate data not found.")
+driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
+time.sleep(2)
+log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
+log1.click()

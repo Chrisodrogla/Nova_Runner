@@ -31,27 +31,27 @@ with sync_playwright() as p:
     with open('/tmp/page_content.html', 'w') as file:
         file.write(page_html)
 
-    # Wait for the listings picker to be available
-    time.sleep(10)  # Adjust as necessary for your page
-
-    # Click the button to open the listing picker
-    page.click('div[data-testid="listingPicker"] button')
-
-    # Wait for the listings to be available
-    time.sleep(2)  # Adjust as necessary for your page
-
-    # Extract listing IDs
-    listing_elements = page.query_selector_all('div._1a8jl99 > div > div:first-of-type')
-    listings = []
-    for element in listing_elements:
-        div_id = element.get_attribute('id')
-        if div_id:
-            listings.append(div_id)
-
-    # Print the listing IDs
-    print("Listings IDs:")
-    for listing in listings:
-        print(listing)
+    # # Wait for the listings picker to be available
+    # time.sleep(10)  # Adjust as necessary for your page
+    #
+    # # Click the button to open the listing picker
+    # page.click('div[data-testid="listingPicker"] button')
+    #
+    # # Wait for the listings to be available
+    # time.sleep(2)  # Adjust as necessary for your page
+    #
+    # # Extract listing IDs
+    # listing_elements = page.query_selector_all('div._1a8jl99 > div > div:first-of-type')
+    # listings = []
+    # for element in listing_elements:
+    #     div_id = element.get_attribute('id')
+    #     if div_id:
+    #         listings.append(div_id)
+    #
+    # # Print the listing IDs
+    # print("Listings IDs:")
+    # for listing in listings:
+    #     print(listing)
 
     # Close the browser
     browser.close()

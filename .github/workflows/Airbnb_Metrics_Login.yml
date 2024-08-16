@@ -21,10 +21,13 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y xvfb wget unzip
+        sudo apt-get install -y xvfb
+        sudo apt-get install -y wget unzip
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+        rm google-chrome-stable_current_amd64.deb
         python -m pip install --upgrade pip
-        pip install pandas playwright google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
-        playwright install
+        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client webdriver-manager
 
     - name: Run Python Script
       env:
@@ -33,9 +36,3 @@ jobs:
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
         xvfb-run -a python scraper/scraper/Listing_Url/metrics_airbnb.py
-
-    - name: Upload HTML Content
-      uses: actions/upload-artifact@v3
-      with:
-        name: page-content
-        path: /tmp/page_content.html

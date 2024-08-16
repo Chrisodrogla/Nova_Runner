@@ -1,6 +1,18 @@
 import os
 import time
-from playwright.sync_api import sync_playwright
+import datetime
+from selenium import webdriver
+import shutil
+import json
+from selenium.common.exceptions import NoSuchElementException
+import datetime
+import pytz
+import pandas as pd
+from datetime import datetime, timedelta
+import calendar
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 start_time = time.time()
 
@@ -9,49 +21,41 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)  # Use headless mode
-    context = browser.new_context()
-    page = context.new_page()
-    page.goto(website)
+# Set up Chrome WebDriver with more stealth options
+options = webdriver.ChromeOptions()
+options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--no-sandbox")
+options.add_argument("--window-size=1920x1080")
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
 
-    # Login process
-    page.click('button[aria-label="Continue with email"]')
-    page.fill('input[inputmode="email"]', username)
-    page.click('button[data-testid="signup-login-submit-btn"]')
-    time.sleep(2)
-    page.fill('input[name="user[password]"]', passw)
-    page.click('button[data-testid="signup-login-submit-btn"]')
+# Prevent detection of automation tools
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
 
-    # Wait for the page to fully load after login
-    page.wait_for_load_state('networkidle')
+# Path to the ChromeDriver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-    # Write the HTML content to a file
-    page_html = page.content()
-    with open('/tmp/page_content.html', 'w') as file:
-        file.write(page_html)
+# Stealth Script to prevent detection
+driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
+    'source': '''
+        Object.defineProperty(navigator, 'webdriver', {
+            get: () => undefined
+        });
+    '''
+})
 
-    # # Wait for the listings picker to be available
-    # time.sleep(10)  # Adjust as necessary for your page
-    #
-    # # Click the button to open the listing picker
-    # page.click('div[data-testid="listingPicker"] button')
-    #
-    # # Wait for the listings to be available
-    # time.sleep(2)  # Adjust as necessary for your page
-    #
-    # # Extract listing IDs
-    # listing_elements = page.query_selector_all('div._1a8jl99 > div > div:first-of-type')
-    # listings = []
-    # for element in listing_elements:
-    #     div_id = element.get_attribute('id')
-    #     if div_id:
-    #         listings.append(div_id)
-    #
-    # # Print the listing IDs
-    # print("Listings IDs:")
-    # for listing in listings:
-    #     print(listing)
+driver.get(website)
 
-    # Close the browser
-    browser.close()
+# Using the Login to Enter the Airbnb websites first so the data becomes available
+log = driver.find_element(By.XPATH, """//button[@aria-label="Continue with email"]""")
+log.click()
+driver.find_element(By.XPATH, """//input[@inputmode="email"]""").send_keys(username)
+time.sleep(2)
+log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
+log1.click()
+time.sleep(2)
+driver.find_element(By.XPATH, """//input[@name="user[password]"]""").send_keys(passw)
+time.sleep(2)
+log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
+log1.click()

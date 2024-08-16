@@ -1,6 +1,7 @@
 import os
 import time
 from playwright.sync_api import sync_playwright
+import sys
 
 start_time = time.time()
 
@@ -23,11 +24,14 @@ with sync_playwright() as p:
     page.fill('input[name="user[password]"]', passw)
     page.click('button[data-testid="signup-login-submit-btn"]')
 
-    # Add any additional scraping logic here
     # Wait for navigation or page update if needed
     page.wait_for_load_state('networkidle')  # Wait for the network to be idle
 
     # Print the HTML content after the login button is clicked
     page_html = page.content()
-    print(page_html)
+    sys.stdout.write(page_html + "\n")
+    sys.stdout.flush()
+
+    # Add any additional scraping logic here
+
     browser.close()

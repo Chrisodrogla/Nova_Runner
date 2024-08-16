@@ -10,7 +10,7 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)  # Set headless=True for no UI
+    browser = p.chromium.launch(headless=True)  # Use headless mode
     context = browser.new_context()
     page = context.new_page()
     page.goto(website)

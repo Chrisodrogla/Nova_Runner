@@ -1,111 +1,44 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
 import os
+import time
+import datetime
+from selenium import webdriver
+import shutil
 import json
-from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
+from selenium.common.exceptions import NoSuchElementException
+import datetime
+import pytz
+import pandas as pd
+from datetime import datetime, timedelta
+import calendar
 
-# Google Sheets setup
-SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
-SHEET_NAME1 = 'Airbnb_Metrics'  # Sheet to clear data below header and write new data
+start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']
-# website = "https://www.airbnb.com/performance/conversion/conversion_rate"
-website = "https://www.airbnb.ca/hosting/reservations/details/HM2ASRDWYT"
-# Get Google Sheets credentials from environment variable
-GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
-credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
-# Create Google Sheets API service
-service = build("sheets", "v4", credentials=credentials)
+website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 # Set up Chrome WebDriver
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")
+# options.add_argument("--headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-options.add_argument("--disable-gpu")
+# options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920x1080")
-options.add_argument("--remote-debugging-port=9222")
 
-# Additional options to avoid detection
-options.add_argument("--start-maximized")  # Start maximized to mimic a real browser window
-options.add_argument("--disable-blink-features=AutomationControlled")  # Disable automation detection
-options.add_argument("--incognito")  # Start in incognito mode
-
-# Add a realistic user-agent string
-options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36")
-
-# Disable WebDriver visibility
-options.add_experimental_option("excludeSwitches", ["enable-automation"])
-options.add_experimental_option('useAutomationExtension', False)
-
-# Set preferences to reduce detection
-prefs = {
-    "profile.default_content_setting_values.notifications": 2,  # Disable notifications
-    "credentials_enable_service": False,  # Disable password manager
-    "profile.password_manager_enabled": False
-}
-options.add_experimental_option("prefs", prefs)
 
 driver = webdriver.Chrome(options=options)
 driver.get(website)
 
-# Wait for the login button to be clickable and click it
-wait = WebDriverWait(driver, 20)
-log = wait.until(EC.element_to_be_clickable((By.XPATH, """//button[@aria-label="Continue with email"]""")))
+# Using the Login to Enter the Airbnb websites first so the data becomes available
+log=driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
 log.click()
-
-# Enter username
-wait.until(EC.presence_of_element_located((By.XPATH, """//input[@inputmode="email"]"""))).send_keys(username)
+driver.find_element("xpath", """//input[@inputmode="email"]""" ).send_keys(username)
 time.sleep(2)
-
-# Submit username and enter password
-log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
+log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
-wait.until(EC.presence_of_element_located((By.XPATH, """//input[@name="user[password]"]"""))).send_keys(passw)
+driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
 time.sleep(2)
-log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
+log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
-
-# Wait for the page to load after logging in
-time.sleep(10)
-
-
-time.sleep(10)
-# driver.get(second)
-# Use JavaScript to remove the element from the DOM
-# Use JavaScript to remove the element from the DOM
-div_to_remove = driver.find_element("xpath", """//div[@class="o30qrr6 atm_wq_z68epy atm_mk_1n9t6rb atm_tk_idpfg4 atm_n3_idpfg4 atm_6i_idpfg4 atm_fq_idpfg4 atm_l1_1wugsn5 atm_kx_i4x0gi atm_26_dezgoh atm_y_1bbsqr7 atm_16_kb7nvz atm_12_1hrf63d atm_1c_16in4td atm_1k_10p890i atm_26_dezgoh__oggzyc o19htd17 dir dir-ltr"]""" )
-driver.execute_script("arguments[0].remove();", div_to_remove)
-try:
-    privacy = driver.find_element("xpath", """/html/body/div[5]/div/div/div[1]/div/div[3]/section/div[2]/div[2]/button""" )
-    privacy.click()
-
-
-    test = driver.find_element("xpath", """/html/body/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div/header/div/div[1]/a""" )
-    test.click()
-except:
-    pass
-time.sleep(10)
-html_content = driver.page_source
-print(html_content)
-# Method of getting the listing numbers available on the website
-time.sleep(3)
-all_listing = wait.until(EC.element_to_be_clickable((By.XPATH, """//div[@data-testid="listingPicker"]/button""")))
-all_listing.click()
-
-time.sleep(2)
-lists = wait.until(EC.presence_of_all_elements_located((By.XPATH, """//div[@class="_1a8jl99"]/div/div[1]""")))
-
-Listings = []
-for list_item in lists:
-    div_id = list_item.get_attribute('id')
-    Listings.append(div_id)
-
-print(Listings)

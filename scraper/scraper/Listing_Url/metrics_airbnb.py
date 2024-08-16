@@ -23,8 +23,13 @@ with sync_playwright() as p:
     page.fill('input[name="user[password]"]', passw)
     page.click('button[data-testid="signup-login-submit-btn"]')
 
-    # Wait for navigation or page update if needed
-    page.wait_for_load_state('networkidle')  # Wait for the network to be idle
+    # Wait for the page to fully load after login
+    page.wait_for_load_state('networkidle')
+
+    # Print the HTML content after login
+    page_html = page.content()
+    print("HTML content after login:")
+    print(page_html)
 
     # Wait for the listings picker to be available
     time.sleep(10)  # Adjust as necessary for your page

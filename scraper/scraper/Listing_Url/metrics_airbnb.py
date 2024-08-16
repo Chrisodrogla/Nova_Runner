@@ -1,15 +1,6 @@
 import os
 import time
-import datetime
-from selenium import webdriver
-import shutil
-import json
-from selenium.common.exceptions import NoSuchElementException
-import datetime
-import pytz
-import pandas as pd
-from datetime import datetime, timedelta
-import calendar
+from playwright.sync_api import sync_playwright
 
 start_time = time.time()
 
@@ -18,27 +9,20 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-# Set up Chrome WebDriver
-options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)  # Set headless=True for no UI
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto(website)
 
+    # Login process
+    page.click('button[aria-label="Continue with email"]')
+    page.fill('input[inputmode="email"]', username)
+    page.click('button[data-testid="signup-login-submit-btn"]')
+    time.sleep(2)
+    page.fill('input[name="user[password]"]', passw)
+    page.click('button[data-testid="signup-login-submit-btn"]')
 
-driver = webdriver.Chrome(options=options)
-driver.get(website)
+    # Add any additional scraping logic here
 
-# Using the Login to Enter the Airbnb websites first so the data becomes available
-log=driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
-log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""" ).send_keys(username)
-time.sleep(2)
-log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-time.sleep(2)
-driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
-time.sleep(2)
-log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
+    browser.close()

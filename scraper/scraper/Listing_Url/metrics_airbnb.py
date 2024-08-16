@@ -59,3 +59,13 @@ driver.find_element(By.XPATH, """//input[@name="user[password]"]""").send_keys(p
 time.sleep(2)
 log1 = driver.find_element(By.XPATH, """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
+# MEthod of getting the listing numbers available on the website
+time.sleep(10)
+all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
+all_listing.click()
+time.sleep(2)
+lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
+Listings = []
+for list_item in lists:
+    div_id = list_item.get_attribute('id')
+    Listings.append(div_id)

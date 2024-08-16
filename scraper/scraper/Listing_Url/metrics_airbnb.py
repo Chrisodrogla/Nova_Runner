@@ -24,5 +24,10 @@ with sync_playwright() as p:
     page.click('button[data-testid="signup-login-submit-btn"]')
 
     # Add any additional scraping logic here
+    # Wait for navigation or page update if needed
+    page.wait_for_load_state('networkidle')  # Wait for the network to be idle
 
+    # Print the HTML content after the login button is clicked
+    page_html = page.content()
+    print(page_html)
     browser.close()

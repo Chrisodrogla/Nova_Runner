@@ -19,8 +19,9 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 options = FirefoxOptions()
-options.add_argument("--headless")
+options.headless = True
 driver = webdriver.Firefox(options=options)
+
 
 driver.get(website)
 

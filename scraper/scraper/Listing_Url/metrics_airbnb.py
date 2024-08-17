@@ -2,7 +2,6 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 # Set environment variables
 username = os.environ['AIRBNB_USER_SECRET']
@@ -10,14 +9,12 @@ passw = os.environ['AIRBNB_PASSW_SECRET']
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-# Set the path to the Firefox binary
-firefox_binary = FirefoxBinary("/usr/bin/firefox")
-
+# Configure Firefox options
 options = FirefoxOptions()
-options.binary = firefox_binary
+options.binary_location = "/usr/bin/firefox"  # Set the correct path to the Firefox binary
 options.headless = True
 
-# Initialize the WebDriver
+# Initialize the WebDriver with the correct options
 driver = webdriver.Firefox(options=options)
 
 # Open the Airbnb website

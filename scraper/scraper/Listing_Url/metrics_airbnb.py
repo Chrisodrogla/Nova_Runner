@@ -6,7 +6,7 @@ import shutil
 import json
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import datetime
-import pytz
+# import pytz
 import pandas as pd
 from datetime import datetime, timedelta
 import calendar

@@ -16,24 +16,22 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9' # You can specify a different Python version if needed
+        python-version: '3.9'
 
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip
         sudo apt-get install -y firefox
         wget https://github.com/mozilla/geckodriver/releases/latest/download/geckodriver-linux64.tar.gz
         tar -xzf geckodriver-linux64.tar.gz
         sudo mv geckodriver /usr/local/bin/
         rm geckodriver-linux64.tar.gz
-        python -m pip install --upgrade pip
-        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+        pip install --upgrade pip
+        pip install selenium
 
     - name: Run Python Script
       env:
-        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
         AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
-        xvfb-run -a python scraper/scraper/Listing_Url/metrics_airbnb.py
+        python scraper/scraper/Listing_Url/metrics_airbnb.py

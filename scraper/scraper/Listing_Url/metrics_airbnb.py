@@ -5,13 +5,7 @@ from selenium import webdriver
 import shutil
 import json
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-import datetime
-# import pytz
-import pandas as pd
-from datetime import datetime, timedelta
-import calendar
 
-start_time = time.time()
 
 username = os.environ['AIRBNB_USER_SECRET']
 passw = os.environ['AIRBNB_PASSW_SECRET']

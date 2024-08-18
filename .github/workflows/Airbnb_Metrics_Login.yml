@@ -34,6 +34,12 @@ jobs:
     - name: Check Firefox binary location
       run: which firefox
 
+    - name: Check Geckodriver Version
+      run: geckodriver --version
+
+    - name: List Installed Firefox Packages
+      run: dpkg --get-selections | grep firefox
+
     - name: Run Python Script
       env:
         AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}

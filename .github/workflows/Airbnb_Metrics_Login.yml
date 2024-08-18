@@ -24,6 +24,7 @@ jobs:
         sudo apt-get remove --purge snapd -y  # Remove snapd and any snap packages
         sudo apt-get install -y firefox
         if [ -f /usr/local/bin/geckodriver ]; then sudo rm /usr/local/bin/geckodriver; fi  # Check if geckodriver exists before removing
+        if [ -f /snap/bin/geckodriver ]; then sudo rm /snap/bin/geckodriver; fi  # Remove geckodriver from Snap if it exists
         wget https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz
         tar -xzf geckodriver-v0.35.0-linux64.tar.gz
         sudo mv geckodriver /usr/local/bin/

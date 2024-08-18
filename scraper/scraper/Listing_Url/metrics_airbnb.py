@@ -18,6 +18,8 @@ options.headless = True
 # Initialize the WebDriver with the correct options and geckodriver service
 service = Service(executable_path="/usr/local/bin/geckodriver")
 
+driver = None
+
 try:
     print("Starting WebDriver...")
     driver = webdriver.Firefox(service=service, options=options)
@@ -52,5 +54,9 @@ try:
 
     print(Listings)
 
+except Exception as e:
+    print(f"An error occurred: {e}")
+
 finally:
-    driver.quit()  # Ensure the driver is quit even if an error occurs
+    if driver:
+        driver.quit()  # Ensure the driver is quit even if an error occurs

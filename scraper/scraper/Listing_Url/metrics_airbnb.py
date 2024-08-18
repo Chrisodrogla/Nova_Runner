@@ -1,6 +1,7 @@
 import os
 import time
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 # Set environment variables
@@ -13,10 +14,10 @@ website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 options = FirefoxOptions()
 options.binary_location = "/usr/bin/firefox"  # Set the correct path to the Firefox binary
 options.headless = True
-options.log.level = "trace"  # Set log level to trace for detailed logs
 
-# Initialize the WebDriver with the correct options
-driver = webdriver.Firefox(options=options)
+# Initialize the WebDriver with the correct options and geckodriver service
+service = Service(executable_path="/usr/local/bin/geckodriver")
+driver = webdriver.Firefox(service=service, options=options)
 
 try:
     # Open the Airbnb website

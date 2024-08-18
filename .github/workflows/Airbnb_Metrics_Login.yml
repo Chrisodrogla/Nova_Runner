@@ -23,10 +23,11 @@ jobs:
         sudo apt-get update
         sudo apt-get remove --purge snapd -y  # Remove snapd and any snap packages
         sudo apt-get install -y firefox
-        if [ -f /snap/bin/geckodriver ]; then sudo rm /snap/bin/geckodriver; fi  # Remove old geckodriver from snap
+        if [ -f /usr/local/bin/geckodriver ]; then sudo rm /usr/local/bin/geckodriver; fi  # Remove old geckodriver
         wget https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz
         tar -xzf geckodriver-v0.35.0-linux64.tar.gz
         sudo mv geckodriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/geckodriver  # Ensure geckodriver is executable
         rm geckodriver-v0.35.0-linux64.tar.gz
         pip install --upgrade pip
         pip install selenium

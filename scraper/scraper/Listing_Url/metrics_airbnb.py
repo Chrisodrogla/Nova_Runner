@@ -12,7 +12,7 @@ website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
 # Configure Firefox options
 options = FirefoxOptions()
-options.binary_location = "/usr/bin/firefox"  # Set the correct path to the Firefox binary
+options.binary_location = "/usr/bin/firefox"  # Path to Firefox binary
 options.headless = True
 
 # Initialize the WebDriver with the correct options and geckodriver service

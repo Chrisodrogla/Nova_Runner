@@ -32,8 +32,12 @@ jobs:
         pip install --upgrade pip
         pip install selenium
 
-    - name: Check Firefox binary location
-      run: which firefox
+    - name: Check Firefox and geckodriver
+      run: |
+        which firefox
+        which geckodriver
+        firefox --version
+        geckodriver --version
 
     - name: Run Python Script
       env:

@@ -17,9 +17,12 @@ options.headless = True
 
 # Initialize the WebDriver with the correct options and geckodriver service
 service = Service(executable_path="/usr/local/bin/geckodriver")
-driver = webdriver.Firefox(service=service, options=options)
 
 try:
+    print("Starting WebDriver...")
+    driver = webdriver.Firefox(service=service, options=options)
+    print("WebDriver started successfully.")
+
     # Open the Airbnb website
     driver.get(website)
 

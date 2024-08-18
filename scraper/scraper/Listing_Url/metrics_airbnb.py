@@ -12,7 +12,8 @@ website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 # Configure Firefox options
 options = FirefoxOptions()
 options.binary_location = "/usr/bin/firefox"  # Set the correct path to the Firefox binary
-options.headless = True  # Enable headless mode for running in environments without a display
+options.headless = True
+options.log.level = "trace"  # Set log level to trace for detailed logs
 
 # Initialize the WebDriver with the correct options
 driver = webdriver.Firefox(options=options)
@@ -48,5 +49,4 @@ try:
     print(Listings)
 
 finally:
-    # Ensure that the driver is properly closed in case of any exceptions
-    driver.quit()
+    driver.quit()  # Ensure the driver is quit even if an error occurs

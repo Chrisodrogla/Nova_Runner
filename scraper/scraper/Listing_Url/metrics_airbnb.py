@@ -11,7 +11,6 @@ async def main():
     page = await browser.newPage()
     await page.goto(website)
 
-    # Using the Login to Enter the Airbnb website
     await page.click('button[aria-label="Continue with email"]')
     await page.type('input[inputmode="email"]', username)
     current_html = await page.content()
@@ -21,7 +20,6 @@ async def main():
     await page.click('button[data-testid="signup-login-submit-btn"]')
     await asyncio.sleep(2)
 
-
     await browser.close()
 
-asyncio.get_event_loop().run_until_complete(main())
+asyncio.run(main())

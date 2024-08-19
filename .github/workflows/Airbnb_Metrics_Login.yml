@@ -1,4 +1,4 @@
-name: Airbnb Metrics Login
+name: Metrics Login Airbnb
 
 on:
   workflow_dispatch: # This allows manual triggering of the workflow

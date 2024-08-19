@@ -6,32 +6,30 @@ on:
     - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
 
 jobs:
-  run_python_script:
+  run_puppeteer_script:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        python-version: '3.9' # You can specify a different Python version if needed
+        node-version: '18' # Specify the Node.js version
 
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget
+        sudo apt-get install -y wget unzip
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
         rm google-chrome-stable_current_amd64.deb
-        python -m pip install --upgrade pip
-        pip install pandas pyppeteer google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+        npm install puppeteer
 
-    - name: Run Python Script
+    - name: Run Puppeteer Script
       env:
-        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
         AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
-        python scraper/scraper/Listing_Url/metrics_airbnb.py
+        node scraper/scraper/Listing_Url/metrics_airbnb.js

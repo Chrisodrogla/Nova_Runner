@@ -1,49 +1,46 @@
 import os
-import time
-import datetime
-from selenium import webdriver
-import shutil
-import json
-from selenium.common.exceptions import NoSuchElementException
-import datetime
-import pytz
-import pandas as pd
-from datetime import datetime, timedelta
-import calendar
+import asyncio
+from pyppeteer import launch
+import logging
 
-start_time = time.time()
+logging.basicConfig(level=logging.INFO)
 
-username = os.environ['AIRBNB_USER_SECRET']
-passw = os.environ['AIRBNB_PASSW_SECRET']
+async def main():
+    username = os.environ.get('AIRBNB_USER_SECRET')
+    passw = os.environ.get('AIRBNB_PASSW_SECRET')
 
-website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+    if not username or not passw:
+        logging.error("Environment variables for Airbnb credentials are not set.")
+        return
 
-# Set up Chrome WebDriver
-options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
+    website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
+    try:
+        # Set up Pyppeteer
+        browser = await launch({
+            'headless': False,  # Set to True to run headless
+            'args': ['--no-sandbox', '--disable-dev-shm-usage', '--window-size=1920x1080']
+        })
+        page = await browser.newPage()
+        await page.goto(website)
 
-driver = webdriver.Chrome(options=options)
-driver.get(website)
+        # Using the Login to Enter the Airbnb website
+        await page.click('button[aria-label="Continue with email"]')
+        await page.type('input[inputmode="email"]', username)
+        await page.click('button[data-testid="signup-login-submit-btn"]')
+        await page.waitForTimeout(2000)  # Wait for 2 seconds
 
+        # Capture the page source
+        content = await page.content()
+        print(content)
 
-# Using the Login to Enter the Airbnb website
-log=driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
-log.click()
-driver.find_element("xpath", """//input[@inputmode="email"]""" ).send_keys(username)
-time.sleep(2)
-log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-time.sleep(2)
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
 
-current_html = driver.page_source
-print(current_html)
+    finally:
+        if 'browser' in locals():
+            await browser.close()
 
-# driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
-# time.sleep(2)
-# log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-# log1.click()
+# Run the async function
+if __name__ == "__main__":
+    asyncio.get_event_loop().run_until_complete(main())

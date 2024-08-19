@@ -39,6 +39,10 @@ time.sleep(2)
 log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
 log1.click()
 time.sleep(2)
+
+current_html = driver.page_source
+print(current_html)
+
 driver.find_element("xpath", """//input[@name="user[password]"]""" ).send_keys(passw)
 time.sleep(2)
 log1=driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")

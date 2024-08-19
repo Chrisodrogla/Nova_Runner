@@ -1,9 +1,9 @@
 name: Airbnb Metrics Login
 
 on:
-  workflow_dispatch: # Allows manual triggering of the workflow
+  workflow_dispatch: # This allows manual triggering of the workflow
   schedule:
-    - cron: "0 0 * * *"  # Runs the workflow every day at midnight (UTC)
+    - cron: "0 0 * * *"  # This runs the workflow every day at midnight (UTC)
 
 jobs:
   run_python_script:
@@ -16,32 +16,23 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.9' # You can specify a different Python version if needed
 
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get remove --purge snapd -y  # Remove snapd and any snap packages
-        sudo apt-get install -y firefox
-        if [ -f /usr/local/bin/geckodriver ]; then sudo rm /usr/local/bin/geckodriver; fi  # Remove old geckodriver
-        wget https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz
-        tar -xzf geckodriver-v0.35.0-linux64.tar.gz
-        sudo mv geckodriver /usr/local/bin/
-        sudo chmod +x /usr/local/bin/geckodriver  # Ensure geckodriver is executable
-        rm geckodriver-v0.35.0-linux64.tar.gz
-        pip install --upgrade pip
-        pip install selenium
-
-    - name: Check Firefox and geckodriver
-      run: |
-        which firefox
-        which geckodriver
-        firefox --version
-        geckodriver --version
+        sudo apt-get install -y xvfb
+        sudo apt-get install -y wget unzip
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+        rm google-chrome-stable_current_amd64.deb
+        python -m pip install --upgrade pip
+        pip install pandas selenium google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
     - name: Run Python Script
       env:
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }} # Your Google Sheets credentials
         AIRBNB_USER_SECRET: ${{ secrets.AIRBNB_USER_SECRET }}
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
-        python scraper/scraper/Listing_Url/metrics_airbnb.py
+        xvfb-run -a python scraper/scraper/Listing_Url/metrics_airbnb.py

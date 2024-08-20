@@ -1,4 +1,4 @@
-name: Air bnb Metrics Login
+name: Metrics Login Airbnb
 
 on:
   workflow_dispatch: # This allows manual triggering of the workflow
@@ -25,7 +25,8 @@ jobs:
 
     - name: Start Video Recording
       run: |
-        ffmpeg -y -video_size 1920x1080 -framerate 25 -f x11grab -i :99.0 video_output.mp4 &
+        mkdir -p output
+        ffmpeg -y -video_size 1920x1080 -framerate 25 -f x11grab -i :99.0 -loglevel debug output/video_output.mp4 &
       env:
         DISPLAY: ":99"
 
@@ -37,12 +38,17 @@ jobs:
       run: |
         python scraper/scraper/Listing_Url/metrics_airbnb.py
 
+    - name: List Files for Debugging
+      run: |
+        ls -al output/
+
     - name: Stop Video Recording
       run: |
+        sleep 5
         pkill ffmpeg || true
 
     - name: Upload Video Recording
       uses: actions/upload-artifact@v3
       with:
         name: video-output
-        path: video_output.mp4
+        path: output/video_output.mp4

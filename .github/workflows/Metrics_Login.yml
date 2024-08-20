@@ -39,7 +39,7 @@ jobs:
 
     - name: Stop Video Recording
       run: |
-        pkill ffmpeg
+        pkill ffmpeg || true
 
     - name: Upload Video Recording
       uses: actions/upload-artifact@v3

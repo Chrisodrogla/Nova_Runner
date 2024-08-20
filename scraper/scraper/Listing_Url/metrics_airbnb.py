@@ -18,11 +18,11 @@ async def main():
     await page.click('button[data-testid="signup-login-submit-btn"]')
     await asyncio.sleep(2)
 
-    # Entering the password
-    await page.type('input[name="user[password]"]', passw)
-    await asyncio.sleep(2)
-    await page.click('button[data-testid="signup-login-submit-btn"]')
-    await asyncio.sleep(2)
+    # # Entering the password
+    # await page.type('input[name="user[password]"]', passw)
+    # await asyncio.sleep(2)
+    # await page.click('button[data-testid="signup-login-submit-btn"]')
+    # await asyncio.sleep(2)
 
     # Optionally capture the page content after login
     current_html = await page.content()

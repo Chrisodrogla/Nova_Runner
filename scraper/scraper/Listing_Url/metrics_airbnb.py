@@ -14,13 +14,13 @@ async def main():
 
     await page.click('button[aria-label="Continue with email"]')
     await page.type('input[inputmode="email"]', username)
-    current_html = await page.content()
-    print(current_html)
+
 
     await asyncio.sleep(2)
     await page.click('button[data-testid="signup-login-submit-btn"]')
     await asyncio.sleep(2)
-
+    current_html = await page.content()
+    print(current_html)
     await browser.close()
 
 asyncio.run(main())

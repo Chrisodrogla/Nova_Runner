@@ -7,7 +7,7 @@ async def main():
     passw = os.environ['AIRBNB_PASSW_SECRET']
     website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 
-    browser = await launch(headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
+    browser = await launch(headless=False, args=['--no-sandbox', '--disable-dev-shm-usage'])
     page = await browser.newPage()
     await page.goto(website)
 

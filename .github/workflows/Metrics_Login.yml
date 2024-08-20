@@ -1,4 +1,4 @@
-name: Metrics Login Airbnb
+name: Air bnb Metrics Login
 
 on:
   workflow_dispatch: # This allows manual triggering of the workflow
@@ -13,20 +13,21 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9' # You can specify a different Python version if needed
-
-    - name: Install Dependencies
+    - name: Set up Python and Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip
+        sudo apt-get install -y wget unzip ffmpeg
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
         rm google-chrome-stable_current_amd64.deb
         python -m pip install --upgrade pip
         pip install pandas pyppeteer google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+    - name: Start Video Recording
+      run: |
+        ffmpeg -y -video_size 1920x1080 -framerate 25 -f x11grab -i :99.0 video_output.mp4 &
+      env:
+        DISPLAY: ":99"
 
     - name: Run Python Script
       env:
@@ -35,3 +36,13 @@ jobs:
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
         python scraper/scraper/Listing_Url/metrics_airbnb.py
+
+    - name: Stop Video Recording
+      run: |
+        pkill ffmpeg
+
+    - name: Upload Video Recording
+      uses: actions/upload-artifact@v3
+      with:
+        name: video-output
+        path: video_output.mp4

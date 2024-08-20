@@ -3,7 +3,8 @@ import asyncio
 from pyppeteer import launch
 
 async def main():
-    username = os.environ['AIRBNB_USER_SECRET']
+    # username = os.environ['AIRBNB_USER_SECRET']
+    username = "SampleOnlylogin"
     passw = os.environ['AIRBNB_PASSW_SECRET']
     website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 

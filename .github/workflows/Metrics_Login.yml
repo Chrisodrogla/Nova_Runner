@@ -13,22 +13,20 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Python and Install Dependencies
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9' # You can specify a different Python version if needed
+
+    - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip ffmpeg
+        sudo apt-get install -y wget unzip
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
         rm google-chrome-stable_current_amd64.deb
         python -m pip install --upgrade pip
         pip install pandas pyppeteer google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
-
-    - name: Start Video Recording
-      run: |
-        mkdir -p output
-        ffmpeg -y -video_size 1920x1080 -framerate 25 -f x11grab -i :99.0 -loglevel debug output/video_output.mp4 &
-      env:
-        DISPLAY: ":99"
 
     - name: Run Python Script
       env:
@@ -37,18 +35,3 @@ jobs:
         AIRBNB_PASSW_SECRET: ${{ secrets.AIRBNB_PASSW_SECRET }}
       run: |
         python scraper/scraper/Listing_Url/metrics_airbnb.py
-
-    - name: List Files for Debugging
-      run: |
-        ls -al output/
-
-    - name: Stop Video Recording
-      run: |
-        sleep 5
-        pkill ffmpeg || true
-
-    - name: Upload Video Recording
-      uses: actions/upload-artifact@v3
-      with:
-        name: video-output
-        path: output/video_output.mp4

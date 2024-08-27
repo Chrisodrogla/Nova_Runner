@@ -116,6 +116,9 @@ df = pd.concat([df, guest_info_df], axis=1)
 df[['BookedDate', 'BookedTime']] = df['column6'].str.split('\n', expand=True)
 df['BookedDate'] = pd.to_datetime(df['BookedDate']).dt.strftime('%m/%d/%Y')
 
+# Split column2 values by '/' and keep only the first part
+df['column2'] = df['column2'].apply(lambda x: x.split('\n')[0] if pd.notna(x) else None)
+df['column9'] = df['column9'].apply(lambda x: x.strip('$') if pd.notna(x) else None)
 # Rename columns and remove specific columns
 df.rename(columns={
     'column1': 'Status',

@@ -21,7 +21,14 @@ values = result.get('values', [])
 
 df = pd.DataFrame(values[1:], columns=values[0])
 
-print("Column names in DataFrame:", df.columns.tolist())
+# Check if ListingID column exists and print the first few values
+if 'ListingID' in df.columns:
+    print("ListingID values in DataFrame:", df['ListingID'].head())
+else:
+    print("ListingID column not found in the DataFrame.")
+
+# Ensure ListingID is properly handled and converted to the correct type
+df['ListingID'] = df['ListingID'].astype(str)  # Ensure ListingID is treated as a string
 
 # Convert data types to match SQL table
 df = df.apply(pd.to_numeric, errors='ignore')  # Convert numeric columns to appropriate types
@@ -42,9 +49,9 @@ for start in range(0, len(df), batch_size):
     batch = df.iloc[start:start+batch_size]
     for index, row in batch.iterrows():
         cursor.execute("""
-            INSERT INTO ListingMetrics (StartDate, EndDate, FPImpression, TotalPageView, TotalPageView_comp, FPImpressionRate, ClickThroughRate, ViewtoBookRate, OverallConversionRate, OverallConversionRate_comp, LeadingTime, LeadingTime_comp, WishlistAdditions, WishlistAdditions_comp)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, row['StartDate'], row['EndDate'], row['FPImpression'], row['TotalPageView'], row['TotalPageView_comp'], row['FPImpressionRate'], row['ClickThroughRate'], row['ViewtoBookRate'], row['OverallConversionRate'], row['OverallConversionRate_comp'], row['LeadingTime'], row['LeadingTime_comp'], row['WishlistAdditions'], row['WishlistAdditions_comp'])
+            INSERT INTO ListingMetrics (ListingID, StartDate, EndDate, FPImpression, TotalPageView, TotalPageView_comp, FPImpressionRate, ClickThroughRate, ViewtoBookRate, OverallConversionRate, OverallConversionRate_comp, LeadingTime, LeadingTime_comp, WishlistAdditions, WishlistAdditions_comp)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, row['ListingID'], row['StartDate'], row['EndDate'], row['FPImpression'], row['TotalPageView'], row['TotalPageView_comp'], row['FPImpressionRate'], row['ClickThroughRate'], row['ViewtoBookRate'], row['OverallConversionRate'], row['OverallConversionRate_comp'], row['LeadingTime'], row['LeadingTime_comp'], row['WishlistAdditions'], row['WishlistAdditions_comp'])
     conn.commit()
 
 # Close connection

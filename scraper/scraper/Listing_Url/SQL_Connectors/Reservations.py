@@ -25,7 +25,7 @@ df = pd.DataFrame(values[1:], columns=values[0])
 # Ensure correct data types to match SQL table
 df['CheckIn'] = pd.to_datetime(df['CheckIn'], errors='coerce').dt.date
 df['CheckOut'] = pd.to_datetime(df['CheckOut'], errors='coerce').dt.date
-df['Earnings'] = pd.to_numeric(df['Earnings'], errors='coerce')
+df['Earnings'] = df['Earnings'].str.replace(',', '').astype(float)
 df['NumberOfAdults'] = pd.to_numeric(df['# of adults'], errors='coerce')
 df['NumberOfChildren'] = pd.to_numeric(df['# of children'], errors='coerce')
 df['NumberOfInfants'] = pd.to_numeric(df['# of infants'], errors='coerce')

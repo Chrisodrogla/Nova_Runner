@@ -7,7 +7,7 @@ import pyodbc
 
 # Constants
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
-PROPERTIES_TABLE = 'Listing_Reservation'
+PROPERTIES_TABLE = 'Listing_Metrics'
 GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 credentials = Credentials.from_service_account_info(json.loads(GOOGLE_SHEETS_CREDENTIALS))
 
@@ -22,10 +22,12 @@ values = result.get('values', [])
 # Create a DataFrame from the Google Sheets data
 df = pd.DataFrame(values[1:], columns=values[0])
 
+# Remove commas from Earnings column and convert to numeric
+df['Earnings'] = df['Earnings'].str.replace(',', '').astype(float)
+
 # Ensure correct data types to match SQL table
 df['CheckIn'] = pd.to_datetime(df['CheckIn'], errors='coerce').dt.date
 df['CheckOut'] = pd.to_datetime(df['CheckOut'], errors='coerce').dt.date
-df['Earnings'] = pd.to_numeric(df['Earnings'], errors='coerce')
 df['NumberOfAdults'] = pd.to_numeric(df['# of adults'], errors='coerce')
 df['NumberOfChildren'] = pd.to_numeric(df['# of children'], errors='coerce')
 df['NumberOfInfants'] = pd.to_numeric(df['# of infants'], errors='coerce')

@@ -22,21 +22,10 @@ values = result.get('values', [])
 # Create a DataFrame from the Google Sheets data
 df = pd.DataFrame(values[1:], columns=values[0])
 
-# Print column names for debugging
-print("Columns in DataFrame:", df.columns.tolist())
-
-# Check for the actual name of the 'Earnings' column and correct if necessary
-earnings_column = 'Earnings'  # Change this to the actual column name if different
-
-if earnings_column in df.columns:
-    # Remove commas from the Earnings column and convert to float
-    df[earnings_column] = df[earnings_column].str.replace(',', '').astype(float)
-else:
-    print(f"Column '{earnings_column}' not found in the DataFrame.")
-
 # Ensure correct data types to match SQL table
 df['CheckIn'] = pd.to_datetime(df['CheckIn'], errors='coerce').dt.date
 df['CheckOut'] = pd.to_datetime(df['CheckOut'], errors='coerce').dt.date
+df['Earnings'] = pd.to_numeric(df['Earnings'], errors='coerce')
 df['NumberOfAdults'] = pd.to_numeric(df['# of adults'], errors='coerce')
 df['NumberOfChildren'] = pd.to_numeric(df['# of children'], errors='coerce')
 df['NumberOfInfants'] = pd.to_numeric(df['# of infants'], errors='coerce')
@@ -72,7 +61,7 @@ for start in range(0, len(df), batch_size):
         cursor.execute("""
             INSERT INTO ListingReservation (Status, GuestName, CheckIn, CheckOut, Listing, ConfirmationCode, Earnings, Contact, GuestLink, NumberOfAdults, NumberOfChildren, NumberOfInfants, BookedDate, BookedTime, Review)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, row['Status'], row['GuestName'], row['CheckIn'], row['CheckOut'], row['Listing'], row['ConfirmationCode'], row[earnings_column], row['Contact'], row['GuestLink'], row['NumberOfAdults'], row['NumberOfChildren'], row['NumberOfInfants'], row['BookedDate'], row['BookedTime'], row['Review'])
+        """, row['Status'], row['GuestName'], row['CheckIn'], row['CheckOut'], row['Listing'], row['ConfirmationCode'], row['Earnings'], row['Contact'], row['GuestLink'], row['NumberOfAdults'], row['NumberOfChildren'], row['NumberOfInfants'], row['BookedDate'], row['BookedTime'], row['Review'])
     conn.commit()
 
 # Close connection

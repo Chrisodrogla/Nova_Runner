@@ -22,7 +22,7 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
     data = json.load(f)
     rental_links = data[batch_id]
 
-def filter_results(result, needed_keys):
+def filter_results(result):
     filtered_results = []
     for listing in result:
         for item in listing:
@@ -83,7 +83,7 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 logger = logging.getLogger(__name__)
-needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night','cohost']
+needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
 
 final_results = []
 errors = []

@@ -13,7 +13,7 @@ import pandas as pd
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
-
+import jmespath
 
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
@@ -22,15 +22,82 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
     data = json.load(f)
     rental_links = data[batch_id]
 
+
 def filter_results(result, needed_keys):
     filtered_results = []
+
+    # Define the JMESPath expressions once, outside the loop
+    orig_price_per_night_paths = [
+        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description",
+        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description",
+        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+    ]
+
+    total_price_paths = [
+        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString",
+        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString",
+        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+    ]
+
+    total_without_tax_paths = [
+        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString",
+        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString",
+        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+    ]
+
     for listing in result:
         for item in listing:
+            # Filtered result based on needed_keys
             filtered_result = {key: item.get(key, None) for key in needed_keys}
+
+            # Extract and process the additional data
+            orig_price_per_night = None
+            for path in orig_price_per_night_paths:
+                orig_price_per_night = jmespath.search(path, item)
+                if orig_price_per_night:
+                    break
+
+            total_price = None
+            for path in total_price_paths:
+                total_price = jmespath.search(path, item)
+                if total_price:
+                    break
+
+            total_without_tax = None
+            for path in total_without_tax_paths:
+                total_without_tax = jmespath.search(path, item)
+                if total_without_tax:
+                    break
+
+            if orig_price_per_night:
+                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',',
+                                                                                                                 '')
+            else:
+                orig_price_per_night_value = None
+
+            if total_price:
+                total_price_value = total_price.replace('$', '').strip().replace(',', '')
+            else:
+                total_price_value = None
+
+            if total_without_tax:
+                total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '')
+            else:
+                total_without_tax_value = None
+
+            # Add the additional data to the filtered result
+            filtered_result.update({
+                'total_price_website': total_price_value,
+                'price_on_website': orig_price_per_night_value,
+                'total_on_website': total_without_tax_value
+            })
+
             # Split the url at '?' to keep only the base URL
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
+
             filtered_results.append(filtered_result)
+
     return filtered_results
 
 def extract_dates_from_url(url):
@@ -46,37 +113,18 @@ def scrape_rental(rental, needed_keys):
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
     filtered_results = filter_results(result, needed_keys)
-
-    # Define the JMESPath expressions
-    orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-
     final_results = []
     check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
     for filtered_result in filtered_results:
-        listing = filtered_result  # Assuming filtered_result contains the listing information
-        total_price_website = jmespath.search(total_price_path, listing)
-        price_on_website = jmespath.search(orig_price_per_night_path, listing)
-        total_on_website = jmespath.search(total_without_tax_path, listing)
-        
-        # Clean the extracted values
-        if total_price_website:
-            total_price_website = total_price_website.replace('$', '').strip().replace(',', '')
-        if price_on_website:
-            price_on_website = price_on_website.split('x')[0].replace('$', '').strip().replace(',', '')
-        if total_on_website:
-            total_on_website = total_on_website.replace('$', '').strip().replace(',', '')
-        
-        filtered_result.update({
-            'listingId': filtered_result['url'].split('/')[-1].split('?')[0],
-            'check_in_date': check_in_date,
-            'check_out_date': check_out_date,
-            'total_price_website': total_price_website,
-            'price_on_website': price_on_website,
-            'total_on_website': total_on_website
-        })
-        final_results.append(filtered_result)
+        filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
+        final_result = {
+            "JobID": rental["JobID"],
+            "InfoID": rental["InfoID"],
+            **filtered_result,
+            "check_in_date": check_in_date,
+            "check_out_date": check_out_date
+        }
+        final_results.append(final_result)
     return final_results
 
 def chunks(lst, n):

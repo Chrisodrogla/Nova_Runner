@@ -3,7 +3,7 @@ import sys
 import time
 import os
 from urllib.parse import urlparse, parse_qs
-import jmespath  # Added import for JMESPath
+sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
@@ -13,6 +13,7 @@ import pandas as pd
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
+
 
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()

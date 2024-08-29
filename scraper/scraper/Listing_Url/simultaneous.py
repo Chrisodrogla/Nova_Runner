@@ -113,7 +113,7 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 logger = logging.getLogger(__name__)
-needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
+needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night','cohost']
 
 final_results = []
 errors = []

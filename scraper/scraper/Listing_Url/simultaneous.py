@@ -46,8 +46,6 @@ def scrape_rental(rental, needed_keys):
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
     filtered_results = filter_results(result, needed_keys)
-    final_results = []
-    check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
 
     # Define the JMESPath expressions
     orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
@@ -62,18 +60,40 @@ def scrape_rental(rental, needed_keys):
     total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
     total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
 
+    final_results = []
+    check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
     for filtered_result in filtered_results:
-        filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
+        # Add JMESPath extracted values
+        orig_price_per_night = (
+            jmespath.search(orig_price_per_night_path, result) or 
+            jmespath.search(orig_price_per_night_path1, result) or 
+            jmespath.search(orig_price_per_night_path2, result)
+        )
+        total_price = (
+            jmespath.search(total_price_path, result) or 
+            jmespath.search(total_price_path1, result) or 
+            jmespath.search(total_price_path2, result)
+        )
+        total_without_tax = (
+            jmespath.search(total_without_tax_path, result) or 
+            jmespath.search(total_without_tax_path1, result) or 
+            jmespath.search(total_without_tax_path2, result)
+        )
 
-        # Extract additional data using JMESPath
-        orig_price_per_night = jmespath.search(orig_price_per_night_path, filtered_result) or jmespath.search(orig_price_per_night_path1, filtered_result) or jmespath.search(orig_price_per_night_path2, filtered_result)
-        total_price = jmespath.search(total_price_path, filtered_result) or jmespath.search(total_price_path1, filtered_result) or jmespath.search(total_price_path2, filtered_result)
-        total_without_tax = jmespath.search(total_without_tax_path, filtered_result) or jmespath.search(total_without_tax_path1, filtered_result) or jmespath.search(total_without_tax_path2, filtered_result)
+        if orig_price_per_night:
+            orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '')
+        else:
+            orig_price_per_night_value = None
 
-        # Process the extracted values
-        orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '') if orig_price_per_night else None
-        total_price_value = total_price.replace('$', '').strip().replace(',', '') if total_price else None
-        total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '') if total_without_tax else None
+        if total_price:
+            total_price_value = total_price.replace('$', '').strip().replace(',', '')
+        else:
+            total_price_value = None
+
+        if total_without_tax:
+            total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '')
+        else:
+            total_without_tax_value = None
 
         final_result = {
             "JobID": rental["JobID"],
@@ -81,9 +101,9 @@ def scrape_rental(rental, needed_keys):
             **filtered_result,
             "check_in_date": check_in_date,
             "check_out_date": check_out_date,
-            "total_price_website": total_price_value,
-            "price_on_website": orig_price_per_night_value,
-            "total_on_website": total_without_tax_value
+            'total_price_website': total_price_value,
+            'price_on_website': orig_price_per_night_value,
+            'total_on_website': total_without_tax_value
         }
         final_results.append(final_result)
     return final_results
@@ -119,7 +139,7 @@ minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
 # Google Sheets setup
-SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
+SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
 MARKETDATA_SHEET_NAMES = ['JobTable_Results', 'JobTable_Results2', 'JobTable_Results3']
 
 # Get Google Sheets credentials from environment variable

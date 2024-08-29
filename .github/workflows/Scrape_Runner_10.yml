@@ -22,7 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install gspread oauth2client pandas gspread-dataframe
-        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client jmespath
 
     - name: Run scraper script
       env:

@@ -7,13 +7,13 @@ sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
+import jmespath
 
 import pandas as pd
 
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
-import jmespath
 
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
@@ -30,6 +30,24 @@ def filter_results(result, needed_keys):
             # Split the url at '?' to keep only the base URL
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
+
+            # Adding the new fields from to_add.py
+            orig_price_per_night = jmespath.search("cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description", item) or \
+                                   jmespath.search("cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description", item) or \
+                                   jmespath.search("cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description", item)
+
+            total_price = jmespath.search("cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString", item) or \
+                          jmespath.search("cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString", item) or \
+                          jmespath.search("cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString", item)
+
+            total_without_tax = jmespath.search("cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString", item) or \
+                                jmespath.search("cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString", item) or \
+                                jmespath.search("cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString", item)
+
+            filtered_result['price_on_website'] = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '') if orig_price_per_night else None
+            filtered_result['total_price_website'] = total_price.replace('$', '').strip().replace(',', '') if total_price else None
+            filtered_result['total_on_website'] = total_without_tax.replace('$', '').strip().replace(',', '') if total_without_tax else None
+
             filtered_results.append(filtered_result)
     return filtered_results
 
@@ -48,42 +66,14 @@ def scrape_rental(rental, needed_keys):
     filtered_results = filter_results(result, needed_keys)
     final_results = []
     check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
-
-    # Define the JMESPath expressions
-    orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-
-    total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    total_price_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    total_price_path2= "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-
-    total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-    total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-    total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-
     for filtered_result in filtered_results:
         filtered_result['listingId'] = filtered_result['url'].split('/')[-1].split('?')[0]
-
-        # Extract additional data using JMESPath
-        orig_price_per_night = jmespath.search(orig_price_per_night_path, result) or jmespath.search(orig_price_per_night_path1, result) or jmespath.search(orig_price_per_night_path2, result)
-        total_price = jmespath.search(total_price_path, result) or jmespath.search(total_price_path1,result) or jmespath.search(total_price_path2, result)
-        total_without_tax = jmespath.search(total_without_tax_path, result) or jmespath.search(total_without_tax_path1,result) or jmespath.search(total_without_tax_path2, result)
-
-        # Process the extracted values
-        orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',','') if orig_price_per_night else None
-        total_price_value = total_price.replace('$', '').strip().replace(',', '') if total_price else None
-        total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',','') if total_without_tax else None
-
         final_result = {
             "JobID": rental["JobID"],
             "InfoID": rental["InfoID"],
             **filtered_result,
             "check_in_date": check_in_date,
-            "check_out_date": check_out_date,
-            "total_price_website": total_price_value,
-            "price_on_website": orig_price_per_night_value,
-            "total_on_website": total_without_tax_value
+            "check_out_date": check_out_date
         }
         final_results.append(final_result)
     return final_results

@@ -31,7 +31,7 @@ def filter_results(result, needed_keys):
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
 
-            # Extract the additional data
+            # Extract additional data using JMESPath as in the provided script
             orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
@@ -63,7 +63,7 @@ def filter_results(result, needed_keys):
             else:
                 total_without_tax_value = None
 
-            # Add the additional data to the filtered result
+            # Update the filtered result with the additional data
             filtered_result.update({
                 'total_price_website': total_price_value,
                 'price_on_website': orig_price_per_night_value,
@@ -171,4 +171,5 @@ for sheet_name in MARKETDATA_SHEET_NAMES:
         error_message = f"Error occurred: {e} while appending data to {sheet_name}"
         logger.error(error_message)
         errors.append(error_message)
+
 

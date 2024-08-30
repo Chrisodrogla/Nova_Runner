@@ -4,6 +4,7 @@ import sys
 import time
 import os
 from urllib.parse import urlparse, parse_qs
+
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
@@ -22,6 +23,7 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
     data = json.load(f)
     rental_links = data[batch_id]
 
+
 def filter_results(result, needed_keys):
     filtered_results = []
     for listing in result:
@@ -33,58 +35,62 @@ def filter_results(result, needed_keys):
             filtered_results.append(filtered_result)
     return filtered_results
 
-def extract_additional_data(result):
-    print(result)
-    
+
+def extract_additional_data(scraper, config):
+    result1 = scraper.execute(config)
 
 
+    # Print the result
 
-
-    for listing in result:
+    for listing in result1:
         for item in listing:
-        
 
-    
             # JMESPath expressions to extract additional data
             orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-        
+
             total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
             total_price_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
             total_price_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-        
+
             total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
             total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
             total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-        
+
             # Extract values
-            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
-            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1, item) or jmespath.search(total_price_path2, item)
-            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
-        
+            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(
+                orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
+            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1,
+                                                                                     item) or jmespath.search(
+                total_price_path2, item)
+            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(
+                total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
+
             # Process the extracted data
             if orig_price_per_night:
-                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '')
+                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',',
+                                                                                                                 '')
             else:
                 orig_price_per_night_value = None
-        
+
             if total_price:
                 total_price_value = total_price.replace('$', '').strip().replace(',', '')
             else:
                 total_price_value = None
-        
+
             if total_without_tax:
                 total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '')
             else:
                 total_without_tax_value = None
-        
+
             # Return the additional data as a dictionary
             return {
                 'total_price_website': total_price_value,
                 'price_on_website': orig_price_per_night_value,
                 'total_on_website': total_without_tax_value
             }
+
 
 def extract_dates_from_url(url):
     parsed_url = urlparse(url)
@@ -93,17 +99,18 @@ def extract_dates_from_url(url):
     check_out_date = query_params.get('checkout', [None])[0]
     return check_in_date, check_out_date
 
+
 def scrape_rental(rental, needed_keys):
     logger = logging.getLogger(__name__)
     scraper = AirbnbComSearchStrategy(logger)
     config = {"url": rental["listing_link_format"]}
-    
+
     # Execute the scraper and store the result
     result = scraper.execute(config)
-    
+
     # Print the result
     print(result)
-    
+
     filtered_results = filter_results(result, needed_keys)
     final_results = []
     check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])
@@ -123,12 +130,15 @@ def scrape_rental(rental, needed_keys):
         final_results.append(final_result)
     return final_results
 
+
 def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
+
 logger = logging.getLogger(__name__)
-needed_keys = ['rank','host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee', 'total_price', 'price_per_night']
+needed_keys = ['rank', 'host_name', 'listingId', 'url', 'orig_price_per_night', 'cleaning_fee', 'service_fee',
+               'total_price', 'price_per_night']
 
 final_results = []
 errors = []
@@ -170,10 +180,13 @@ for result in final_results:
 
 df = pd.DataFrame(final_results)
 
+
 def get_sheet_cell_count(sheet_name):
     sheet = service.spreadsheets().get(spreadsheetId=SHEET_ID, ranges=[sheet_name], includeGridData=False).execute()
     sheet_info = sheet['sheets'][0]
-    return sheet_info['properties']['gridProperties']['rowCount'] * sheet_info['properties']['gridProperties']['columnCount']
+    return sheet_info['properties']['gridProperties']['rowCount'] * sheet_info['properties']['gridProperties'][
+        'columnCount']
+
 
 def append_to_sheet(sheet_name, data):
     service.spreadsheets().values().append(
@@ -182,6 +195,7 @@ def append_to_sheet(sheet_name, data):
         valueInputOption="RAW",
         body={"values": data}
     ).execute()
+
 
 # Check each sheet for available space and append data accordingly
 for sheet_name in MARKETDATA_SHEET_NAMES:

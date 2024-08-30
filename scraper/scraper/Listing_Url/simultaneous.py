@@ -33,47 +33,52 @@ def filter_results(result, needed_keys):
             filtered_results.append(filtered_result)
     return filtered_results
 
-def extract_additional_data(listing):
-    # JMESPath expressions to extract additional data
-    orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+def extract_additional_data(result):
+    for listing in result:
+        for item in listing:
+        
 
-    total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    total_price_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    total_price_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-
-    total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-    total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-    total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-
-    # Extract values
-    orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
-    total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1, item) or jmespath.search(total_price_path2, item)
-    total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
-
-    # Process the extracted data
-    if orig_price_per_night:
-        orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '')
-    else:
-        orig_price_per_night_value = None
-
-    if total_price:
-        total_price_value = total_price.replace('$', '').strip().replace(',', '')
-    else:
-        total_price_value = None
-
-    if total_without_tax:
-        total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '')
-    else:
-        total_without_tax_value = None
-
-    # Return the additional data as a dictionary
-    return {
-        'total_price_website': total_price_value,
-        'price_on_website': orig_price_per_night_value,
-        'total_on_website': total_without_tax_value
-    }
+    
+            # JMESPath expressions to extract additional data
+            orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+            orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+            orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+        
+            total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+            total_price_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+            total_price_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+        
+            total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+            total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+            total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+        
+            # Extract values
+            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
+            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1, item) or jmespath.search(total_price_path2, item)
+            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
+        
+            # Process the extracted data
+            if orig_price_per_night:
+                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '')
+            else:
+                orig_price_per_night_value = None
+        
+            if total_price:
+                total_price_value = total_price.replace('$', '').strip().replace(',', '')
+            else:
+                total_price_value = None
+        
+            if total_without_tax:
+                total_without_tax_value = total_without_tax.replace('$', '').strip().replace(',', '')
+            else:
+                total_without_tax_value = None
+        
+            # Return the additional data as a dictionary
+            return {
+                'total_price_website': total_price_value,
+                'price_on_website': orig_price_per_night_value,
+                'total_on_website': total_without_tax_value
+            }
 
 def extract_dates_from_url(url):
     parsed_url = urlparse(url)

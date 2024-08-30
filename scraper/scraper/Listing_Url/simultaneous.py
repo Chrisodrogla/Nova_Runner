@@ -34,6 +34,8 @@ def filter_results(result, needed_keys):
     return filtered_results
 
 def extract_additional_data(result):
+        # Print the result
+
     for listing in result:
         for item in listing:
         
@@ -92,6 +94,9 @@ def scrape_rental(rental, needed_keys):
     scraper = AirbnbComSearchStrategy(logger)
     config = {"url": rental["listing_link_format"]}
     result = scraper.execute(config)
+    
+     print(f"Result for {rental['JobID']}:", result)
+
     filtered_results = filter_results(result, needed_keys)
     final_results = []
     check_in_date, check_out_date = extract_dates_from_url(rental["listing_link_format"])

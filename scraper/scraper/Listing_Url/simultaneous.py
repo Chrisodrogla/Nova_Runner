@@ -34,7 +34,11 @@ def filter_results(result, needed_keys):
     return filtered_results
 
 def extract_additional_data(result):
-        # Print the result
+    print(result)
+    
+
+
+
 
     for listing in result:
         for item in listing:
@@ -98,7 +102,7 @@ def scrape_rental(rental, needed_keys):
     result = scraper.execute(config)
     
     # Print the result
-    print(f"Result for {rental['JobID']}:", result)
+    print(result)
     
     filtered_results = filter_results(result, needed_keys)
     final_results = []

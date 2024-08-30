@@ -35,7 +35,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(f'[*] Execution Failed {str(e)}')
         return data
-    
+
     def fetch_basic(self, url, soup):
         data = {}
         try:
@@ -68,7 +68,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 "rating_count": rating_count,
                 "property_type": property_type,
                 "host_name": host_name,
-                "cleanliness" : cleanliness,
+                "cleanliness": cleanliness,
                 "accuracy": accuracy,
                 "location_rate": location_rate,
                 "communication": communication,
@@ -81,7 +81,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 'pool': amenties.get('pool'),
                 'latitude': lat,
                 'longitude': lon,
-                'amenities': amenties.get('extra',[]),
+                'amenities': amenties.get('extra', []),
                 "cleaning_fee": fees.get('cleaning_fee'),
                 "service_fee": fees.get('service_fee'),
             }
@@ -89,7 +89,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return data
-    
 
     def fetch_room_data(self, url, soup, initial=False):
 
@@ -121,7 +120,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(f'[*] Failed to fetch {str(e)}')
         return {}
-    
+
     def fetch_pdp_soup(self, url):
         try:
             raw = download(url)
@@ -130,15 +129,17 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return None
-    
+
     def get_pdp_js_link(self, soup):
         ''' This script url will contain the hash of the operation_id for the PDP api route
         '''
-        tag = soup.find('script', src=re.compile('web/common/frontend/gp-stays-pdp-route/routes/PdpPlatformRoute.prepare', re.IGNORECASE))
+        tag = soup.find('script',
+                        src=re.compile('web/common/frontend/gp-stays-pdp-route/routes/PdpPlatformRoute.prepare',
+                                       re.IGNORECASE))
         if tag:
             return tag.get('src')
         return None
-    
+
     def get_pdp_js_link_price_prerequisite(self, soup):
 
         tag = soup.find('script', src=re.compile('web/en/frontend/airmetro/src/browser/asyncRequire'))
@@ -152,9 +153,9 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         try:
             if spa_data:
                 client_data = spa_data[1][1]
-                niobe_data = client_data.get('niobeMinimalClientData',[None])[0][0]
+                niobe_data = client_data.get('niobeMinimalClientData', [None])[0][0]
 
-                variables_txt = niobe_data.replace('StaysPdpSections:','')
+                variables_txt = niobe_data.replace('StaysPdpSections:', '')
                 variables_json = json.loads(variables_txt)
 
                 if not initial:
@@ -171,13 +172,14 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                         "EDUCATION_FOOTER_BANNER_MODAL"
                     ]
                     variables_json['pdpSectionsRequest'].update({'sectionIds': section_ids})
-                
-                extensions = json.dumps({"persistedQuery":{"version":1,"sha256Hash":operation_id}},separators=(',',':'))
+
+                extensions = json.dumps({"persistedQuery": {"version": 1, "sha256Hash": operation_id}},
+                                        separators=(',', ':'))
                 query_params = {
                     "operationName": "StaysPdpSections",
                     "locale": "en",
                     "currency": "USD",
-                    "variables": json.dumps(variables_json,separators=(',',':')),
+                    "variables": json.dumps(variables_json, separators=(',', ':')),
                     "extensions": extensions
                 }
                 return f'https://www.airbnb.com/api/v3/StaysPdpSections/{operation_id}?{urlencode(query_params, quote_via=quote)}'
@@ -185,7 +187,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             self.logger.info(str(e))
 
         return None
-    
+
     def generate_pdp_checkout_api_url(self, soup):
 
         checkout_operation_id = self.fetch_checkout_operation_id(soup)
@@ -194,42 +196,43 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         parsed_query = parse_qs(parsed.query)
         checkin_date = parsed_query.get('check_in')[0]
         checkout_date = parsed_query.get('check_out')[0]
-        adults = parsed_query.get('adults',[10])[0]
+        adults = parsed_query.get('adults', [10])[0]
         children = parsed_query.get('children', [0])[0]
         infant = parsed_query.get('children', [0])[0]
 
-    
         variables_json = {
-            "input":{
-                "businessTravel":{
-                    "workTrip":False
+            "input": {
+                "businessTravel": {
+                    "workTrip": False
                 },
-                "checkinDate":checkin_date,
-                "checkoutDate":checkout_date,
-                "guestCounts":{
-                    "numberOfAdults":int(adults),
-                    "numberOfChildren":int(children),
-                    "numberOfInfants":int(infant),
-                    "numberOfPets":0
+                "checkinDate": checkin_date,
+                "checkoutDate": checkout_date,
+                "guestCounts": {
+                    "numberOfAdults": int(adults),
+                    "numberOfChildren": int(children),
+                    "numberOfInfants": int(infant),
+                    "numberOfPets": 0
                 },
-                "guestCurrencyOverride":"USD",
-                "listingDetail":{},"lux":{},
-                "metadata":{
-                    "internalFlags":["LAUNCH_LOGIN_PHONE_AUTH","LAUNCH_WEB_SBUI_MIGRATION_V2","LAUNCH_WEB_SBUI_MIGRATION_V3"]
-                },"org":{},
-                "productId":self.product_id,
-                "addOn":{"carbonOffsetParams":{"isSelected":False}},
-                "quickPayData":None
+                "guestCurrencyOverride": "USD",
+                "listingDetail": {}, "lux": {},
+                "metadata": {
+                    "internalFlags": ["LAUNCH_LOGIN_PHONE_AUTH", "LAUNCH_WEB_SBUI_MIGRATION_V2",
+                                      "LAUNCH_WEB_SBUI_MIGRATION_V3"]
+                }, "org": {},
+                "productId": self.product_id,
+                "addOn": {"carbonOffsetParams": {"isSelected": False}},
+                "quickPayData": None
             },
-            "isLeanFragment":False
+            "isLeanFragment": False
         }
-    
+
         query_params = {
             "operationName": "stayCheckout",
             "locale": "en",
             "currency": "USD",
-            "variables": json.dumps(variables_json,separators=(',',':')),
-            "extensions": json.dumps({"persistedQuery":{"version":1,"sha256Hash":checkout_operation_id}},separators=(',',':'))
+            "variables": json.dumps(variables_json, separators=(',', ':')),
+            "extensions": json.dumps({"persistedQuery": {"version": 1, "sha256Hash": checkout_operation_id}},
+                                     separators=(',', ':'))
         }
 
         return f'https://www.airbnb.com/api/v3/stayCheckout/{checkout_operation_id}?{urlencode(query_params, quote_via=quote)}'
@@ -239,32 +242,31 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         try:
             injector_json = self.get_injector_instance_json(soup)
             spa_data = injector_json.get('root > core-guest-spa', {})
-            bootstrap_token_data= spa_data[0][1]
+            bootstrap_token_data = spa_data[0][1]
             api_key = bootstrap_token_data.get('layout-init', {}).get('api_config', {}).get('key')
             header = {
-                "authority":"www.airbnb.com",
-                "accept":"*/*",
-                "accept-language":"en-US,en;q=0.9",
-                "content-type":"application/json",
+                "authority": "www.airbnb.com",
+                "accept": "*/*",
+                "accept-language": "en-US,en;q=0.9",
+                "content-type": "application/json",
                 "referer": pdp_url,
-                "sec-fetch-dest":"empty",
-                "sec-fetch-mode":"cors",
-                "sec-fetch-site":"same-origin",
-                "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-                "x-airbnb-api-key":api_key,
-                "x-airbnb-graphql-platform":"web",
-                "x-airbnb-graphql-platform-client":"minimalist-niobe",
-                "x-airbnb-supports-airlock-v2":"true",
-                "x-csrf-token":"null",
-                "x-csrf-without-token":"1",
-                "x-niobe-short-circuited":"true"
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-origin",
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                "x-airbnb-api-key": api_key,
+                "x-airbnb-graphql-platform": "web",
+                "x-airbnb-graphql-platform-client": "minimalist-niobe",
+                "x-airbnb-supports-airlock-v2": "true",
+                "x-csrf-token": "null",
+                "x-csrf-without-token": "1",
+                "x-niobe-short-circuited": "true"
             }
 
         except Exception as e:
             print('failed to generate api headers')
 
         return header
-    
 
     def fetch_checkout_operation_id(self, soup):
 
@@ -273,21 +275,23 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             if js_link:
                 raw = download(js_link)
                 if raw:
-                    matches = re.search(r'common\/frontend\/gp-stays-checkout-route\/routes\/StaysCheckoutRoute\/StaysCheckoutCreateRoute.[\d|\w]+.js', raw)
+                    matches = re.search(
+                        r'common\/frontend\/gp-stays-checkout-route\/routes\/StaysCheckoutRoute\/StaysCheckoutCreateRoute.[\d|\w]+.js',
+                        raw)
                     if matches:
                         path = matches.group(0)
                         url = f'https://a0.muscache.com/airbnb/static/packages/web/{path}'
                         requirements_raw = download(url)
                         if requirements_raw:
-                            matches = re.search(r"'stayCheckout',type:'query',operationId:'([0-9a-zA-Z]+)'", requirements_raw)
+                            matches = re.search(r"'stayCheckout',type:'query',operationId:'([0-9a-zA-Z]+)'",
+                                                requirements_raw)
                             if matches:
                                 return matches.group(1)
-                            
+
         except Exception as e:
             self.logger.info(str(e))
         return str()
 
-        
     def fetch_pdp_operation_id(self, url):
         try:
             raw = download(url)
@@ -298,7 +302,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return None
-    
+
     def get_injector_instance_json(self, soup):
         try:
             tag = soup.select_one('#data-injector-instances')
@@ -314,17 +318,16 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         try:
             sbui_data = room_data.get('sections', {}).get('sbuiData')
             if sbui_data:
-                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections',[])
+                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections', [])
                 for section in sections:
                     if section.get('sectionId') == 'HOST_OVERVIEW_DEFAULT':
                         sec_data = section.get('sectionData')
                         title = sec_data.get('title')
                         if title:
-                            value = title.replace('Hosted by','').strip()
+                            value = title.replace('Hosted by', '').strip()
         except Exception as e:
             self.logger.info(str(e))
         return value
-
 
     def get_pdp_title(self, room_data):
         meta_data = room_data.get('sections', {}).get('metadata')
@@ -337,7 +340,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return str()
-    
 
     def get_pdp_description(self, room_data):
         meta_data = room_data.get('sections', {}).get('metadata')
@@ -358,7 +360,8 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         value = float()
         try:
             quick_pay_data = price_data_json.get('sections', {}).get('temporaryQuickPayData', {})
-            price_breakdown = quick_pay_data.get('bootstrapPayments', {}).get('productPriceBreakdown', {}).get('priceBreakdown')
+            price_breakdown = quick_pay_data.get('bootstrapPayments', {}).get('productPriceBreakdown', {}).get(
+                'priceBreakdown')
             price_items = price_breakdown.get('priceItems')
             if price_items:
                 price_data = price_items[0]
@@ -372,27 +375,27 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             self.logger.info(str(e))
 
         return value
-    
 
     def get_pdp_price_per_night(self, price_data_json):
         value = float()
         try:
             quick_pay_data = price_data_json.get('sections', {}).get('temporaryQuickPayData', {})
-            price_breakdown = quick_pay_data.get('bootstrapPayments', {}).get('productPriceBreakdown', {}).get('priceBreakdown')
+            price_breakdown = quick_pay_data.get('bootstrapPayments', {}).get('productPriceBreakdown', {}).get(
+                'priceBreakdown')
             price_items = price_breakdown.get('priceItems')
             if price_items:
                 price_data = price_items[0]
                 if price_data:
                     txt = price_data.get('localizedTitle')
                     if txt:
-                        clean_txt = txt.split('x')[0].replace('$','').strip()
+                        clean_txt = txt.split('x')[0].replace('$', '').strip()
                         value = float(clean_txt)
 
         except Exception as e:
             self.logger.info(str(e))
 
         return value
-    
+
     def get_pdp_rating_score(self, room_data):
         value = float()
         try:
@@ -401,12 +404,11 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 rating = meta_data.get('sharingConfig', {}).get('starRating')
                 if rating:
                     value = float(rating)
-                    
+
         except Exception as e:
             self.logger.info(str(e))
 
         return value
-
 
     def get_pdp_rating_count(self, room_data):
         value = int()
@@ -416,11 +418,10 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 count = meta_data.get('sharingConfig', {}).get('reviewCount')
                 if count:
                     value = int(count)
-                    
+
         except Exception as e:
             self.logger.info(str(e))
         return value
-
 
     def get_pdp_labels(self, room_data):
         pass
@@ -433,11 +434,10 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 url = meta_data.get('sharingConfig', {}).get('imageUrl')
                 if url:
                     value = url
-                    
+
         except Exception as e:
             self.logger.info(str(e))
         return value
-
 
     def get_pdp_clean(self, room_data):
         value = float()
@@ -451,7 +451,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_communication(self, room_data):
         value = float()
@@ -465,7 +464,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_location_rating(self, room_data):
         value = float()
@@ -479,7 +477,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_check_in(self, room_data):
         value = float()
@@ -493,7 +490,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_lat(self, room_data):
         value = str()
@@ -507,7 +503,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_lon(self, room_data):
         value = str()
@@ -521,7 +516,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_pdp_capacity(self, room_data):
         value = int()
@@ -534,8 +528,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
-    
+
     def get_pdp_rooms(self, room_data):
         value = {
             'bedroom': 0,
@@ -545,7 +538,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         try:
             sbui_data = room_data.get('sections', {}).get('sbuiData')
             if sbui_data:
-                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections',[])
+                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections', [])
                 for section in sections:
                     if section.get('sectionId') == 'OVERVIEW_DEFAULT_V2':
                         sec_data = section.get('sectionData')
@@ -562,12 +555,11 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
-    
+
     def get_pdp_fees(self, room_data):
         value = {
-            'cleaning_fee':0,
-            'service_fee':0
+            'cleaning_fee': 0,
+            'service_fee': 0
         }
         try:
             sections = room_data.get('sections', {}).get('sections')
@@ -575,12 +567,16 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 for section in sections:
                     if section.get('sectionComponentType') == 'BOOK_IT_CALENDAR_SHEET':
                         sec_data = section.get('section')
-                        price_items = sec_data.get('structuredDisplayPrice', {}).get('explanationData', {}).get('priceDetails', [None])[0].get('items')
+                        price_items = \
+                        sec_data.get('structuredDisplayPrice', {}).get('explanationData', {}).get('priceDetails',
+                                                                                                  [None])[0].get(
+                            'items')
                         fees = list(value)
                         if price_items:
                             for key in fees:
                                 fee = ' '.join(key.split('_'))
-                                item = [item.get('priceString') for item in price_items if fee in item.get('description').lower()]
+                                item = [item.get('priceString') for item in price_items if
+                                        fee in item.get('description').lower()]
                                 if item:
                                     fee_val = float(re.sub('[^0-9.]', '', item[0]))
                                     if fee_val:
@@ -590,7 +586,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             self.logger.info(str(e))
         return value
 
-    
     def get_property_type(self, room_data):
         value = str()
         try:
@@ -603,7 +598,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             self.logger.info(str(e))
         return value
 
-    
     def get_pdp_amenties(self, room_data):
         value = {
             'kitchen': False,
@@ -612,7 +606,7 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         }
         try:
             extras = []
-            sections = room_data.get('sections', {}).get('sections',[])
+            sections = room_data.get('sections', {}).get('sections', [])
             if sections:
                 for section in sections:
                     if section.get('sectionId') == 'AMENITIES_DEFAULT':
@@ -631,13 +625,12 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                                         title = item.get('title')
                                         if item.get('available', False):
                                             extras.append(title)
-                                            
+
             if extras:
                 value.update({'extra': extras})
         except Exception as e:
             self.logger.info(str(e))
         return value
-    
 
     def get_check_dates(self):
         value = {}
@@ -649,11 +642,10 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 value.update({'checkin': check_in[0]})
             check_out = parsed_query.get('checkout')
             if check_out:
-                 value.update({'checkout': check_out[0]})
+                value.update({'checkout': check_out[0]})
         except Exception as e:
             self.logger.info(str(e))
         return value
-
 
     def fetch_pdp_price_data(self, url, soup):
         data = {}
@@ -678,7 +670,6 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             self.logger.info(str(e))
         return data
 
-
     def generate_pdp_price_api_url(self, room_data):
 
         product_id = self.get_pdp_product_id(room_data)
@@ -688,55 +679,56 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         checkout_date = parsed_query.get('check_out')
 
         query_params = {"operationName": "stayCheckout",
-            "locale": "en",
-            "currency": "USD",
-            "variables": {
-            "input":{
-                "businessTravel":{
-                    "workTrip":False
-                },
-                "checkinDate":checkin_date,
-                "checkoutDate":checkout_date,
-                "guestCounts":{
-                    "numberOfAdults":10,
-                    "numberOfChildren":0,
-                    "numberOfInfants":0,
-                    "numberOfPets":0
-                },
-                "guestCurrencyOverride":"USD",
-                "listingDetail":{
-                    
-                },
-                "lux":{
-                    
-                },
-                "metadata":{
-                    "internalFlags":[
-                        "LAUNCH_LOGIN_PHONE_AUTH"
-                    ]
-                },
-                "org":{
-                    
-                },
-                "productId":product_id,
-                "addOn":{
-                    "carbonOffsetParams":{
-                        "isSelected":False
-                    }
-                },
-                "quickPayData":None
-            },
-            "isLeanFragment":False
-            },
-            "extensions": {"persistedQuery":{"version":1,"sha256Hash":"b69ff2a5e43ee3454cb5bcd5bada4c72ad093d6fb57c90a4a7fc4e30490ae7fa"}}
+                        "locale": "en",
+                        "currency": "USD",
+                        "variables": {
+                            "input": {
+                                "businessTravel": {
+                                    "workTrip": False
+                                },
+                                "checkinDate": checkin_date,
+                                "checkoutDate": checkout_date,
+                                "guestCounts": {
+                                    "numberOfAdults": 10,
+                                    "numberOfChildren": 0,
+                                    "numberOfInfants": 0,
+                                    "numberOfPets": 0
+                                },
+                                "guestCurrencyOverride": "USD",
+                                "listingDetail": {
 
-        }
+                                },
+                                "lux": {
+
+                                },
+                                "metadata": {
+                                    "internalFlags": [
+                                        "LAUNCH_LOGIN_PHONE_AUTH"
+                                    ]
+                                },
+                                "org": {
+
+                                },
+                                "productId": product_id,
+                                "addOn": {
+                                    "carbonOffsetParams": {
+                                        "isSelected": False
+                                    }
+                                },
+                                "quickPayData": None
+                            },
+                            "isLeanFragment": False
+                        },
+                        "extensions": {"persistedQuery": {"version": 1,
+                                                          "sha256Hash": "b69ff2a5e43ee3454cb5bcd5bada4c72ad093d6fb57c90a4a7fc4e30490ae7fa"}}
+
+                        }
 
     def get_pdp_product_id(self, room_data):
         try:
             sbui_data = room_data.get('sections', {}).get('sbuiData')
             if sbui_data:
-                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections',[])
+                sections = sbui_data.get('sectionConfiguration', {}).get('root', {}).get('sections', [])
                 for section in sections:
                     if section and 'OVERVIEW_DEFAULT_V2' in section.get('sectionId'):
                         product_id = section.get('loggingData', {}).get('eventData', {}).get('productId')
@@ -745,4 +737,3 @@ class AirbnbComDetailStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return None
-

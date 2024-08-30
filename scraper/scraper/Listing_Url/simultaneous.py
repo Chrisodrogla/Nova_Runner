@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
-
+import jmespath
 import pandas as pd
 
 from google.oauth2.service_account import Credentials

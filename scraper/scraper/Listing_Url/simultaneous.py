@@ -7,13 +7,12 @@ sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
-
+import jmespath
 import pandas as pd
 
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
-import jmespath
 
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
@@ -23,51 +22,40 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
     rental_links = data[batch_id]
 
 
+
+
 def filter_results(result, needed_keys):
     filtered_results = []
 
-    # Define the JMESPath expressions once, outside the loop
-    orig_price_per_night_paths = [
-        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description",
-        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description",
-        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
-    ]
-
-    total_price_paths = [
-        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString",
-        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString",
-        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
-    ]
-
-    total_without_tax_paths = [
-        "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString",
-        "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString",
-        "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
-    ]
-
     for listing in result:
         for item in listing:
-            # Filtered result based on needed_keys
+            # Extract the existing needed keys
             filtered_result = {key: item.get(key, None) for key in needed_keys}
 
-            # Extract and process the additional data
-            orig_price_per_night = None
-            for path in orig_price_per_night_paths:
-                orig_price_per_night = jmespath.search(path, item)
-                if orig_price_per_night:
-                    break
+            # Split the URL at '?' to keep only the base URL
+            if 'url' in filtered_result:
+                filtered_result['url'] = filtered_result['url'].split('?')[0]
 
-            total_price = None
-            for path in total_price_paths:
-                total_price = jmespath.search(path, item)
-                if total_price:
-                    break
+            # Extract the additional data
+            orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+            orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
+            orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
 
-            total_without_tax = None
-            for path in total_without_tax_paths:
-                total_without_tax = jmespath.search(path, item)
-                if total_without_tax:
-                    break
+            total_price_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+            total_price_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+            total_price_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].priceString"
+
+            total_without_tax_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+            total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+            total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
+
+            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(
+                orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
+            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1,
+                                                                                     item) or jmespath.search(
+                total_price_path2, item)
+            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(
+                total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
 
             if orig_price_per_night:
                 orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',',
@@ -92,13 +80,10 @@ def filter_results(result, needed_keys):
                 'total_on_website': total_without_tax_value
             })
 
-            # Split the url at '?' to keep only the base URL
-            if 'url' in filtered_result:
-                filtered_result['url'] = filtered_result['url'].split('?')[0]
-
             filtered_results.append(filtered_result)
 
     return filtered_results
+
 
 def extract_dates_from_url(url):
     parsed_url = urlparse(url)
@@ -158,7 +143,7 @@ minutes = int(elapsed_time // 60)
 seconds = int(elapsed_time % 60)
 
 # Google Sheets setup
-SHEET_ID = '1S6gAIsjuYyGtOmWFGpF9okAPMWq6SnZ1zbIylBZqCt4'
+SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
 MARKETDATA_SHEET_NAMES = ['JobTable_Results', 'JobTable_Results2', 'JobTable_Results3']
 
 # Get Google Sheets credentials from environment variable

@@ -39,6 +39,8 @@ def filter_results(result, needed_keys):
 def extract_additional_data(scraper, config):
     result1 = scraper.execute(config)
 
+    print(result1)
+
 
     # Print the result
 

@@ -1,6 +1,7 @@
 import json
 import sys
 import time
+import jmespath
 import os
 from urllib.parse import urlparse, parse_qs
 sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))

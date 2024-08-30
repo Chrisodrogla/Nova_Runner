@@ -3,51 +3,26 @@ import re
 from datetime import datetime
 from typing import List
 from urllib.parse import urlencode, quote, urlparse, parse_qs
-import requests
-import logging
+
 from bs4 import BeautifulSoup
 
 from scraper.strategies.abstract import AbstractCrawler
 from scraper.strategies.airbnb_com.downloader import download
 from scraper.strategies.airbnb_com.detail_page import AirbnbComDetailStrategy
 
-
 class AirbnbComSearchStrategy(AbstractCrawler):
 
     def __init__(self, logger):
-        # self.origin_url = None
-        self.logger = logger
+        self.origin_url = None
+        self.logger=logger
 
     def execute(self, config) -> List:
+        self.origin_url = config.get('url')
+        page_limit = config.get('page_limit', None)
+        results = self._crawl_listing(self.origin_url,page_limit=page_limit)
 
-        url = config["url"]
-        proxy = config.get("proxy")
-        self.logger.debug(f"Executing request to {url} with proxy {proxy}")
-        try:
-            response = requests.get(url, proxies={"http": proxy, "https": proxy} if proxy else None)
-            response.raise_for_status()  # Raise an error for bad responses
-            return response.json()  # Assuming the response is JSON
-        except requests.exceptions.ProxyError as e:
-            self.logger.error(f"Proxy error with proxy {proxy}: {e}")
-            raise
-        except requests.exceptions.RequestException as e:
-            self.logger.error(f"Request failed: {e}")
-            raise
-#####################################################################################        
-        # url = config["url"]
-        # proxy = config.get("proxy")
-        # if proxy:
-        #     response = requests.get(url, proxies={"http": proxy, "https": proxy})
-        # else:
-        #     response = requests.get(url)
-
-
-        # self.origin_url = config.get('url')
-        # page_limit = config.get('page_limit', None)
-        # results = self._crawl_listing(self.origin_url, page_limit=page_limit)
-
-        # return results
-###########################################################
+        return results
+    
     def _crawl_listing(self, url, page_limit=None):
         self.origin_url = url
         next_page_url = url
@@ -59,13 +34,13 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         page = 1
         start_rank = 1
         try:
-            while (next_page_url):
+            while(next_page_url):
                 self.logger.info(f'Connecting to: {next_page_url}')
                 raw_data = download(next_page_url, headers=api_headers, data=payload)
                 if not raw_data:
                     self.logger.info(f"No raw data found")
                     break
-
+                
                 if initial_raw is None:
                     initial_raw = raw_data
 
@@ -74,7 +49,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
                 if not result:
                     break
                 results.append(result)
-
+    
                 if search_operation_id is None:
                     search_operation_id = self.fetch_search_operation_id(raw_data)
 
@@ -95,12 +70,12 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return results
-
+    
     def get_next_page(self, raw_data, url):
         next_url = None
         soup = BeautifulSoup(raw_data, 'lxml')
         deffered_state_json = self.get_deffered_state(soup)
-        pagination_json = self.get_pagination_json(deffered_state_json)
+        pagination_json =  self.get_pagination_json(deffered_state_json)
         if pagination_json:
             next_page_cursor = pagination_json.get('page_info', {}).get('nextPageCursor')
             session_id = pagination_json.get('session_id')
@@ -108,6 +83,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
                 next_url = f'{url}&federated_search_session_id={session_id}&pagination_search=true&cursor={quote(next_page_cursor)}'
         return next_url
 
+    
     def parse(self, raw_data, start_rank):
         results = []
         listing_items_json = []
@@ -174,7 +150,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return results
-
+    
     def get_url(self, item_json):
         value = str()
         try:
@@ -193,7 +169,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
 
             base_url = 'https://www.airbnb.com/rooms/'
             id = item_json.get('listing', {}).get('id') \
-                 or item_json.get('listingId')
+                or item_json.get('listingId')
             if id and quary_params:
                 value = f'{base_url}{id.strip()}?{urlencode(quary_params, quote_via=quote)}'
             elif id:
@@ -214,10 +190,9 @@ class AirbnbComSearchStrategy(AbstractCrawler):
                         pagination_info = stay_search.get('results', {}).get('paginationInfo')
                         if pagination_info:
                             pagination.update({"page_info": pagination_info})
-                        session_id = stay_search.get('results', {}).get('loggingMetadata', {}).get(
-                            'legacyLoggingContext', {}).get('federatedSearchSessionId')
+                        session_id = stay_search.get('results', {}).get('loggingMetadata', {}).get('legacyLoggingContext', {}).get('federatedSearchSessionId')
                         if session_id:
-                            pagination.update({"session_id": session_id})
+                            pagination.update({"session_id":session_id })
 
             if pagination:
                 return pagination
@@ -226,15 +201,15 @@ class AirbnbComSearchStrategy(AbstractCrawler):
             self.logger.info(str(e))
 
         return {}
-
+    
     def generate_search_api_payload(self, raw_data, page, operation_id):
         soup = BeautifulSoup(raw_data, 'lxml')
-
+        
         try:
             deffered_state_json = self.get_deffered_state(soup)
             listing_items_json = self.get_listing_items(deffered_state_json)
             item_ids = [item.get('listing', {}).get('id') for item in listing_items_json]
-            pagination_json = self.get_pagination_json(deffered_state_json)
+            pagination_json =  self.get_pagination_json(deffered_state_json)
 
             client_data = deffered_state_json.get('niobeMinimalClientData')
             search_result = client_data[0][1]
@@ -246,29 +221,29 @@ class AirbnbComSearchStrategy(AbstractCrawler):
             variables['staysSearchRequest'].update({
                 "cursor": cursor,
                 "skipHydrationListingIds": item_ids
-            })
-
+                })
+            
             variables['staysMapSearchRequestV2'].update({
                 "cursor": cursor,
                 "skipHydrationListingIds": item_ids
-            })
-
+                })
+            
             payload = {
                 "operationName": "StaysSearch",
                 "variables": variables,
                 "extensions": {
                     "persistedQuery": {
-                        "version": 1,
-                        "sha256Hash": operation_id
+                    "version": 1,
+                    "sha256Hash": operation_id
                     }
                 }
             }
-            return json.dumps(payload, separators=(',', ':'))
+            return json.dumps(payload, separators=(',',':'))
         except Exception as e:
             self.logger.info(str(e))
 
         return None
-
+    
     def fetch_search_operation_id(self, raw_data):
         try:
             soup = BeautifulSoup(raw_data, 'lxml')
@@ -284,16 +259,15 @@ class AirbnbComSearchStrategy(AbstractCrawler):
 
     def generate_search_api_url(self, operation_id):
         return f'https://www.airbnb.com/api/v3/StaysSearch/{operation_id}?operationName=StaysSearch&locale=en&currency=USD'
-
+    
     def get_search_js_link(self, soup):
         ''' This script url will contain the hash of the operation_id for the search api route
         '''
-        tag = soup.find('script', src=re.compile(
-            'web/common/frontend/stays-search/routes/StaysSearchRoute/StaysSearchRoute.prepare', re.IGNORECASE))
+        tag = soup.find('script', src=re.compile('web/common/frontend/stays-search/routes/StaysSearchRoute/StaysSearchRoute.prepare', re.IGNORECASE))
         if tag:
             return tag.get('src')
         return None
-
+    
     def get_injector_instance_json(self, soup):
         try:
             tag = soup.select_one('#data-injector-instances')
@@ -303,31 +277,31 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return {}
-
+        
     def generate_api_headers(self, soup, url):
         header = {}
         try:
             injector_json = self.get_injector_instance_json(soup)
             spa_data = injector_json.get('root > core-guest-spa', {})
-            bootstrap_token_data = spa_data[0][1]
+            bootstrap_token_data= spa_data[0][1]
             api_key = bootstrap_token_data.get('layout-init', {}).get('api_config', {}).get('key')
             header = {
-                "authority": "www.airbnb.com",
-                "accept": "*/*",
-                "accept-language": "en-US,en;q=0.9",
-                "content-type": "application/json",
+                "authority":"www.airbnb.com",
+                "accept":"*/*",
+                "accept-language":"en-US,en;q=0.9",
+                "content-type":"application/json",
                 "referer": url,
-                "sec-fetch-dest": "empty",
-                "sec-fetch-mode": "cors",
-                "sec-fetch-site": "same-origin",
-                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-                "x-airbnb-api-key": api_key,
-                "x-airbnb-graphql-platform": "web",
-                "x-airbnb-graphql-platform-client": "minimalist-niobe",
-                "x-airbnb-supports-airlock-v2": "true",
-                "x-csrf-token": "null",
-                "x-csrf-without-token": "1",
-                "x-niobe-short-circuited": "true"
+                "sec-fetch-dest":"empty",
+                "sec-fetch-mode":"cors",
+                "sec-fetch-site":"same-origin",
+                "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                "x-airbnb-api-key":api_key,
+                "x-airbnb-graphql-platform":"web",
+                "x-airbnb-graphql-platform-client":"minimalist-niobe",
+                "x-airbnb-supports-airlock-v2":"true",
+                "x-csrf-token":"null",
+                "x-csrf-without-token":"1",
+                "x-niobe-short-circuited":"true"
             }
         except Exception as e:
             print('failed to generate api headers')
@@ -337,7 +311,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
 
         try:
             strategy = AirbnbComDetailStrategy(self.logger)
-            config.update({"url": url})
+            config.update({"url":url})
             room_data = strategy.execute(config)
             if room_data:
                 return room_data
@@ -345,6 +319,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(f'[*] Failed to fetch {str(e)}')
         return {}
+
 
     def get_title(self, item_json):
         value = str()
@@ -371,7 +346,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         try:
             price_displays = item_json.get('pricingQuote', {}).get('structuredStayDisplayPrice')
             if price_displays:
-                price_txt = price_displays.get('primaryLine', {}).get('price', '')
+                price_txt = price_displays.get('primaryLine', {}).get('price','')
                 if not price_txt:
                     price_txt = price_displays.get('primaryLine', {}).get('discountedPrice')
                 if price_txt:
@@ -379,7 +354,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-
+    
     def get_orig_price_per_night(self, item_json):
         value = float()
         try:
@@ -391,6 +366,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
+
 
     def get_total_price(self, item_json):
         value = float()
@@ -427,10 +403,11 @@ class AirbnbComSearchStrategy(AbstractCrawler):
             self.logger.info(str(e))
         return value
 
+
     def get_image_url(self, item_json):
         value = str()
         try:
-            images = item_json.get('listing', {}).get('contextualPictures', [])
+            images = item_json.get('listing', {}).get('contextualPictures',[])
             if images:
                 url = images[0].get('picture')
                 if url:
@@ -442,7 +419,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
     def get_labels(self, item_json):
         value = []
         try:
-            badges = item_json.get('listing', {}).get('formattedBadges', [])
+            badges = item_json.get('listing', {}).get('formattedBadges',[])
             if badges:
                 for badge in badges:
                     txt = badge.get('text')
@@ -451,7 +428,7 @@ class AirbnbComSearchStrategy(AbstractCrawler):
         except Exception as e:
             self.logger.info(str(e))
         return value
-
+    
     def get_deffered_state(self, soup):
         tag = soup.select_one('script[id^="data-deferred-state"]')
         try:
@@ -474,11 +451,11 @@ class AirbnbComSearchStrategy(AbstractCrawler):
             else:
                 presentation = state_json.get('data', {}).get('presentation', {})
                 if presentation:
-                    return presentation.get('staysSearch', {}).get('results', {}).get('searchResults', [])
+                    return presentation.get('staysSearch', {}).get('results', {}).get('searchResults', []) 
         except Exception as e:
             self.logger.info(str(e))
         return []
-
+    
     def get_check_dates(self):
         value = {}
         try:
@@ -489,7 +466,8 @@ class AirbnbComSearchStrategy(AbstractCrawler):
                 value.update({'checkin': check_in[0]})
             check_out = parsed_query.get('checkout')
             if check_out:
-                value.update({'checkout': check_out[0]})
+                 value.update({'checkout': check_out[0]})
         except Exception as e:
             self.logger.info(str(e))
         return value
+    

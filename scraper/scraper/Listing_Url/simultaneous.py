@@ -170,3 +170,7 @@ for sheet_name in MARKETDATA_SHEET_NAMES:
         error_message = f"Error occurred: {e} while appending data to {sheet_name}"
         logger.error(error_message)
         errors.append(error_message)
+
+
+
+print(result)

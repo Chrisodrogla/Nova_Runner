@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.join(os.getcwd(), "scraper"))
 import concurrent.futures
 from scraper.strategies.airbnb_com.search_page import AirbnbComSearchStrategy
 import logging
-import jmespath
+
 import pandas as pd
 
 from google.oauth2.service_account import Credentials
@@ -21,17 +21,11 @@ with open('scraper/scraper/Listing_Url/json_file/final_rental_link.json', 'r') a
     data = json.load(f)
     rental_links = data[batch_id]
 
-
-
-
 def filter_results(result, needed_keys):
     filtered_results = []
-
     for listing in result:
         for item in listing:
-            # Extract the existing needed keys
             filtered_result = {key: item.get(key, None) for key in needed_keys}
-
             # Split the URL at '?' to keep only the base URL
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
@@ -49,17 +43,12 @@ def filter_results(result, needed_keys):
             total_without_tax_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
             total_without_tax_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[1].items[0].priceString"
 
-            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(
-                orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
-            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1,
-                                                                                     item) or jmespath.search(
-                total_price_path2, item)
-            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(
-                total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
+            orig_price_per_night = jmespath.search(orig_price_per_night_path, item) or jmespath.search(orig_price_per_night_path1, item) or jmespath.search(orig_price_per_night_path2, item)
+            total_price = jmespath.search(total_price_path, item) or jmespath.search(total_price_path1, item) or jmespath.search(total_price_path2, item)
+            total_without_tax = jmespath.search(total_without_tax_path, item) or jmespath.search(total_without_tax_path1, item) or jmespath.search(total_without_tax_path2, item)
 
             if orig_price_per_night:
-                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',',
-                                                                                                                 '')
+                orig_price_per_night_value = orig_price_per_night.split('x')[0].replace('$', '').strip().replace(',', '')
             else:
                 orig_price_per_night_value = None
 
@@ -81,9 +70,7 @@ def filter_results(result, needed_keys):
             })
 
             filtered_results.append(filtered_result)
-
     return filtered_results
-
 
 def extract_dates_from_url(url):
     parsed_url = urlparse(url)

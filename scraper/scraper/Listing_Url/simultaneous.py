@@ -26,7 +26,7 @@ def filter_results(result, needed_keys):
     for listing in result:
         for item in listing:
             filtered_result = {key: item.get(key, None) for key in needed_keys}
-            # Split the URL at '?' to keep only the base URL
+            # Split the url at '?' to keep only the base URL
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
 
@@ -170,7 +170,3 @@ for sheet_name in MARKETDATA_SHEET_NAMES:
         error_message = f"Error occurred: {e} while appending data to {sheet_name}"
         logger.error(error_message)
         errors.append(error_message)
-
-
-
-print(result)

@@ -2,6 +2,7 @@ from scraper.utils.http_curl import HTTP
 
 
 def download(url, headers={}, data=None):
+
     if not headers:
         headers = {
             'authority': 'www.airbnb.com',
@@ -18,14 +19,14 @@ def download(url, headers={}, data=None):
         }
     http = HTTP()
     if not data:
-
-        response = http.get(url, headers=headers)
+    
+        response = http.get(url, headers=headers )
         if response and response.status_code in [200, 201]:
             return response.text
         else:
             print(response.status_code)
     else:
-        response = http.post(url, headers=headers, data=data)
+        response = http.post(url, headers=headers, data=data )
         if response and response.status_code in [200, 201]:
             return response.text
         else:

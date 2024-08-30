@@ -33,7 +33,7 @@ def filter_results(result, needed_keys):
             filtered_results.append(filtered_result)
     return filtered_results
 
-def extract_additional_data(item):
+def extract_additional_data(listing):
     # JMESPath expressions to extract additional data
     orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
     orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"

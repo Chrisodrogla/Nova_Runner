@@ -31,7 +31,7 @@ def filter_results(result, needed_keys):
             if 'url' in filtered_result:
                 filtered_result['url'] = filtered_result['url'].split('?')[0]
 
-            # Extract additional data using JMESPath as in the provided script
+            # Extract the additional data
             orig_price_per_night_path = "cohost.sections.sections[0].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path1 = "cohost.sections.sections[1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
             orig_price_per_night_path2 = "cohost.sections.sections[-1].section.structuredDisplayPrice.explanationData.priceDetails[0].items[0].description"
@@ -63,7 +63,7 @@ def filter_results(result, needed_keys):
             else:
                 total_without_tax_value = None
 
-            # Update the filtered result with the additional data
+            # Add the additional data to the filtered result
             filtered_result.update({
                 'total_price_website': total_price_value,
                 'price_on_website': orig_price_per_night_value,

@@ -16,6 +16,22 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime
 
+logger = logging.getLogger(__name__)
+
+start_time = time.time()
+scraper = AirbnbComSearchStrategy(logger)
+
+config = {
+    "url": "https://www.airbnb.ca/s/Kissimmee--Florida--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-09-01&monthly_length=3&monthly_end_date=2024-12-01&price_filter_input_type=2&channel=EXPLORE&date_picker_type=calendar&checkin=2024-09-15&checkout=2024-09-20&adults=10&children=2&query=Kissimmee%2C%20FL&place_id=ChIJ5wsVNxqE3YgRDcL9EZfN55Q&source=structured_search_input_header&search_type=user_map_move&search_mode=regular_search&price_filter_num_nights=5&ne_lat=28.324183778891268&ne_lng=-81.59150754475331&sw_lat=28.31927027087826&sw_lng=-81.5957779516566&zoom=17.56002983473028&zoom_level=17.56002983473028&search_by_map=true"
+}
+
+result123 = scraper.execute(config)
+print(result123)
+
+
+
+
+
 batch_id = os.getenv('BATCH_ID', 'Batch1')
 start_time = time.time()
 

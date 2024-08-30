@@ -2,13 +2,6 @@ from scraper.utils.http_curl import HTTP
 
 
 def download(url, headers={}, data=None):
-    if proxy:
-        response = requests.get(url, proxies={"http": proxy, "https": proxy})
-    else:
-        response = requests.get(url)
-
-
-        
     if not headers:
         headers = {
             'authority': 'www.airbnb.com',
@@ -38,3 +31,4 @@ def download(url, headers={}, data=None):
         else:
             print(response.status_code)
     return None
+

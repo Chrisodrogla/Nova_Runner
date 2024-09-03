@@ -434,7 +434,7 @@
     ],
     "Batch10": [
         {
-            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-09&checkout=2024-09-12&adults=19&search_mode=regular_search&min_bedrooms=8&",
+            "listing_link_format": "https://www.airbnb.ca/s/Kissimee--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-09&checkout=2024-09-12&adults=19&search_mode=regular_search&min_bedrooms=8&currency=USD",
             "JobID": "799",
             "InfoID": "62"
         }

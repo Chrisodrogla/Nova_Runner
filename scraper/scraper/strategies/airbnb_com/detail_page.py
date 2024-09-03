@@ -46,21 +46,21 @@ class AirbnbComDetailStrategy(AbstractCrawler):
             cohost = self.get_pdp_cohost_name(room_data)
             cleanliness = self.get_pdp_clean(room_data)
             accuracy = self.get_pdp_clean(room_data)
-            communication = self.get_pdp_communication(room_data)
-            location_rate = self.get_pdp_location_rating(room_data)
-            check_in_rate = self.get_pdp_check_in(room_data)
-            guest_capacity = self.get_pdp_capacity(room_data)
-            lat = self.get_pdp_lat(initial_room_data)
-            lon = self.get_pdp_lon(initial_room_data)
-            rooms = self.get_pdp_rooms(room_data)
-            amenties = self.get_pdp_amenties(initial_room_data)
-            property_type = self.get_property_type(room_data)
+            # communication = self.get_pdp_communication(room_data)
+            # location_rate = self.get_pdp_location_rating(room_data)
+            # check_in_rate = self.get_pdp_check_in(room_data)
+            # guest_capacity = self.get_pdp_capacity(room_data)
+            # lat = self.get_pdp_lat(initial_room_data)
+            # lon = self.get_pdp_lon(initial_room_data)
+            # rooms = self.get_pdp_rooms(room_data)
+            # amenties = self.get_pdp_amenties(initial_room_data)
+            # property_type = self.get_property_type(room_data)
             fees = self.get_pdp_fees(room_data)
             title = self.get_pdp_title(room_data)
             description = self.get_pdp_description(room_data)
-            image_url = self.get_pdp_image_url(room_data)
-            rating_score = self.get_pdp_rating_score(room_data)
-            rating_count = self.get_pdp_rating_count(room_data)
+            # image_url = self.get_pdp_image_url(room_data)
+            # rating_score = self.get_pdp_rating_score(room_data)
+            # rating_count = self.get_pdp_rating_count(room_data)
             data = {
                 "label": title,
                 "description": description,
@@ -70,20 +70,20 @@ class AirbnbComDetailStrategy(AbstractCrawler):
                 "property_type": property_type,
                 "host_name": host_name,
                 "cohost":cohost,
-                "cleanliness": cleanliness,
-                "accuracy": accuracy,
-                "location_rate": location_rate,
-                "communication": communication,
-                "check_in_rating": check_in_rate,
-                "guest": guest_capacity,
-                "baths": rooms.get('bath'),
-                'beds': rooms.get('beds'),
-                'bedrooms': rooms.get('bedroom'),
-                'kitchen': amenties.get('kitchen'),
-                'pool': amenties.get('pool'),
-                'latitude': lat,
-                'longitude': lon,
-                'amenities': amenties.get('extra', []),
+                # "cleanliness": cleanliness,
+                # "accuracy": accuracy,
+                # "location_rate": location_rate,
+                # "communication": communication,
+                # "check_in_rating": check_in_rate,
+                # "guest": guest_capacity,
+                # "baths": rooms.get('bath'),
+                # 'beds': rooms.get('beds'),
+                # 'bedrooms': rooms.get('bedroom'),
+                # 'kitchen': amenties.get('kitchen'),
+                # 'pool': amenties.get('pool'),
+                # 'latitude': lat,
+                # 'longitude': lon,
+                # 'amenities': amenties.get('extra', []),
                 "cleaning_fee": fees.get('cleaning_fee'),
                 "service_fee": fees.get('service_fee'),
             }

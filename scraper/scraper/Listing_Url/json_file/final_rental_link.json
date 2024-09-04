@@ -262,16 +262,6 @@
             "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-09&checkout=2024-09-12&adults=25.0&search_mode=regular_search&min_bedrooms=9.0&query=Davenport%2C%20Florida%2C%20United%20States",
             "JobID": 112,
             "InfoID": 9
-        },
-        {
-            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-16&checkout=2024-09-19&adults=25.0&search_mode=regular_search&min_bedrooms=9.0&query=Davenport%2C%20Florida%2C%20United%20States",
-            "JobID": 113,
-            "InfoID": 9
-        },
-        {
-            "listing_link_format": "https://www.airbnb.ca/s/Davenport--Florida--United-States/homes?date_picker_type=calendar&currency=USD&checkin=2024-09-23&checkout=2024-09-26&adults=25.0&search_mode=regular_search&min_bedrooms=9.0&query=Davenport%2C%20Florida%2C%20United%20States",
-            "JobID": 114,
-            "InfoID": 9
         }
     ],
     "Batch11": [

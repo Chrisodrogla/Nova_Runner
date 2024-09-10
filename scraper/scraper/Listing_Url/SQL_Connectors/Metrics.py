@@ -4,6 +4,7 @@ import os
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
+import time
 
 # Constants
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
@@ -30,8 +31,12 @@ else:
 # Ensure ListingID is properly handled and converted to the correct type
 df['ListingID'] = df['ListingID'].astype(str)  # Ensure ListingID is treated as a string
 
-# Convert data types to match SQL table
-df = df.apply(pd.to_numeric, errors='ignore')  # Convert numeric columns to appropriate types
+# Explicitly convert numeric columns
+numeric_cols = ['FPImpression', 'TotalPageView', 'TotalPageView_comp', 'FPImpressionRate', 'ClickThroughRate', 
+                'ViewtoBookRate', 'OverallConversionRate', 'OverallConversionRate_comp', 'LeadingTime', 
+                'LeadingTime_comp', 'WishlistAdditions', 'WishlistAdditions_comp']
+for col in numeric_cols:
+    df[col] = pd.to_numeric(df[col], errors='coerce')  # Convert only numeric columns, coerce invalid values to NaN
 
 # Handle missing or empty values
 df = df.replace('', None)
@@ -39,8 +44,24 @@ df = df.replace('', None)
 # Connection string from environment variable
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
-# Establish SQL Server connection
-conn = pyodbc.connect(connection_string)
+# Retry mechanism for SQL connection
+max_retries = 3
+retries = 0
+connected = False
+
+while retries < max_retries and not connected:
+    try:
+        # Establish SQL Server connection
+        conn = pyodbc.connect(connection_string, timeout=30)  # Set timeout explicitly
+        connected = True
+    except pyodbc.OperationalError as e:
+        print(f"Connection failed: {e}. Retrying in 5 seconds...")
+        retries += 1
+        time.sleep(5)
+
+if not connected:
+    raise Exception("Failed to connect to the database after several retries.")
+
 cursor = conn.cursor()
 
 # Insert data into SQL Server table in batches

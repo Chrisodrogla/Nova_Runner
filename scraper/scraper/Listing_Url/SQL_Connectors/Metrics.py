@@ -4,7 +4,6 @@ import os
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyodbc
-from datetime import datetime
 
 # Constants
 SHEET_ID = '10OgYeu7oj5Lwtr4gGy14zXuZlAk0gibSbgq_AmUtf7Q'
@@ -37,9 +36,6 @@ df = df.apply(pd.to_numeric, errors='ignore')  # Convert numeric columns to appr
 # Handle missing or empty values
 df = df.replace('', None)
 
-# Add UpdatedAt column with current timestamp
-df['UpdatedAt'] = datetime.now().strftime('%Y-%m-%d')
-
 # Connection string from environment variable
 connection_string = os.environ.get('SECRET_CHRISTIANSQL_STRING')
 
@@ -53,9 +49,9 @@ for start in range(0, len(df), batch_size):
     batch = df.iloc[start:start+batch_size]
     for index, row in batch.iterrows():
         cursor.execute("""
-            INSERT INTO ListingMetrics (ListingID, StartDate, EndDate, FPImpression, TotalPageView, TotalPageView_comp, FPImpressionRate, ClickThroughRate, ViewtoBookRate, OverallConversionRate, OverallConversionRate_comp, LeadingTime, LeadingTime_comp, WishlistAdditions, WishlistAdditions_comp, UpdatedAt)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, row['ListingID'], row['StartDate'], row['EndDate'], row['FPImpression'], row['TotalPageView'], row['TotalPageView_comp'], row['FPImpressionRate'], row['ClickThroughRate'], row['ViewtoBookRate'], row['OverallConversionRate'], row['OverallConversionRate_comp'], row['LeadingTime'], row['LeadingTime_comp'], row['WishlistAdditions'], row['WishlistAdditions_comp'], row['UpdatedAt'])
+            INSERT INTO ListingMetrics (ListingID, StartDate, EndDate, FPImpression, TotalPageView, TotalPageView_comp, FPImpressionRate, ClickThroughRate, ViewtoBookRate, OverallConversionRate, OverallConversionRate_comp, LeadingTime, LeadingTime_comp, WishlistAdditions, WishlistAdditions_comp)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, row['ListingID'], row['StartDate'], row['EndDate'], row['FPImpression'], row['TotalPageView'], row['TotalPageView_comp'], row['FPImpressionRate'], row['ClickThroughRate'], row['ViewtoBookRate'], row['OverallConversionRate'], row['OverallConversionRate_comp'], row['LeadingTime'], row['LeadingTime_comp'], row['WishlistAdditions'], row['WishlistAdditions_comp'])
     conn.commit()
 
 # Close connection

@@ -14,9 +14,8 @@ import calendar
 start_time = time.time()
 
 # Get environment variables for username and password
-
-username ="data.bnb@NovaVacation.com"
-passw = "Data@2024*"
+username = os.getenv("USERNAME")
+passw = os.getenv("PASSWORD")
 
 website = "https://www.airbnb.com/performance/conversion/conversion_rate"
 

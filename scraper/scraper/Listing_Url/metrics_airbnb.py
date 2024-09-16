@@ -30,11 +30,12 @@ options.add_argument("--window-size=1920x1080")
 driver = webdriver.Chrome(options=options)
 driver.get(website)
 
-time.sleep(10)
+time.sleep(5)
 
 # Using the Login to Enter the Airbnb website
 log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
 log.click()
+time.sleep(2)
 driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
 time.sleep(10)
 log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")

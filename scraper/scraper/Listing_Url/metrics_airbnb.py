@@ -1,61 +1,45 @@
 import os
-import time
-import datetime
-from selenium import webdriver
 import shutil
-import json
-from selenium.common.exceptions import NoSuchElementException
-import datetime
-import pytz
 import pandas as pd
-from datetime import datetime, timedelta
-import calendar
+import requests
+import json
 
-start_time = time.time()
+# Step 1: Define API credentials
+TOKEN_KEY = os.getenv("TOKEN_KEY")
+TOKEN_SECRET = os.getenv("TOKEN_SECRET")
 
-# Get environment variables for username and password
-username = os.getenv("AIRBNB_USER_SECRET")
-passw = os.getenv("AIRBNB_PASSW_SECRET")
 
-website = "https://www.airbnb.com/performance/conversion/conversion_rate"
+# Step 2: Define the API endpoint
+api_url = "https://web.streamlinevrs.com/api/json"
 
-# Set up Chrome WebDriver
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-gpu")
-options.add_argument("--window-size=1920x1080")
+# Step 3: Create the request payload
+payload = {
+    "methodName": "GetPropertyInfo",
+    "params": {
+        "token_key": TOKEN_KEY,
+        "token_secret": TOKEN_SECRET,
+        "unit_id": 575257,
+        "return_multiple_housekeepers": 1,
+        "include_owners": 1,
+        "owner_manager": 1,
+        "maintenance_plan": 1,
+        "unit_proposition_package": 1,
+        "return_markup": 1,
+        "show_advance_date": 1,
+        "show_website_url": 1,
+        "show_wifi_name": 1,
+        "show_housekeeping_status": 1
+    }
+}
 
-driver = webdriver.Chrome(options=options)
-driver.get(website)
+# Step 4: Send the POST request to the API
+response = requests.post(api_url, json=payload)
 
-time.sleep(5)
-
-# Using the Login to Enter the Airbnb website
-log = driver.find_element("xpath", """//button[@aria-label="Continue with email"]""")
-log.click()
-time.sleep(2)
-driver.find_element("xpath", """//input[@inputmode="email"]""").send_keys(username)
-time.sleep(10)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-time.sleep(10)
-driver.find_element("xpath", """//input[@name="user[password]"]""").send_keys(passw)
-time.sleep(10)
-log1 = driver.find_element("xpath", """//button[@data-testid="signup-login-submit-btn"]""")
-log1.click()
-
-# MEthod of getting the listing numbers available on the website
-time.sleep(10)
-all_listing = driver.find_element("xpath", """//div[@data-testid="listingPicker"]/button""")
-all_listing.click()
-time.sleep(2)
-lists = driver.find_elements("xpath", """//div[@class="_1a8jl99"]/div/div[1]""")
-Listings = []
-for list_item in lists:
-    div_id = list_item.get_attribute('id')
-    Listings.append(div_id)
-    
-    
-print(Listings)    
+# Step 5: Print the response
+if response.status_code == 200:
+    # Print the JSON response in a formatted way
+    result = response.json()
+    print(json.dumps(result, indent=4))
+else:
+    print(f"Error: {response.status_code}, {response.text}")
+ 
